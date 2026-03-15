@@ -70,7 +70,27 @@ const authorsBySlug = {
   'the-arabs-and-the-holocaust': 'Gilbert Achcar',
   'nazis-islamists-and-the-making-of-the-modern-middle-east': 'Barry Rubin and Wolfgang G. Schwanitz',
   'the-mufti-of-jerusalem-and-the-nazis': 'Klaus Gensicke',
-  'sombres-bourreaux': 'Serge Bilé'
+  'sombres-bourreaux': 'Serge Bilé',
+  'the-quran': 'Traditionally understood as revelation received by Prophet Muhammad',
+  'tao-te-ching': 'Lao Tzu (traditionally attributed)',
+  'kojiki': 'Ō no Yasumaro',
+  'dhammapada': 'Sayings traditionally attributed to the Buddha',
+  'bhagavad-gita': 'Vyasa (traditionally attributed)',
+  'the-mabinogion': 'Anonymous',
+  'arvisura': 'Pál Zoltán',
+  'opportunity': 'Eben Pagan',
+  'the-power-of-now': 'Eckhart Tolle',
+  'david-and-goliath': 'Malcolm Gladwell',
+  'blink': 'Malcolm Gladwell',
+  'what-the-dog-saw': 'Malcolm Gladwell',
+  'outliers': 'Malcolm Gladwell',
+  'freakonomics': 'Steven D. Levitt and Stephen J. Dubner',
+  'zero-the-biography-of-a-dangerous-idea': 'Charles Seife',
+  'journey-through-genius': 'William Dunham',
+  'the-strangest-man': 'Graham Farmelo',
+  'the-alchemist': 'Paulo Coelho',
+  'meditations': 'Marcus Aurelius',
+  'the-picture-of-dorian-gray': 'Oscar Wilde'
 };
 
 window.bookReports = [
@@ -145,7 +165,27 @@ window.bookReports = [
   { slug: 'the-arabs-and-the-holocaust', title: 'The Arabs and the Holocaust', category: 'Modern History', summary: 'A study of Arab intellectual and political responses to the Holocaust, European antisemitism, Zionism, and the struggle over historical memory.', topics: ['Holocaust memory', 'Arab political thought', 'Antisemitism and anti-Zionism', 'Colonial history and conflict', 'Historical interpretation'] },
   { slug: 'nazis-islamists-and-the-making-of-the-modern-middle-east', title: 'Nazis, Islamists and the Making of the Modern Middle East', category: 'Modern History', summary: 'A historical argument that Nazi alliances, propaganda, and Islamist political currents influenced parts of the modern Middle East.', topics: ['Nazi influence abroad', 'Islamism and politics', 'Middle East state formation', 'War and ideology', 'Historical legacy'] },
   { slug: 'the-mufti-of-jerusalem-and-the-nazis', title: 'The Mufti of Jerusalem and the Nazis', category: 'Modern History', summary: 'A focused history of Haj Amin al-Husseini’s relationship with Nazi Germany, emphasizing wartime collaboration, propaganda, and political responsibility.', topics: ['Collaboration and leadership', 'Antisemitism and nationalism', 'Propaganda and diplomacy', 'Wartime alliances', 'Responsibility in history'] },
-  { slug: 'sombres-bourreaux', title: 'Sombres Bourreaux — Collabos africains, antillais, guyanais, réunionnais, et noirs américains, dans la Deuxième Guerre mondiale', category: 'Modern History', summary: 'A historical work examining Black collaborators from Africa, the Caribbean, Guyana, Réunion, and the United States in relation to the Second World War.', topics: ['Collaboration under occupation', 'Race and empire', 'War and moral compromise', 'Colonial history', 'Memory and responsibility'] }
+  { slug: 'sombres-bourreaux', title: 'Sombres Bourreaux — Collabos africains, antillais, guyanais, réunionnais, et noirs américains, dans la Deuxième Guerre mondiale', category: 'Modern History', summary: 'A historical work examining Black collaborators from Africa, the Caribbean, Guyana, Réunion, and the United States in relation to the Second World War.', topics: ['Collaboration under occupation', 'Race and empire', 'War and moral compromise', 'Colonial history', 'Memory and responsibility'] },
+  { slug: 'the-quran', title: 'The Qur’an', category: 'Religion & Philosophy', summary: 'The central scripture of Islam, focused on divine revelation, moral responsibility, worship, guidance, and the relationship between human beings and God.', topics: ['Monotheism and revelation', 'Judgment and moral responsibility', 'Mercy and justice', 'Prophecy and guidance', 'Community and obedience'] },
+  { slug: 'tao-te-ching', title: 'Tao Te Ching', category: 'Religion & Philosophy', summary: 'A foundational Taoist text that reflects on harmony, non-forcing, simplicity, wise leadership, and living in accord with the Tao.', topics: ['The Tao and natural order', 'Wu wei and non-forcing', 'Simplicity and humility', 'Power through softness', 'Leadership and balance'] },
+  { slug: 'kojiki', title: 'Kojiki', category: 'Religion & Philosophy', summary: 'Japan’s oldest chronicle of myth and sacred origins, shaping how Shinto tradition remembers the kami, creation, and imperial ancestry.', topics: ['Creation myths and kami', 'Imperial ancestry and legitimacy', 'Purity and ritual', 'Sacred landscape and identity', 'Myth and memory'] },
+  { slug: 'dhammapada', title: 'Dhammapada', category: 'Religion & Philosophy', summary: 'A compact and influential Buddhist text of moral and spiritual verses centered on the mind, suffering, discipline, compassion, and liberation.', topics: ['Mind and intention', 'Suffering and impermanence', 'Self-discipline', 'Compassion and non-attachment', 'Path to wisdom'] },
+  { slug: 'bhagavad-gita', title: 'Bhagavad Gita', category: 'Religion & Philosophy', summary: 'A philosophical dialogue set on the eve of battle, exploring duty, action, devotion, knowledge, and the struggle to act rightly.', topics: ['Duty and dharma', 'Action without attachment', 'Knowledge and devotion', 'Self and ultimate reality', 'Moral struggle'] },
+  { slug: 'the-mabinogion', title: 'The Mabinogion', category: 'Religion & Philosophy', summary: 'A major collection of medieval Welsh tales that preserves mythic kingship, otherworldly encounters, sacred memory, and pre-Christian Celtic imagination.', topics: ['Mythic kingship', 'Fate and otherworldly power', 'Honor and kinship', 'Transformation and magic', 'Memory and sacred story'] },
+  { slug: 'arvisura', title: 'Arvisura', category: 'Religion & Philosophy', summary: 'A modern mytho-historical work associated by some readers with Hungarian táltos tradition, blending sacred ancestry, legendary history, and national memory.', topics: ['Sacred ancestry and origins', 'Mythic history', 'Heroic identity', 'Spiritual tradition and memory', 'Nation and legend'] },
+  { slug: 'opportunity', title: 'Opportunity', category: 'Self-Development', summary: 'A motivational business-minded book about seeing opportunities clearly, acting decisively, and building value through mindset and initiative.', topics: ['Opportunity recognition', 'Personal responsibility', 'Mindset and ambition', 'Value creation', 'Action and momentum'] },
+  { slug: 'the-power-of-now', title: 'The Power of Now', category: 'Self-Development', summary: 'A spiritual self-help book centered on presence, awareness, freedom from compulsive thought, and peace through living in the present moment.', topics: ['Presence and awareness', 'Freedom from compulsive thought', 'Ego and identity', 'Acceptance and peace', 'Spiritual awakening'] },
+  { slug: 'david-and-goliath', title: 'David and Goliath', category: 'Ideas & Nonfiction', summary: 'A nonfiction book arguing that apparent disadvantages can become strengths, and that power often works differently than it first appears.', topics: ['Power and disadvantage', 'Underdog strategy', 'Perception and strength', 'Adversity and resilience', 'Unexpected advantage'] },
+  { slug: 'blink', title: 'Blink', category: 'Ideas & Nonfiction', summary: 'A popular nonfiction book about rapid cognition, first impressions, and the surprising strengths and weaknesses of snap judgment.', topics: ['Rapid cognition', 'Intuition and judgment', 'Bias in first impressions', 'Expertise and pattern recognition', 'Limits of snap decisions'] },
+  { slug: 'what-the-dog-saw', title: 'What the Dog Saw', category: 'Ideas & Nonfiction', summary: 'A collection of Malcolm Gladwell essays that studies people, work, behavior, and overlooked patterns in ordinary and extraordinary situations.', topics: ['Human behavior in detail', 'Observation and interpretation', 'Innovation and problem solving', 'Hidden patterns in everyday life', 'Character and decision-making'] },
+  { slug: 'outliers', title: 'Outliers', category: 'Ideas & Nonfiction', summary: 'A widely read nonfiction book exploring how success grows from talent, practice, timing, culture, opportunity, and hidden structural advantages.', topics: ['Success and opportunity', 'Practice and mastery', 'Culture and background', 'Timing and circumstance', 'Hidden advantages'] },
+  { slug: 'freakonomics', title: 'Freakonomics', category: 'Ideas & Nonfiction', summary: 'A data-driven popular economics book that uses unusual questions and case studies to reveal how incentives shape behavior in surprising ways.', topics: ['Incentives and behavior', 'Hidden side of economics', 'Data and unconventional questions', 'Cheating and self-interest', 'Patterns beneath everyday life'] },
+  { slug: 'zero-the-biography-of-a-dangerous-idea', title: 'Zero: The Biography of a Dangerous Idea', category: 'Science & Math History', summary: 'A readable history of zero and how the idea of nothing transformed mathematics, philosophy, and science across different cultures.', topics: ['Origins of zero', 'Mathematics across cultures', 'Infinity and nothingness', 'Ideas that reshape science', 'History of number systems'] },
+  { slug: 'journey-through-genius', title: 'Journey Through Genius', category: 'Science & Math History', summary: 'An accessible tour through famous mathematical proofs, showing how major ideas emerged and why they matter in the history of thought.', topics: ['Historic mathematical proofs', 'Beauty of reasoning', 'Breakthrough ideas', 'Mathematics in historical context', 'Discovery and insight'] },
+  { slug: 'the-strangest-man', title: 'The Strangest Man', category: 'Science & Math History', summary: 'A historical biography of Paul Dirac that connects one unusual life to the making of modern physics and twentieth-century scientific thought.', topics: ['Quantum theory and modern physics', 'Paul Dirac and scientific genius', 'Ideas that change science', 'Personality and isolation', 'History of twentieth-century physics'] },
+  { slug: 'the-alchemist', title: 'The Alchemist', category: 'Adventure', summary: 'A brief allegorical novel about pursuit, destiny, faith, and the search for meaning through a journey across the world and into the self.', topics: ['Personal destiny', 'Faith and signs', 'Journey and transformation', 'Dreams and purpose', 'Inner treasure'] },
+  { slug: 'meditations', title: 'Meditations', category: 'Religion & Philosophy', summary: 'A Stoic work of personal reflection on self-discipline, mortality, duty, reason, and how to live well under pressure.', topics: ['Stoic self-mastery', 'Duty and character', 'Mortality and perspective', 'Reason and self-control', 'Inner freedom'] },
+  { slug: 'the-picture-of-dorian-gray', title: 'The Picture of Dorian Gray', category: 'Gothic & Horror', summary: 'A dark novel of beauty, vanity, corruption, and conscience in which outward perfection hides inward moral decay.', topics: ['Vanity and corruption', 'Beauty and morality', 'Pleasure and consequence', 'Double life and secrecy', 'Conscience and decay'] }
 ].map(entry => ({
   ...entry,
   author: authorsBySlug[entry.slug] || 'Unknown author'
