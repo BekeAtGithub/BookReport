@@ -114,6 +114,10 @@
     const randomButtons = [document.getElementById('randomTop')];
     let selectedTitle = books.length ? books[0].title : '';
 
+    function normalizeSortTitle(title) {
+      return title.trim().replace(/^(the|a)\s+/i, '');
+    }
+
     const categories = ['All', ...new Set(books.map(book => book.category))];
     categories.forEach(category => {
       const option = document.createElement('option');
@@ -149,9 +153,12 @@
 
       const sortMode = sortSelect.value;
       filtered.sort((a, b) => {
-        if (sortMode === 'za') return b.title.localeCompare(a.title);
-        if (sortMode === 'category') return a.category.localeCompare(b.category) || a.title.localeCompare(b.title);
-        return a.title.localeCompare(b.title);
+        const titleA = normalizeSortTitle(a.title);
+        const titleB = normalizeSortTitle(b.title);
+
+        if (sortMode === 'za') return titleB.localeCompare(titleA);
+        if (sortMode === 'category') return a.category.localeCompare(b.category) || titleA.localeCompare(titleB);
+        return titleA.localeCompare(titleB);
       });
       return filtered;
     }

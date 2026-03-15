@@ -90,7 +90,18 @@ const authorsBySlug = {
   'the-strangest-man': 'Graham Farmelo',
   'the-alchemist': 'Paulo Coelho',
   'meditations': 'Marcus Aurelius',
-  'the-picture-of-dorian-gray': 'Oscar Wilde'
+  'the-picture-of-dorian-gray': 'Oscar Wilde',
+  'smugglers-cove': 'Martin Cate with Rebecca Cate',
+  'the-age-of-gold': 'H. W. Brands',
+  'death-valley-and-the-amargosa': 'Richard E. Lingenfelter',
+  'klondike': 'Pierre Berton',
+  'the-civilization-of-the-renaissance-in-italy': 'Jacob Burckhardt',
+  'versailles-a-biography-of-a-palace': 'Tony Spawforth',
+  'the-story-of-art': 'E. H. Gombrich',
+  'music-in-the-baroque': 'Wendy Heller',
+  'food-in-history': 'Reay Tannahill',
+  'the-old-man-and-the-sea': 'Ernest Hemingway',
+  'green-hills-of-africa': 'Ernest Hemingway'
 };
 
 window.bookReports = [
@@ -185,7 +196,18 @@ window.bookReports = [
   { slug: 'the-strangest-man', title: 'The Strangest Man', category: 'Science & Math History', summary: 'A historical biography of Paul Dirac that connects one unusual life to the making of modern physics and twentieth-century scientific thought.', topics: ['Quantum theory and modern physics', 'Paul Dirac and scientific genius', 'Ideas that change science', 'Personality and isolation', 'History of twentieth-century physics'] },
   { slug: 'the-alchemist', title: 'The Alchemist', category: 'Adventure', summary: 'A brief allegorical novel about pursuit, destiny, faith, and the search for meaning through a journey across the world and into the self.', topics: ['Personal destiny', 'Faith and signs', 'Journey and transformation', 'Dreams and purpose', 'Inner treasure'] },
   { slug: 'meditations', title: 'Meditations', category: 'Religion & Philosophy', summary: 'A Stoic work of personal reflection on self-discipline, mortality, duty, reason, and how to live well under pressure.', topics: ['Stoic self-mastery', 'Duty and character', 'Mortality and perspective', 'Reason and self-control', 'Inner freedom'] },
-  { slug: 'the-picture-of-dorian-gray', title: 'The Picture of Dorian Gray', category: 'Gothic & Horror', summary: 'A dark novel of beauty, vanity, corruption, and conscience in which outward perfection hides inward moral decay.', topics: ['Vanity and corruption', 'Beauty and morality', 'Pleasure and consequence', 'Double life and secrecy', 'Conscience and decay'] }
+  { slug: 'the-picture-of-dorian-gray', title: 'The Picture of Dorian Gray', category: 'Gothic & Horror', summary: 'A dark novel of beauty, vanity, corruption, and conscience in which outward perfection hides inward moral decay.', topics: ['Vanity and corruption', 'Beauty and morality', 'Pleasure and consequence', 'Double life and secrecy', 'Conscience and decay'] },
+  { slug: 'smugglers-cove', title: 'Smuggler\'s Cove', category: 'Art, Music & Culture', summary: 'A lively guide to rum, tiki history, cocktail craft, and the performance of hospitality that turns drinking culture into a readable cultural story.', topics: ['Cocktail craft and technique', 'Rum history and style', 'Tiki culture and revival', 'Hospitality and presentation', 'Tradition and experimentation'] },
+  { slug: 'the-age-of-gold', title: 'The Age of Gold', category: 'Modern History', summary: 'A history of the California Gold Rush that links migration, speculation, labor, politics, and expansion to the making of a new American dream.', topics: ['Gold rush migration and ambition', 'Boomtown society and disorder', 'Capital and speculation', 'State-building and expansion', 'The American Dream'] },
+  { slug: 'death-valley-and-the-amargosa', title: 'Death Valley and the Amargosa', category: 'Modern History', summary: 'A regional history of Death Valley and the Mojave borderlands that follows mining fever, illusion, hardship, and boom-and-bust settlement in the desert.', topics: ['Desert mining booms', 'Gold and silver speculation', 'Survival in harsh landscapes', 'Myth and frontier memory', 'Boom-and-bust settlement'] },
+  { slug: 'klondike', title: 'Klondike', category: 'Modern History', summary: 'A sweeping account of the Yukon gold rush that captures the stampede north, frontier hardship, greed, law, and the legend-making power of the Klondike.', topics: ['Stampede and migration', 'Hardship and survival', 'Gold fever and speculation', 'Northern frontier society', 'Law, order, and myth'] },
+  { slug: 'the-civilization-of-the-renaissance-in-italy', title: 'The Civilization of the Renaissance in Italy', category: 'Art, Music & Culture', summary: 'A classic interpretation of Renaissance Italy that connects humanism, political life, art, learning, and the rise of individual self-consciousness.', topics: ['Humanism and individualism', 'City-states and political culture', 'Art and patronage', 'Secular learning and power', 'Renaissance identity'] },
+  { slug: 'versailles-a-biography-of-a-palace', title: 'Versailles: A Biography of a Palace', category: 'Art, Music & Culture', summary: 'A history of Versailles as a political stage where architecture, ritual, monarchy, and taste were used to display power and shape French court culture.', topics: ['Royal spectacle and power', 'Court ritual and etiquette', 'Architecture and symbolism', 'Monarchy and statecraft', 'Memory of absolutism'] },
+  { slug: 'the-story-of-art', title: 'The Story of Art', category: 'Art, Music & Culture', summary: 'A readable survey of art history that explains how styles, techniques, and cultural settings changed across major civilizations and artistic movements.', topics: ['Art across civilizations', 'Style and visual language', 'Artists and innovation', 'Patronage and society', 'Changing taste and tradition'] },
+  { slug: 'music-in-the-baroque', title: 'Music in the Baroque', category: 'Art, Music & Culture', summary: 'A history of baroque music that places composition, performance, religion, theater, and court life inside a larger cultural world.', topics: ['Baroque style and form', 'Opera, court, and church', 'Patronage and performance', 'Music and social ritual', 'Innovation and expression'] },
+  { slug: 'food-in-history', title: 'Food in History', category: 'Art, Music & Culture', summary: 'A broad cultural history of food tracing how agriculture, trade, class, religion, and taste shaped diets and social life across centuries.', topics: ['Food and civilization', 'Trade, scarcity, and abundance', 'Cuisine and class', 'Technology and diet', 'Culture, ritual, and taste'] },
+  { slug: 'the-old-man-and-the-sea', title: 'The Old Man and the Sea', category: 'Classics', summary: 'A short novel about endurance, pride, struggle, and dignity in which an aging fisherman tests himself against the sea, a marlin, and his own limits.', topics: ['Endurance and resilience', 'Pride and dignity', 'Man versus nature', 'Skill and perseverance', 'Loss and spiritual victory'] },
+  { slug: 'green-hills-of-africa', title: 'Green Hills of Africa', category: 'Adventure', summary: 'A nonfiction safari narrative that blends travel, landscape, hunting, competition, and reflection on writing, courage, and the pursuit of experience.', topics: ['Travel and wilderness', 'Hunting and competition', 'Courage and self-testing', 'Landscape and observation', 'Writing and lived experience'] }
 ].map(entry => ({
   ...entry,
   author: authorsBySlug[entry.slug] || 'Unknown author'
