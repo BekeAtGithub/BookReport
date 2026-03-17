@@ -85,6 +85,7 @@ const authorsBySlug = {
   'what-the-dog-saw': 'Malcolm Gladwell',
   'outliers': 'Malcolm Gladwell',
   'freakonomics': 'Steven D. Levitt and Stephen J. Dubner',
+  'startup-nation': 'Dan Senor and Saul Singer',
   'zero-the-biography-of-a-dangerous-idea': 'Charles Seife',
   'journey-through-genius': 'William Dunham',
   'the-strangest-man': 'Graham Farmelo',
@@ -101,7 +102,8 @@ const authorsBySlug = {
   'music-in-the-baroque': 'Wendy Heller',
   'food-in-history': 'Reay Tannahill',
   'the-old-man-and-the-sea': 'Ernest Hemingway',
-  'green-hills-of-africa': 'Ernest Hemingway'
+  'green-hills-of-africa': 'Ernest Hemingway',
+  'storm-of-steel': 'Ernst Jünger'
 };
 
 window.bookReports = [
@@ -191,6 +193,7 @@ window.bookReports = [
   { slug: 'what-the-dog-saw', title: 'What the Dog Saw', category: 'Ideas & Nonfiction', summary: 'A collection of Malcolm Gladwell essays that studies people, work, behavior, and overlooked patterns in ordinary and extraordinary situations.', topics: ['Human behavior in detail', 'Observation and interpretation', 'Innovation and problem solving', 'Hidden patterns in everyday life', 'Character and decision-making'] },
   { slug: 'outliers', title: 'Outliers', category: 'Ideas & Nonfiction', summary: 'A widely read nonfiction book exploring how success grows from talent, practice, timing, culture, opportunity, and hidden structural advantages.', topics: ['Success and opportunity', 'Practice and mastery', 'Culture and background', 'Timing and circumstance', 'Hidden advantages'] },
   { slug: 'freakonomics', title: 'Freakonomics', category: 'Ideas & Nonfiction', summary: 'A data-driven popular economics book that uses unusual questions and case studies to reveal how incentives shape behavior in surprising ways.', topics: ['Incentives and behavior', 'Hidden side of economics', 'Data and unconventional questions', 'Cheating and self-interest', 'Patterns beneath everyday life'] },
+  { slug: 'startup-nation', title: 'Startup Nation', category: 'Ideas & Nonfiction', summary: 'A study of Israel’s startup ecosystem that connects entrepreneurship, military culture, immigration, risk-taking, and national adaptability to unusual economic dynamism.', topics: ['Entrepreneurship and innovation', 'Risk-taking culture', 'Military experience and leadership', 'Immigration and talent', 'National adaptability and growth'] },
   { slug: 'zero-the-biography-of-a-dangerous-idea', title: 'Zero: The Biography of a Dangerous Idea', category: 'Science & Math History', summary: 'A readable history of zero and how the idea of nothing transformed mathematics, philosophy, and science across different cultures.', topics: ['Origins of zero', 'Mathematics across cultures', 'Infinity and nothingness', 'Ideas that reshape science', 'History of number systems'] },
   { slug: 'journey-through-genius', title: 'Journey Through Genius', category: 'Science & Math History', summary: 'An accessible tour through famous mathematical proofs, showing how major ideas emerged and why they matter in the history of thought.', topics: ['Historic mathematical proofs', 'Beauty of reasoning', 'Breakthrough ideas', 'Mathematics in historical context', 'Discovery and insight'] },
   { slug: 'the-strangest-man', title: 'The Strangest Man', category: 'Science & Math History', summary: 'A historical biography of Paul Dirac that connects one unusual life to the making of modern physics and twentieth-century scientific thought.', topics: ['Quantum theory and modern physics', 'Paul Dirac and scientific genius', 'Ideas that change science', 'Personality and isolation', 'History of twentieth-century physics'] },
@@ -207,7 +210,8 @@ window.bookReports = [
   { slug: 'music-in-the-baroque', title: 'Music in the Baroque', category: 'Art, Music & Culture', summary: 'A history of baroque music that places composition, performance, religion, theater, and court life inside a larger cultural world.', topics: ['Baroque style and form', 'Opera, court, and church', 'Patronage and performance', 'Music and social ritual', 'Innovation and expression'] },
   { slug: 'food-in-history', title: 'Food in History', category: 'Art, Music & Culture', summary: 'A broad cultural history of food tracing how agriculture, trade, class, religion, and taste shaped diets and social life across centuries.', topics: ['Food and civilization', 'Trade, scarcity, and abundance', 'Cuisine and class', 'Technology and diet', 'Culture, ritual, and taste'] },
   { slug: 'the-old-man-and-the-sea', title: 'The Old Man and the Sea', category: 'Classics', summary: 'A short novel about endurance, pride, struggle, and dignity in which an aging fisherman tests himself against the sea, a marlin, and his own limits.', topics: ['Endurance and resilience', 'Pride and dignity', 'Man versus nature', 'Skill and perseverance', 'Loss and spiritual victory'] },
-  { slug: 'green-hills-of-africa', title: 'Green Hills of Africa', category: 'Adventure', summary: 'A nonfiction safari narrative that blends travel, landscape, hunting, competition, and reflection on writing, courage, and the pursuit of experience.', topics: ['Travel and wilderness', 'Hunting and competition', 'Courage and self-testing', 'Landscape and observation', 'Writing and lived experience'] }
+  { slug: 'green-hills-of-africa', title: 'Green Hills of Africa', category: 'Adventure', summary: 'A nonfiction safari narrative that blends travel, landscape, hunting, competition, and reflection on writing, courage, and the pursuit of experience.', topics: ['Travel and wilderness', 'Hunting and competition', 'Courage and self-testing', 'Landscape and observation', 'Writing and lived experience'] },
+  { slug: 'storm-of-steel', title: 'Storm of Steel', category: 'History & Warfare', summary: 'A firsthand World War I memoir that records trench combat, danger, endurance, and the strange intensity of modern industrial war.', topics: ['Trench warfare and frontline life', 'Courage and survival', 'Violence and detachment', 'Comradeship under fire', 'Modern war and technology'] }
 ].map(entry => ({
   ...entry,
   author: authorsBySlug[entry.slug] || 'Unknown author'
