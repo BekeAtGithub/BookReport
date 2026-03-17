@@ -80,6 +80,9 @@ const authorsBySlug = {
   'arvisura': 'Pál Zoltán',
   'opportunity': 'Eben Pagan',
   'the-power-of-now': 'Eckhart Tolle',
+  '7-habits-of-highly-effective-people': 'Stephen R. Covey',
+  'mastery': 'Robert Greene',
+  'think-and-grow-rich': 'Napoleon Hill',
   'david-and-goliath': 'Malcolm Gladwell',
   'blink': 'Malcolm Gladwell',
   'what-the-dog-saw': 'Malcolm Gladwell',
@@ -103,7 +106,8 @@ const authorsBySlug = {
   'food-in-history': 'Reay Tannahill',
   'the-old-man-and-the-sea': 'Ernest Hemingway',
   'green-hills-of-africa': 'Ernest Hemingway',
-  'storm-of-steel': 'Ernst Jünger'
+  'storm-of-steel': 'Ernst Jünger',
+  'one-green-beret': 'Mark Giaconia'
 };
 
 window.bookReports = [
@@ -188,6 +192,9 @@ window.bookReports = [
   { slug: 'arvisura', title: 'Arvisura', category: 'Religion & Philosophy', summary: 'A modern mytho-historical work associated by some readers with Hungarian táltos tradition, blending sacred ancestry, legendary history, and national memory.', topics: ['Sacred ancestry and origins', 'Mythic history', 'Heroic identity', 'Spiritual tradition and memory', 'Nation and legend'] },
   { slug: 'opportunity', title: 'Opportunity', category: 'Self-Development', summary: 'A motivational business-minded book about seeing opportunities clearly, acting decisively, and building value through mindset and initiative.', topics: ['Opportunity recognition', 'Personal responsibility', 'Mindset and ambition', 'Value creation', 'Action and momentum'] },
   { slug: 'the-power-of-now', title: 'The Power of Now', category: 'Self-Development', summary: 'A spiritual self-help book centered on presence, awareness, freedom from compulsive thought, and peace through living in the present moment.', topics: ['Presence and awareness', 'Freedom from compulsive thought', 'Ego and identity', 'Acceptance and peace', 'Spiritual awakening'] },
+  { slug: '7-habits-of-highly-effective-people', title: '7 Habits of Highly Effective People', category: 'Self-Development', summary: 'A practical self-development book about building character, acting proactively, aligning priorities, and improving relationships through durable habits.', topics: ['Personal responsibility and proactivity', 'Priorities and discipline', 'Character and integrity', 'Mutual benefit and cooperation', 'Self-renewal and long-term growth'] },
+  { slug: 'mastery', title: 'Mastery', category: 'Self-Development', summary: 'A book about long-term excellence that argues mastery grows through apprenticeship, disciplined practice, self-knowledge, and strategic persistence.', topics: ['Apprenticeship and skill-building', 'Deliberate practice', 'Patience and persistence', 'Social intelligence', 'Creative mastery'] },
+  { slug: 'think-and-grow-rich', title: 'Think and Grow Rich', category: 'Self-Development', summary: 'A classic success book that links wealth-building to desire, belief, planning, persistence, and the disciplined direction of thought.', topics: ['Desire and ambition', 'Faith and belief', 'Persistence', 'Goal-focused planning', 'Success mindset'] },
   { slug: 'david-and-goliath', title: 'David and Goliath', category: 'Ideas & Nonfiction', summary: 'A nonfiction book arguing that apparent disadvantages can become strengths, and that power often works differently than it first appears.', topics: ['Power and disadvantage', 'Underdog strategy', 'Perception and strength', 'Adversity and resilience', 'Unexpected advantage'] },
   { slug: 'blink', title: 'Blink', category: 'Ideas & Nonfiction', summary: 'A popular nonfiction book about rapid cognition, first impressions, and the surprising strengths and weaknesses of snap judgment.', topics: ['Rapid cognition', 'Intuition and judgment', 'Bias in first impressions', 'Expertise and pattern recognition', 'Limits of snap decisions'] },
   { slug: 'what-the-dog-saw', title: 'What the Dog Saw', category: 'Ideas & Nonfiction', summary: 'A collection of Malcolm Gladwell essays that studies people, work, behavior, and overlooked patterns in ordinary and extraordinary situations.', topics: ['Human behavior in detail', 'Observation and interpretation', 'Innovation and problem solving', 'Hidden patterns in everyday life', 'Character and decision-making'] },
@@ -211,7 +218,8 @@ window.bookReports = [
   { slug: 'food-in-history', title: 'Food in History', category: 'Art, Music & Culture', summary: 'A broad cultural history of food tracing how agriculture, trade, class, religion, and taste shaped diets and social life across centuries.', topics: ['Food and civilization', 'Trade, scarcity, and abundance', 'Cuisine and class', 'Technology and diet', 'Culture, ritual, and taste'] },
   { slug: 'the-old-man-and-the-sea', title: 'The Old Man and the Sea', category: 'Classics', summary: 'A short novel about endurance, pride, struggle, and dignity in which an aging fisherman tests himself against the sea, a marlin, and his own limits.', topics: ['Endurance and resilience', 'Pride and dignity', 'Man versus nature', 'Skill and perseverance', 'Loss and spiritual victory'] },
   { slug: 'green-hills-of-africa', title: 'Green Hills of Africa', category: 'Adventure', summary: 'A nonfiction safari narrative that blends travel, landscape, hunting, competition, and reflection on writing, courage, and the pursuit of experience.', topics: ['Travel and wilderness', 'Hunting and competition', 'Courage and self-testing', 'Landscape and observation', 'Writing and lived experience'] },
-  { slug: 'storm-of-steel', title: 'Storm of Steel', category: 'History & Warfare', summary: 'A firsthand World War I memoir that records trench combat, danger, endurance, and the strange intensity of modern industrial war.', topics: ['Trench warfare and frontline life', 'Courage and survival', 'Violence and detachment', 'Comradeship under fire', 'Modern war and technology'] }
+  { slug: 'storm-of-steel', title: 'Storm of Steel', category: 'History & Warfare', summary: 'A firsthand World War I memoir that records trench combat, danger, endurance, and the strange intensity of modern industrial war.', topics: ['Trench warfare and frontline life', 'Courage and survival', 'Violence and detachment', 'Comradeship under fire', 'Modern war and technology'] },
+  { slug: 'one-green-beret', title: 'One Green Beret', category: 'History & Warfare', summary: 'A military memoir following service in Bosnia, Kosovo, Iraq, and beyond, emphasizing endurance, duty, sacrifice, and the realities of modern special operations.', topics: ['Special operations service', 'War zones and deployments', 'Discipline and resilience', 'Duty and sacrifice', 'Modern military experience'] }
 ].map(entry => ({
   ...entry,
   author: authorsBySlug[entry.slug] || 'Unknown author'
