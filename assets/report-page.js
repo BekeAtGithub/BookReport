@@ -11,6 +11,8 @@ let authorEl;
 let readingGuideEl;
 let keyPointsEl;
 let importantLinesEl;
+let contextNotesEl;
+let reportAnglesEl;
 let detailedSummaryEl;
 
 const bespokeDetailedReports = {
@@ -104,6 +106,44 @@ const bespokeDetailedReports = {
     `The Sibyl Vane episode is especially important because it reveals how quickly Dorian learns to treat other people as instruments of sensation rather than as moral realities. Later chapters, including the murder of Basil and Dorian's increasing fear of exposure, show the cost of living as if aesthetics could be separated from ethics. The more perfectly Dorian preserves the surface, the more monstrous the hidden truth becomes.`,
     `The novel's themes include influence, duplicity, desire, performance, conscience, and the relationship between art and life. A strong report should show that Wilde is not simply condemning beauty or pleasure. Instead, he is exploring what happens when style is severed from responsibility and when the self is treated as an object to be endlessly curated rather than a character to be morally formed.`,
     `A strong conclusion should explain why the ending feels inevitable. Dorian's attempt to destroy the portrait is really an attempt to escape judgment without transformation, and that is why it kills him. The book endures because it combines wit, atmosphere, and moral seriousness in a way that makes its warning unforgettable: no surface can remain innocent once the soul beneath it has been trained to love corruption.`
+  ],
+  '7-habits-of-highly-effective-people': [
+    `The 7 Habits of Highly Effective People is best read as a practical argument that lasting success has to be built on character rather than on quick tricks or surface techniques. Covey begins by contrasting a shallow personality ethic with a deeper character ethic, arguing that effectiveness comes from principles such as responsibility, integrity, and disciplined self-government rather than from image management alone. A strong report should make that contrast clear from the start because it explains the logic of the whole book.`,
+    `The first three habits form what Covey calls a movement toward private victory. Be Proactive asks the reader to take responsibility for choices instead of living reactively. Begin with the End in Mind pushes the reader to define purpose, values, and desired direction before acting. Put First Things First then turns those values into practice through time management, discipline, and the ordering of priorities. A good summary should show that these habits build on one another rather than standing alone.`,
+    `The next three habits move from self-mastery to relationships and public life. Think Win-Win argues that healthy cooperation depends on mutual benefit rather than domination. Seek First to Understand, Then to Be Understood teaches deep listening before persuasion. Synergize presents teamwork as something more than compromise: it is the creation of better outcomes through trust, difference, and creative cooperation. A proper report should explain how the book shifts from independence toward interdependence at this stage.`,
+    `The seventh habit, Sharpen the Saw, gives the system its long-term rhythm by insisting on renewal. Covey argues that physical, mental, emotional, and spiritual maintenance are not extras but conditions for sustaining effectiveness. This part matters because it prevents the book from becoming a one-time productivity formula; instead, it presents growth as something that must be renewed continuously.`,
+    `A strong concluding paragraph should explain why the book remains influential. Its core claim is that personal effectiveness is not mainly about speed or ambition, but about aligning habits with enduring principles. Whether a reader finds the book inspiring or idealistic, its lasting appeal comes from the way it links personal responsibility, purpose, discipline, communication, cooperation, and renewal into one coherent model of self-development.`
+  ],
+  'how-spies-think': [
+    `How Spies Think should be approached as a guide to disciplined judgment under conditions of uncertainty. David Omand is not only describing intelligence agencies; he is also showing how ordinary readers can think more carefully when information is partial, motives are hidden, and events are still unfolding. A strong report should begin by explaining that the book's real subject is reasoning under pressure.`,
+    `The opening lessons focus on how analysts build order out of incomplete information. Situational awareness stresses that our picture of reality is always fragmentary. Explanation then asks what model best makes sense of the facts. Estimations moves from explanation toward probabilistic judgment about what may happen next. Strategic notice widens the frame further by emphasizing the need to detect threats and opportunities early enough to act. A good summary should show how these first four lessons create a method for seeing, explaining, estimating, and anticipating.`,
+    `The middle of the book becomes more psychological by examining the ways judgment goes wrong. Omand warns that our own demons, biases, and fixed ideas can distort analysis. He adds that obsessive states of mind make people cling to false patterns, while deception and manipulation mean that even apparently solid evidence may be staged or misleading. A proper report should make clear that the book treats error as both internal and external.`,
+    `The later lessons move from analysis to interaction and strategy. Readers are urged to imagine themselves in the shoes of the person on the other side, to recognize trustworthiness as the basis of durable partnerships, and to understand that modern subversion increasingly operates through digital channels. This final movement matters because it connects intelligence not just to secret information, but to empathy, alliances, and the changing character of conflict in the information age.`,
+    `A strong conclusion should explain why the book is useful beyond the world of espionage. Its central lesson is that good thinking requires humility, probabilistic reasoning, resistance to bias, alertness to deception, and awareness of long-term risk. The book remains valuable because it turns intelligence practice into a broader model for reasoning well when certainty is impossible and mistakes can be costly.`
+  ]
+};
+
+const bespokeKeyPoints = {
+  '7-habits-of-highly-effective-people': [
+    `Habit 1: Be Proactive — take responsibility for your responses, choices, and conduct instead of blaming circumstances or other people.`,
+    `Habit 2: Begin with the End in Mind — define your principles, long-term goals, and desired direction before deciding what to do day to day.`,
+    `Habit 3: Put First Things First — organize time around what matters most so values and priorities control the schedule rather than urgency alone.`,
+    `Habit 4: Think Win-Win — aim for solutions that create mutual benefit instead of treating relationships as zero-sum contests.`,
+    `Habit 5: Seek First to Understand, Then to Be Understood — listen deeply and accurately before trying to persuade, defend, or correct.`,
+    `Habit 6: Synergize — use difference, trust, and cooperation to create better outcomes than any one person could produce alone.`,
+    `Habit 7: Sharpen the Saw — renew yourself physically, mentally, emotionally, and spiritually so effectiveness can be sustained over time.`
+  ],
+  'how-spies-think': [
+    `Lesson 1: Situational Awareness — begin by building the clearest possible picture of reality, knowing that information is always incomplete and sometimes wrong.`,
+    `Lesson 2: Explanation — facts do not speak for themselves, so the analyst must test which explanation best accounts for what is known.`,
+    `Lesson 3: Estimations — judgments about what happens next should be framed as reasoned probabilities, not false certainty.`,
+    `Lesson 4: Strategic notice — look early for signals of danger or opportunity so surprise does not force rushed, unprepared reactions.`,
+    `Lesson 5: It is our own demons that are most likely to mislead us — bias, ego, and wishful thinking can distort analysis from within.`,
+    `Lesson 6: We are all susceptible to obsessive states of mind — people can become trapped in fixed narratives and keep forcing evidence to fit them.`,
+    `Lesson 7: Seeing is not always believing: beware manipulation, deception and faking — evidence may be staged, filtered, or designed to mislead.`,
+    `Lesson 8: Imagine yourself in the shoes of the person on the other side — understand motives, fears, and incentives by reasoning from the opponent's point of view.`,
+    `Lesson 9: Trustworthiness creates lasting partnerships — intelligence works best when cooperation is built on credibility, reliability, and shared confidence.`,
+    `Lesson 10: Subversion and sedition are now digital — modern influence campaigns and destabilization increasingly move through networks, platforms, and online information systems.`
   ]
 };
 
@@ -129,6 +169,9 @@ function ensureDetailSections() {
     readingGuideEl = document.getElementById('readingGuide');
     keyPointsEl = document.getElementById('keyPoints');
     importantLinesEl = document.getElementById('importantLines');
+    contextNotesEl = document.getElementById('contextNotes');
+    reportAnglesEl = document.getElementById('reportAngles');
+    detailedSummaryEl = document.getElementById('detailedSummary');
     return;
   }
 
@@ -148,6 +191,14 @@ function ensureDetailSections() {
       <ul id="importantLines" class="detail-list quote-list"></ul>
     </section>
     <section class="detail-section">
+      <h2>Context / Why This Book Matters</h2>
+      <div id="contextNotes" class="report-paragraphs"></div>
+    </section>
+    <section class="detail-section">
+      <h2>Questions / Angles for a Strong Report</h2>
+      <ul id="reportAngles" class="detail-list"></ul>
+    </section>
+    <section class="detail-section">
       <h2>Detailed Summary / Book Report</h2>
       <div id="detailedSummary" class="report-paragraphs"></div>
     </section>
@@ -157,6 +208,8 @@ function ensureDetailSections() {
   readingGuideEl = document.getElementById('readingGuide');
   keyPointsEl = document.getElementById('keyPoints');
   importantLinesEl = document.getElementById('importantLines');
+  contextNotesEl = document.getElementById('contextNotes');
+  reportAnglesEl = document.getElementById('reportAngles');
   detailedSummaryEl = document.getElementById('detailedSummary');
 }
 
@@ -202,20 +255,140 @@ function getReadingGuide(entry) {
 }
 
 function getKeyPoints(entry) {
+  const bespokePoints = bespokeKeyPoints[entry.slug];
+
+  if (bespokePoints) {
+    return bespokePoints;
+  }
+
   const [first, second, third, fourth, fifth] = entry.topics;
   return [
-    `${entry.title} mainly explores ${lowerFirst(first)} and ${lowerFirst(second)} through its central conflict.`,
-    `Another major point is ${lowerFirst(third)}${fourth ? `, which is deepened by ${lowerFirst(fourth)}` : ''}.`,
-    `For a book report, connect the ending back to ${lowerFirst(fifth || first)} because that helps explain the author's final message.`
+    `${entry.title} mainly explores ${lowerFirst(first)} and ${lowerFirst(second)} through its central conflict or argument.`,
+    `A strong report should show how ${lowerFirst(third)} develops through the book's major scenes, examples, or turning points.`,
+    `${entry.title} also gives special weight to ${lowerFirst(fourth || first)}, which helps reveal what the author values most under pressure.`,
+    `By the later chapters, ${lowerFirst(fifth || second)} becomes important because it helps connect the middle of the book to the ending.`,
+    `For a book report, connect the conclusion back to ${lowerFirst(fifth || first)} and ${lowerFirst(second)} so the final message feels earned rather than sudden.`
   ];
 }
 
 function getImportantLines(entry) {
-  const [first, second, third, fourth] = entry.topics;
+  const [first, second, third, fourth, fifth] = entry.topics;
   return [
     `Mark lines that clearly reveal ${lowerFirst(first)} or show a character responding to it.`,
     `Notice passages where ${lowerFirst(second)} clashes with ${lowerFirst(third)}.`,
+    `Flag a scene, example, or argument that makes ${lowerFirst(fourth || first)} concrete instead of abstract.`,
+    `Save a line that makes ${lowerFirst(fifth || second)} especially vivid, memorable, or controversial.`,
     `Use a turning-point or ending passage to explain the book's final view of ${lowerFirst(fourth || first)}.`
+  ];
+}
+
+function getContextNotes(entry) {
+  const [first, second, third, fourth] = entry.topics;
+
+  if (entry.category.includes('Modern History')) {
+    return [
+      `${entry.title} matters because it turns ${lowerFirst(first)} into a way of understanding a much larger historical moment. The book should be read not only for events, but for the wider system of institutions, ideologies, and decisions surrounding them.`,
+      `A strong reader should notice how ${lowerFirst(second)} and ${lowerFirst(third)} are connected into an interpretation of cause and consequence. History books are not just timelines; they are arguments about why events unfolded as they did.`,
+      `Its lasting value comes from the way it links the past to larger questions about ${lowerFirst(fourth || first)}, public memory, and political judgment. That is what makes the subject feel bigger than one place, leader, or crisis.`
+    ];
+  }
+
+  if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
+    return [
+      `${entry.title} matters because it treats conflict as a test of leadership, organization, and human judgment rather than as a mere sequence of battles. A good report should keep the political stakes and strategic setting in view from the start.`,
+      `The deeper interest of the book often lies in how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} interact under pressure. Strong military or strategic writing shows that victory and defeat grow from decisions, morale, timing, and structure as much as from force.`,
+      `Its long-term significance usually comes from what it teaches about ${lowerFirst(fourth || first)}, power, and the consequences of leadership. That is why these books often remain relevant well beyond the original conflict they describe.`
+    ];
+  }
+
+  if (entry.category.includes('Religion & Philosophy')) {
+    return [
+      `${entry.title} matters because it is trying to shape how the reader thinks about truth, discipline, and the purpose of human life. It should be read as a guide to formation, not merely as a source of famous quotations.`,
+      `Its importance comes partly from how it defines the relationship between ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)}. A serious report should explain both the teaching itself and the method used to deliver it.`,
+      `The book remains influential because it offers a durable way of thinking about ${lowerFirst(fourth || first)}, moral duty, and spiritual order. That larger vision is what gives the text its authority across time.`
+    ];
+  }
+
+  if (entry.category.includes('Self-Development')) {
+    return [
+      `${entry.title} matters because it presents more than advice: it offers a model of the kind of person the reader is supposed to become. A strong report should therefore identify the book's ideal of character, action, or self-command.`,
+      `Its real argument is usually built on assumptions about ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)}. The advice makes the most sense when those underlying assumptions are made clear.`,
+      `The book's broader importance lies in the way it connects ${lowerFirst(fourth || first)} to everyday conduct, ambition, discipline, and long-term growth. That is why these books are often judged by both their inspiration and their realism.`
+    ];
+  }
+
+  if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
+    return [
+      `${entry.title} matters because it takes a big question and makes it understandable through examples, cases, or historical explanation. A serious report should begin by naming the central puzzle or claim the author wants the reader to see differently.`,
+      `The work becomes stronger when the reader follows how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are connected into a line of reasoning. Good nonfiction teaches the reader a way of thinking, not just a collection of facts.`,
+      `Its lasting value usually comes from the way it changes how we think about ${lowerFirst(fourth || first)}, evidence, judgment, and the hidden structure of ordinary events or major discoveries.`
+    ];
+  }
+
+  if (entry.category.includes('Art, Music & Culture')) {
+    return [
+      `${entry.title} matters because it treats culture as a record of what a society values, admires, displays, and preserves. A strong report should show that style and taste are never detached from power, ritual, status, or everyday life.`,
+      `The book becomes richer when the reader tracks how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} move from individual examples to a larger cultural pattern. Works of art, buildings, music, or foodways are being used to explain a whole social world.`,
+      `Its deeper significance lies in what it reveals about ${lowerFirst(fourth || first)}, memory, craftsmanship, and collective identity. That is why the subject remains valuable even after the specific period has passed.`
+    ];
+  }
+
+  if (entry.category.includes('Poetry & Drama')) {
+    return [
+      `${entry.title} matters because its meaning is carried not only by events, but by speech, imagery, rhythm, and dramatic structure. A strong report should treat form as part of the argument rather than as decoration.`,
+      `The work gains force when the reader notices how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are intensified through repetition, contrast, performance, or symbolic language.`,
+      `Its enduring importance comes from the way it turns ${lowerFirst(fourth || first)} into an experience for the audience rather than a simple statement. That fusion of form and theme is what keeps the work alive.`
+    ];
+  }
+
+  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
+    return [
+      `${entry.title} matters because the journey or quest is being used to test character, loyalty, endurance, and identity. A strong report should explain the larger challenge, not just list episodes along the way.`,
+      `The story becomes more meaningful when ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are treated as part of a pattern of growth, danger, and moral testing rather than as disconnected adventures.`,
+      `Its lasting appeal comes from what it says about ${lowerFirst(fourth || first)}, belonging, courage, and the cost of reaching one's goal. That is why these works endure as more than entertainment.`
+    ];
+  }
+
+  if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
+    return [
+      `${entry.title} matters because the imagined world is a warning as well as a setting. A strong report should show how institutions, technology, or social rules create pressure on ordinary life.`,
+      `Its real power comes from how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} reveal the book's critique of the world it has invented. The personal conflict and the social argument should be read together.`,
+      `The book remains important because it turns ${lowerFirst(fourth || first)} into a question about the future of truth, freedom, identity, or human dignity. That relevance is what gives the story its force.`
+    ];
+  }
+
+  if (entry.category.includes('Gothic & Horror')) {
+    return [
+      `${entry.title} matters because fear in this kind of book is never just about shock. A strong report should ask what emotional, moral, or social anxiety the work is turning into story.`,
+      `The book becomes more meaningful when ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are read as pressures acting on the mind, the body, or the social order. Atmosphere and theme work together here.`,
+      `Its lasting strength comes from the way it connects ${lowerFirst(fourth || first)} to deeper questions about guilt, corruption, desire, repression, or the limits of human control.`
+    ];
+  }
+
+  if (entry.category.includes('War & Satire')) {
+    return [
+      `${entry.title} matters because it uses humor, absurdity, or exaggeration to expose systems that have become morally upside down. A serious report should explain what real logic, institution, or habit of mind is being attacked beneath the comedy.`,
+      `Its force comes from the way ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are made to look ridiculous without becoming trivial. The laughter is part of the critique.`,
+      `The work remains important because it turns ${lowerFirst(fourth || first)} into a wider judgment about bureaucracy, war, survival, and the human ability to normalize madness.`
+    ];
+  }
+
+  return [
+    `${entry.title} matters because it turns ${lowerFirst(first)} and ${lowerFirst(second)} into a larger reflection on character, society, and human motivation. A strong report should show that the book is doing more than telling a story.`,
+    `Its deeper interest often lies in how ${lowerFirst(third)} and ${lowerFirst(fourth || first)} develop through conflict, relationships, and changing pressure. The middle of the book usually reveals what the opening only hints at.`,
+    `The work endures because it gives lasting shape to questions about identity, morality, memory, power, and consequence. That broader significance is what makes the book worth reporting on carefully.`
+  ];
+}
+
+function getReportAngles(entry) {
+  const [first, second, third, fourth, fifth] = entry.topics;
+  return [
+    `Explain the opening situation clearly and show why ${lowerFirst(first)} matters from the beginning.`,
+    `Trace how ${lowerFirst(second)} shapes the middle of the book instead of jumping too quickly from opening to ending.`,
+    `Use at least one turning point, scene, or major example to show how ${lowerFirst(third)} changes the direction of the work.`,
+    `Point out how the author uses structure, voice, evidence, or symbolism to make ${lowerFirst(first)} and ${lowerFirst(second)} more convincing.`,
+    `Connect ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} to the ending so the conclusion feels prepared rather than sudden.`,
+    `Close by explaining why ${entry.title} still matters and what it teaches about society, history, belief, character, or power.`
   ];
 }
 
@@ -370,6 +543,99 @@ function getDetailedSummary(entry) {
   ];
 }
 
+function getExpandedSummaryNotes(entry) {
+  const [first, second, third, fourth, fifth] = entry.topics;
+
+  if (entry.category.includes('Manifestos & Politics')) {
+    return [
+      `A more detailed report should also examine how the author creates momentum. Repetition, certainty, blame, urgency, and dramatic simplification are often used to make ${lowerFirst(first)} and ${lowerFirst(second)} feel obvious or historically necessary. Paying attention to this rhetoric helps explain why political writing can be influential even when its reasoning is weak, selective, or dangerous.`,
+      `It is equally important to ask what the book leaves out. A strong final evaluation should consider how ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} are framed, distorted, or turned into a call for action, because omissions and exaggerations are often central to the text's power.`
+    ];
+  }
+
+  if (entry.category.includes('Religion & Philosophy')) {
+    return [
+      `A fuller report should explain how the reader is meant to receive the teaching. Some works expect contemplation, some demand obedience, some provoke questioning, and some train the mind through repetition. That reading posture matters because it shapes how ${lowerFirst(first)} and ${lowerFirst(second)} are meant to transform the reader rather than merely inform them.`,
+      `It is also worth showing how the text handles difficulty, suffering, failure, or moral conflict. The deepest philosophical and spiritual books are rarely content with easy answers; they use ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} to define what kind of discipline, wisdom, or inner order a human life requires.`
+    ];
+  }
+
+  if (entry.category.includes('Modern History')) {
+    return [
+      `A more detailed historical report should notice the scale on which the author is working. Good history moves between individual actors and larger structures, showing how choices, institutions, public opinion, and chance interact. That is especially important when ${lowerFirst(first)} and ${lowerFirst(second)} might otherwise be reduced to a few famous names or events.`,
+      `The strongest conclusion should also address memory and interpretation. Books of this kind are usually trying to shape how later readers understand ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)}. In other words, the work is not only preserving the past; it is arguing over its meaning.`
+    ];
+  }
+
+  if (entry.category.includes('Art, Music & Culture')) {
+    return [
+      `A stronger cultural report should move constantly between the object and the world around it. Buildings, artworks, performances, or food traditions matter because they embody habits of seeing, ranking, celebrating, and remembering. That is why ${lowerFirst(first)} and ${lowerFirst(second)} should be tied to patrons, audiences, institutions, and everyday practices.`,
+      `It also helps to explain what kind of attention the book is training in the reader. By the end, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} should feel like part of a broader lesson in how culture stores power, identity, taste, and historical memory.`
+    ];
+  }
+
+  if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
+    return [
+      `A detailed report should distinguish between immediate action and long-term structure. Battles and campaigns are important, but the best summaries also show how command, logistics, fear, discipline, and political purpose shape what looks like sudden success or failure. That is where ${lowerFirst(first)} and ${lowerFirst(second)} gain their real explanatory weight.`,
+      `The ending of a military or strategic report should also ask what kind of judgment the book rewards. Does it admire patience, audacity, deception, adaptability, moral authority, or ruthless efficiency? Using ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} to answer that question makes the report feel more thoughtful and complete.`
+    ];
+  }
+
+  if (entry.category.includes('Poetry & Drama')) {
+    return [
+      `A more detailed literary report should explain how the language itself carries the meaning. Metaphor, rhythm, recurring images, speeches, pauses, and reversals often do as much interpretive work as the events on the surface. That is why ${lowerFirst(first)} and ${lowerFirst(second)} should be discussed through the texture of the writing, not only through the plot.`,
+      `It is also useful to comment on emotional movement. By the final scenes or closing lines, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} should feel intensified, clarified, or tragically exposed, and a strong report should show how form makes that climax persuasive.`
+    ];
+  }
+
+  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
+    return [
+      `A stronger report should pay attention to how the world is organized. Roads, seas, courts, monsters, rival peoples, sacred places, and tests are not random scenery; they help explain what kind of order or disorder the journey is moving through. That broader setting gives ${lowerFirst(first)} and ${lowerFirst(second)} a larger symbolic force.`,
+      `It also helps to ask what kind of maturity or insight the journey produces. By the end, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} should reveal whether the hero has merely survived or actually learned something about duty, belonging, leadership, fate, or self-knowledge.`
+    ];
+  }
+
+  if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
+    return [
+      `A fuller report should explain how the imagined system reproduces itself. The strongest dystopian and science-fiction works show how rules, routines, technologies, myths, and incentives make oppression or distortion feel normal. That is where ${lowerFirst(first)} and ${lowerFirst(second)} become most revealing.`,
+      `A strong conclusion should also identify the warning with precision. Rather than saying the book is simply about the future, the report should show how ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} point back toward recognizable dangers in real politics, culture, or human behavior.`
+    ];
+  }
+
+  if (entry.category.includes('Gothic & Horror')) {
+    return [
+      `A more detailed report should ask what the book makes frightening and why. Settings, bodies, secrets, doubles, voices, and forbidden knowledge often work together so that fear becomes a way of thinking about desire, control, corruption, or collapse. That is where ${lowerFirst(first)} and ${lowerFirst(second)} become more than atmosphere.`,
+      `The ending should also be treated carefully, because horror often leaves behind uncertainty rather than clean resolution. A strong summary should show how ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} remain active even after the final event, which is often why the work continues to haunt the reader.`
+    ];
+  }
+
+  if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
+    return [
+      `A stronger nonfiction report should explain the movement of the argument, not just its conclusion. Good explanatory writing earns its claims by staging questions, testing examples, refining distinctions, and guiding the reader toward a sharper way of seeing. That process is where ${lowerFirst(first)} and ${lowerFirst(second)} become most persuasive.`,
+      `The final evaluation should also ask what habits of mind the book encourages. By the end, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} should reveal whether the author is training skepticism, curiosity, clearer reasoning, historical awareness, or a new method of interpretation.`
+    ];
+  }
+
+  if (entry.category.includes('Self-Development')) {
+    return [
+      `A more detailed self-development report should identify the book's hidden anthropology: what picture of human weakness, motivation, and change the author assumes. Advice books become much clearer when ${lowerFirst(first)} and ${lowerFirst(second)} are understood as parts of a larger theory about character, discipline, and personal agency.`,
+      `It also helps to evaluate how the book moves from principle to practice. By the later sections, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} should reveal whether the advice is concrete, idealistic, demanding, flexible, or repetitive. That judgment makes the report feel more substantial than a simple list of tips.`
+    ];
+  }
+
+  if (entry.category.includes('War & Satire')) {
+    return [
+      `A stronger report should explain how satire works in the book rather than treating the jokes as decoration. Repetition, contradiction, deadpan description, circular logic, and absurd escalation often expose the moral emptiness of institutions more effectively than direct denunciation. That is why ${lowerFirst(first)} and ${lowerFirst(second)} should be read through tone as well as through plot.`,
+      `The ending is also important because satire often leaves the reader with unease rather than comfort. A full report should show how ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} reveal what human beings have accepted as normal and why that normalization is the book's deepest target.`
+    ];
+  }
+
+  return [
+    `A more detailed report should also comment on method: point of view, structure, repetition, contrast, or the pattern of examples and turning points. These choices matter because they shape how ${lowerFirst(first)} and ${lowerFirst(second)} are experienced by the reader rather than merely stated as themes.`,
+    `It is equally valuable to ask what changes by the end. Whether the work closes with victory, ruin, uncertainty, or reflection, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} should help explain what the reader is meant to understand more deeply in the final pages.`
+  ];
+}
+
 function renderList(target, items, className) {
   target.innerHTML = '';
   items.forEach(text => {
@@ -397,6 +663,14 @@ if (!detailedSummaryEl) {
   detailedSummaryEl = document.getElementById('detailedSummary');
 }
 
+if (!contextNotesEl) {
+  contextNotesEl = document.getElementById('contextNotes');
+}
+
+if (!reportAnglesEl) {
+  reportAnglesEl = document.getElementById('reportAngles');
+}
+
 if (!book) {
   document.title = 'Report Not Found';
   titleEl.textContent = 'Report not found';
@@ -409,6 +683,8 @@ if (!book) {
   if (readingGuideEl) readingGuideEl.textContent = 'Return to the homepage and choose a valid book report.';
   if (keyPointsEl) keyPointsEl.innerHTML = '';
   if (importantLinesEl) importantLinesEl.innerHTML = '';
+  if (contextNotesEl) contextNotesEl.innerHTML = '';
+  if (reportAnglesEl) reportAnglesEl.innerHTML = '';
   if (detailedSummaryEl) detailedSummaryEl.innerHTML = '';
 } else {
   document.title = `${book.title} | Book Report Home`;
@@ -431,7 +707,13 @@ if (!book) {
   if (importantLinesEl) {
     renderList(importantLinesEl, getImportantLines(book), 'detail-item quote-item');
   }
+  if (contextNotesEl) {
+    renderParagraphs(contextNotesEl, getContextNotes(book));
+  }
+  if (reportAnglesEl) {
+    renderList(reportAnglesEl, getReportAngles(book), 'detail-item');
+  }
   if (detailedSummaryEl) {
-    renderParagraphs(detailedSummaryEl, getDetailedSummary(book));
+    renderParagraphs(detailedSummaryEl, getDetailedSummary(book).concat(getExpandedSummaryNotes(book)));
   }
 }
