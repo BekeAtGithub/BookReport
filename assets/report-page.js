@@ -636,6 +636,92 @@ function getExpandedSummaryNotes(entry) {
   ];
 }
 
+function getBluntConclusion(entry) {
+  const [first, second, third] = entry.topics;
+
+  if (entry.slug === 'the-great-gatsby') {
+    return [
+      `Bluntly, The Great Gatsby says almost everybody here is full of shit: old money, new money, and the hustlers hanging around the edges, all of them dressing up insecurity with houses, cars, parties, and polished manners. Gatsby can build the mansion, invent the persona, and throw the perfect show, but he still cannot turn Daisy into the dream in his head, and after all that sad striving he ends up dead while the careless people keep moving. If you want the casual takeaway, it is that money and status are never just about head knowledge; they are mostly behavior, vanity, fantasy, and the stories people tell to hide what they lack.`
+    ];
+  }
+
+  if (entry.category.includes('Manifestos & Politics')) {
+    return [
+      `Bluntly, books like this are often what happens when grievance, ego, and certainty get dressed up as destiny. Strip away the grand language and ${entry.title} usually comes down to somebody insisting that ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} justify power, blame, or control.`
+    ];
+  }
+
+  if (entry.category.includes('Religion & Philosophy')) {
+    return [
+      `Bluntly, big spiritual or philosophical books keep asking one awkward question: are you actually going to live differently, or are you just collecting noble sentences that make you feel wise for five minutes? ${entry.title} matters because it pushes ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} out of the abstract and into the problem of how a person really lives.`
+    ];
+  }
+
+  if (entry.category.includes('Modern History')) {
+    return [
+      `Bluntly, a lot of history is the same miserable pattern: ambitious people make huge decisions, ordinary people pay for them, and later everyone tries to rename the mess as inevitability or strategy. ${entry.title} lasts because it makes ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} look like real forces with real human costs instead of polished textbook language.`
+    ];
+  }
+
+  if (entry.category.includes('Art, Music & Culture')) {
+    return [
+      `Bluntly, half of what gets called taste is status wearing better clothes. ${entry.title} is good because it does not just admire beautiful things; it shows how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} get tied to power, prestige, and the need people have to prove they belong.`
+    ];
+  }
+
+  if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
+    return [
+      `Bluntly, war gets sold as honor, genius, and glory, but most of the time it is ego, fear, logistics, and human beings getting crushed by decisions made above them. ${entry.title} still matters because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} show what conflict looks like once the heroic slogans wear off.`
+    ];
+  }
+
+  if (entry.category.includes('Poetry & Drama')) {
+    return [
+      `Bluntly, people can speak beautifully and still wreck themselves. That is why ${entry.title} lands: beneath the style and emotion, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} expose how pride, desire, fear, or blindness keep pushing people toward consequences they could almost see coming.`
+    ];
+  }
+
+  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
+    return [
+      `Bluntly, once you strip away the monsters, maps, and heroic speeches, these stories usually ask whether someone can actually grow up, carry responsibility, and pay the cost of what they want. ${entry.title} earns its place because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} turn the adventure into a test of character instead of empty spectacle.`
+    ];
+  }
+
+  if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
+    return [
+      `Bluntly, the gadgets may change, but the control freaks stay the same. ${entry.title} works because it shows how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} let people dress domination up as order, progress, safety, or common sense.`
+    ];
+  }
+
+  if (entry.category.includes('Gothic & Horror')) {
+    return [
+      `Bluntly, the monster is usually not the whole problem; it just drags hidden rot into the light. ${entry.title} sticks with people because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} reveal the fear, guilt, obsession, or corruption that was already there under the surface.`
+    ];
+  }
+
+  if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
+    return [
+      `Bluntly, the world runs on systems most people never think about until something breaks. ${entry.title} is worth reading because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} stop looking like random facts and start looking like the hidden machinery underneath everyday life.`
+    ];
+  }
+
+  if (entry.category.includes('Self-Development')) {
+    return [
+      `Bluntly, books like this usually come down to one annoying truth: the problem is rarely that people need a little more information; it is that behavior, discipline, and self-deception matter more than motivational talk. ${entry.title} works best when ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} stop being slogans and start becoming habits.`
+    ];
+  }
+
+  if (entry.category.includes('War & Satire')) {
+    return [
+      `Bluntly, a lot of institutions are insane, but they sound official enough that people keep obeying them anyway. ${entry.title} bites because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} show how absurdity becomes normal once bureaucracy, fear, and self-interest get a uniform and a script.`
+    ];
+  }
+
+  return [
+    `Bluntly, whatever the setting, people spend a lot of time dressing up insecurity, desire, fear, or pride in nicer language. ${entry.title} lasts because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} eventually strip that performance down and show what the characters or ideas are really made of.`
+  ];
+}
+
 function renderList(target, items, className) {
   target.innerHTML = '';
   items.forEach(text => {
@@ -714,6 +800,6 @@ if (!book) {
     renderList(reportAnglesEl, getReportAngles(book), 'detail-item');
   }
   if (detailedSummaryEl) {
-    renderParagraphs(detailedSummaryEl, getDetailedSummary(book).concat(getExpandedSummaryNotes(book)));
+    renderParagraphs(detailedSummaryEl, getDetailedSummary(book).concat(getExpandedSummaryNotes(book), getBluntConclusion(book)));
   }
 }
