@@ -14,6 +14,7 @@ let importantLinesEl;
 let contextNotesEl;
 let reportAnglesEl;
 let detailedSummaryEl;
+let tldrEl;
 
 const bespokeDetailedReports = {
   'the-old-man-and-the-sea': [
@@ -172,6 +173,7 @@ function ensureDetailSections() {
     contextNotesEl = document.getElementById('contextNotes');
     reportAnglesEl = document.getElementById('reportAngles');
     detailedSummaryEl = document.getElementById('detailedSummary');
+    tldrEl = document.getElementById('tldrSummary');
     return;
   }
 
@@ -202,6 +204,10 @@ function ensureDetailSections() {
       <h2>Detailed Summary / Book Report</h2>
       <div id="detailedSummary" class="report-paragraphs"></div>
     </section>
+    <section class="detail-section">
+      <h2>TL;DR</h2>
+      <div id="tldrSummary" class="report-paragraphs"></div>
+    </section>
   `;
 
   panelEl.appendChild(details);
@@ -211,6 +217,12 @@ function ensureDetailSections() {
   contextNotesEl = document.getElementById('contextNotes');
   reportAnglesEl = document.getElementById('reportAngles');
   detailedSummaryEl = document.getElementById('detailedSummary');
+  tldrEl = document.getElementById('tldrSummary');
+}
+
+function normalizeTldrParagraph(text) {
+  const normalized = text.replace(/^Bluntly,\s*/, '');
+  return normalized ? normalized.charAt(0).toUpperCase() + normalized.slice(1) : normalized;
 }
 
 function getReadingGuide(entry) {
@@ -757,6 +769,10 @@ if (!reportAnglesEl) {
   reportAnglesEl = document.getElementById('reportAngles');
 }
 
+if (!tldrEl) {
+  tldrEl = document.getElementById('tldrSummary');
+}
+
 if (!book) {
   document.title = 'Report Not Found';
   titleEl.textContent = 'Report not found';
@@ -772,6 +788,7 @@ if (!book) {
   if (contextNotesEl) contextNotesEl.innerHTML = '';
   if (reportAnglesEl) reportAnglesEl.innerHTML = '';
   if (detailedSummaryEl) detailedSummaryEl.innerHTML = '';
+  if (tldrEl) tldrEl.innerHTML = '';
 } else {
   document.title = `${book.title} | Book Report Home`;
   categoryEl.textContent = book.category;
@@ -800,6 +817,9 @@ if (!book) {
     renderList(reportAnglesEl, getReportAngles(book), 'detail-item');
   }
   if (detailedSummaryEl) {
-    renderParagraphs(detailedSummaryEl, getDetailedSummary(book).concat(getExpandedSummaryNotes(book), getBluntConclusion(book)));
+    renderParagraphs(detailedSummaryEl, getDetailedSummary(book).concat(getExpandedSummaryNotes(book)));
+  }
+  if (tldrEl) {
+    renderParagraphs(tldrEl, getBluntConclusion(book).map(normalizeTldrParagraph));
   }
 }
