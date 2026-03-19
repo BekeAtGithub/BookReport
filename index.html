@@ -15,7 +15,7 @@
     :root{--bg:#0f172a;--bg2:#4f46e5;--card:#ffffff;--text:#0f172a;--muted:#64748b;--accent:#2563eb;--accent-soft:#dbeafe;--border:#e2e8f0;--chip:#eff6ff;--success:#0f766e}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#e0e7ff 0%,#f8fafc 35%,#f8fafc 100%);color:var(--text);overflow-x:hidden}
     .hero{background:linear-gradient(135deg,var(--bg),var(--bg2));color:#fff;padding:48px 20px 68px}.wrap{max-width:1200px;margin:0 auto}.hero h1{margin:0 0 12px;font-size:clamp(2rem,4vw,3.4rem)}
-    .hero p{max-width:800px;margin:0 0 24px;color:#dbeafe;font-size:1.05rem;line-height:1.6}.hero-links{display:flex;gap:12px;flex-wrap:wrap}.hero-links a,.hero-links button{border:none;border-radius:999px;padding:12px 18px;font-weight:700;cursor:pointer;text-decoration:none}
+    .hero p{max-width:800px;margin:0 0 24px;color:#dbeafe;font-size:1.05rem;line-height:1.6}.hero-note{display:inline-block;margin:0 0 20px;padding:10px 14px;border-radius:999px;background:rgba(15,118,110,.2);border:1px solid rgba(167,243,208,.35);color:#ecfdf5;font-weight:700}.hero-links{display:flex;gap:12px;flex-wrap:wrap}.hero-links a,.hero-links button{border:none;border-radius:999px;padding:12px 18px;font-weight:700;cursor:pointer;text-decoration:none}
     .primary{background:#fff;color:var(--accent)}.secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.22)}
     .featured{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:20px}.mini{padding:14px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}.mini strong{display:block;margin-bottom:6px}
     main{margin-top:-34px;padding:0 20px 36px}.panel{background:rgba(255,255,255,.95);border:1px solid rgba(226,232,240,.95);border-radius:24px;box-shadow:0 18px 45px rgba(15,23,42,.12);padding:24px}
@@ -27,7 +27,7 @@
     .report-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap}.report-top h2{margin:10px 0 8px;font-size:clamp(1.4rem,2.8vw,2rem);overflow-wrap:anywhere}.tag{display:inline-block;width:max-content;max-width:100%;padding:6px 10px;border-radius:999px;background:#f1f5f9;color:#334155;font-size:.82rem;font-weight:700}
     .report-author{margin:0 0 10px;color:#475569;font-size:.96rem;font-weight:700;line-height:1.5}.report-summary{margin:0;color:#334155;max-width:780px;line-height:1.65}.topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:20px 0 18px;padding:0;list-style:none}.topic{padding:14px 14px 14px 16px;border-radius:16px;background:#fff;border:1px solid var(--border);box-shadow:0 6px 20px rgba(15,23,42,.04);font-weight:700;color:#1e293b}
     .report-actions{display:flex;gap:12px;flex-wrap:wrap}.report-note{color:var(--success);font-weight:700;align-self:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:0 10px 24px rgba(15,23,42,.06);display:flex;flex-direction:column;gap:14px}
-    .card.selected{border-color:#60a5fa;box-shadow:0 12px 28px rgba(37,99,235,.14)}.card h3{margin:0;font-size:1.05rem;line-height:1.35;overflow-wrap:anywhere}.card-author{margin:-6px 0 0;color:#475569;font-size:.92rem;font-weight:700;line-height:1.45}.card p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.55;flex:1}.card-actions{display:flex;gap:10px;flex-wrap:wrap}.card-actions .ghost-btn,.card-actions .link-btn{flex:1}
+    .card.read{border-color:var(--success);box-shadow:0 10px 24px rgba(15,23,42,.06),0 0 0 3px rgba(15,118,110,.18)}.card.selected{border-color:#60a5fa;box-shadow:0 12px 28px rgba(37,99,235,.14)}.card.read.selected{border-color:var(--success);box-shadow:0 12px 28px rgba(37,99,235,.14),0 0 0 3px rgba(15,118,110,.24)}.card h3{margin:0;font-size:1.05rem;line-height:1.35;overflow-wrap:anywhere}.card-author{margin:-6px 0 0;color:#475569;font-size:.92rem;font-weight:700;line-height:1.45}.card p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.55;flex:1}.card-actions{display:flex;gap:10px;flex-wrap:wrap}.card-actions .ghost-btn,.card-actions .link-btn{flex:1}
     .empty{padding:36px 18px;text-align:center;color:var(--muted)}footer{padding:20px;color:#64748b;text-align:center}
     @media (max-width:900px){.hero{padding:40px 18px 56px}.featured{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr 1fr}.action-btn{width:100%}.report-top{flex-direction:column}.report-actions{width:100%}}
     @media (max-width:640px){main{margin-top:-20px;padding:0 14px 28px}.hero{padding:34px 14px 48px}.hero p{font-size:1rem}.featured{grid-template-columns:1fr}.panel,.report-panel{padding:18px}.meta{align-items:flex-start}.report-actions{flex-direction:column}.report-actions .link-btn{width:100%}.topics,.grid{grid-template-columns:1fr}.card{padding:16px}.card-actions .ghost-btn,.card-actions .link-btn{flex:initial;width:100%}}
@@ -38,6 +38,7 @@
     <div class="wrap">
       <h1>Adams most important books</h1>
       <p>Browse concise reports for each book, focused on the main topics and big ideas. Use search, category filters, sorting, and a random pick to quickly find the report you want.</p>
+      <p class="hero-note">Books Adam has read are highlighted in green.</p>
       <div class="hero-links">
         <a class="primary" href="#library">Browse Reports</a>
         <button id="randomTop" class="secondary" type="button">Pick a Random Report</button>
@@ -98,8 +99,50 @@
 
   <script src="assets/books.js"></script>
   <script>
+    const readBookSlugs = new Set([
+      '7-habits-of-highly-effective-people',
+      'animal-farm',
+      'the-arabs-and-the-holocaust',
+      'art-of-war',
+      'bhagavad-gita',
+      'blink',
+      'the-buying-brain',
+      'the-catcher-in-the-rye',
+      'the-changing-world-order',
+      'the-communist-manifesto',
+      'david-and-goliath',
+      'food-in-history',
+      'freakonomics',
+      'the-great-gatsby',
+      'the-holy-bible',
+      'kite-runner',
+      'lord-of-the-flies',
+      'lord-of-the-rings',
+      'macbeth',
+      'mastery',
+      'moby-dick',
+      'nazis-islamists-and-the-making-of-the-modern-middle-east',
+      'one-green-beret',
+      'opportunity',
+      'outliers',
+      'the-phoenix-project',
+      'the-power-of-now',
+      'the-quran',
+      'the-silk-roads',
+      'smugglers-cove',
+      'snow-crash',
+      'social-engineering-the-art-of-human-hacking',
+      'sombres-bourreaux',
+      'tao-te-ching',
+      'think-and-grow-rich',
+      'to-kill-a-mockingbird',
+      'versailles-a-biography-of-a-palace',
+      'what-the-dog-saw'
+    ]);
+
     const books = (window.bookReports || []).map(book => ({
       ...book,
+      read: readBookSlugs.has(book.slug),
       page: `reports/${book.slug}.html`
     }));
 
@@ -211,7 +254,7 @@
 
       filtered.forEach(book => {
         const card = document.createElement('article');
-        card.className = `card${book.title === selectedTitle ? ' selected' : ''}`;
+        card.className = `card${book.read ? ' read' : ''}${book.title === selectedTitle ? ' selected' : ''}`;
 
         const tag = document.createElement('span');
         tag.className = 'tag';
