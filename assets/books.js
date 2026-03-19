@@ -141,7 +141,8 @@ const authorsBySlug = {
   'the-old-man-and-the-sea': 'Ernest Hemingway',
   'green-hills-of-africa': 'Ernest Hemingway',
   'storm-of-steel': 'Ernst Jünger',
-  'one-green-beret': 'Mark Giaconia'
+  'one-green-beret': 'Mark Giaconia',
+  'bloodlines': 'Chris Wraight'
 };
 
 window.bookReports = [
@@ -287,7 +288,8 @@ window.bookReports = [
   { slug: 'the-old-man-and-the-sea', title: 'The Old Man and the Sea', category: 'Classics', summary: 'A short novel about endurance, pride, struggle, and dignity in which an aging fisherman tests himself against the sea, a marlin, and his own limits.', topics: ['Endurance and resilience', 'Pride and dignity', 'Man versus nature', 'Skill and perseverance', 'Loss and spiritual victory'] },
   { slug: 'green-hills-of-africa', title: 'Green Hills of Africa', category: 'Adventure', summary: 'A nonfiction safari narrative that blends travel, landscape, hunting, competition, and reflection on writing, courage, and the pursuit of experience.', topics: ['Travel and wilderness', 'Hunting and competition', 'Courage and self-testing', 'Landscape and observation', 'Writing and lived experience'] },
   { slug: 'storm-of-steel', title: 'Storm of Steel', category: 'History & Warfare', summary: 'A firsthand World War I memoir that records trench combat, danger, endurance, and the strange intensity of modern industrial war.', topics: ['Trench warfare and frontline life', 'Courage and survival', 'Violence and detachment', 'Comradeship under fire', 'Modern war and technology'] },
-  { slug: 'one-green-beret', title: 'One Green Beret', category: 'History & Warfare', summary: 'A military memoir following service in Bosnia, Kosovo, Iraq, and beyond, emphasizing endurance, duty, sacrifice, and the realities of modern special operations.', topics: ['Special operations service', 'War zones and deployments', 'Discipline and resilience', 'Duty and sacrifice', 'Modern military experience'] }
+  { slug: 'one-green-beret', title: 'One Green Beret', category: 'History & Warfare', summary: 'A military memoir following service in Bosnia, Kosovo, Iraq, and beyond, emphasizing endurance, duty, sacrifice, and the realities of modern special operations.', topics: ['Special operations service', 'War zones and deployments', 'Discipline and resilience', 'Duty and sacrifice', 'Modern military experience'] },
+  { slug: 'bloodlines', title: 'Bloodlines', category: 'Science Fiction', summary: 'A hardboiled Warhammer Crime novel in which a veteran investigator follows a missing noble heir into the machinery of a hive city where luxury at the top depends on predation below.', topics: ['Hive-city class inequality', 'Corruption, gangs, and enforcers', 'Cell-draining and elite rejuvenation', 'Family duty under Imperial pressure', 'Noir investigation inside the Imperium'] }
 ].map(entry => ({
   ...entry,
   author: authorsBySlug[entry.slug] || 'Unknown author'
