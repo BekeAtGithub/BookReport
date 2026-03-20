@@ -171,8 +171,102 @@ const bespokeKeyPoints = {
   ]
 };
 
+const bespokeTldrs = {
+  'the-great-gatsby': [
+    `Bluntly, The Great Gatsby says almost everybody here is full of shit: old money, new money, and the hustlers hanging around the edges, all of them dressing up insecurity with houses, cars, parties, and polished manners. Gatsby can build the mansion, invent the persona, and throw the perfect show, but he still cannot turn Daisy into the dream in his head, and after all that sad striving he ends up dead while the careless people keep moving.`
+  ],
+  'the-holy-bible': [
+    `Bluntly, The Holy Bible is not one neat slogan but a huge running drama about creation, covenant, rebellion, judgment, mercy, suffering, and redemption. It keeps returning to the same hard point: human beings wreck things constantly, and the real question is whether they can be judged, forgiven, reshaped, or saved.`
+  ],
+  'torah': [
+    `Bluntly, the Torah is the foundation layer: origins, patriarchs, Egypt, Moses, Sinai, law, wilderness, and the formation of Israel as a people under covenant. It is not just spiritual uplift. It is memory, law, identity, and obligation fused together.`
+  ],
+  'tanakh': [
+    `Bluntly, the Tanakh takes that Torah foundation and shows what happens when a people actually tries to live under it: conquest, judges, kings, prophetic warning, collapse, exile, poetry, wisdom, and stubborn hope. If the Torah is the charter, the Tanakh is the full civilizational story plus the voices that keep judging it.`
+  ],
+  'talmud': [
+    `Bluntly, the Talmud is what happens when a civilization refuses to let law stay simple. It is argument, interpretation, precedent, disagreement, and practical reasoning on an enormous scale. The point is not smooth inspiration. The point is disciplined thought about how to live.`
+  ],
+  'the-quran': [
+    `Bluntly, the Qur’an is revelation as warning, command, recitation, and judgment: one God, earlier prophets, accountability, communal order, and the constant reminder that human beings answer for what they do.`
+  ],
+  'bhagavad-gita': [
+    `Bluntly, the Bhagavad Gita begins with Arjuna wanting out and Krishna refusing the easy escape. It turns battlefield panic into a hard argument about duty, detached action, devotion, knowledge, and what it means to act without being owned by fear or outcome.`
+  ],
+  'tao-te-ching': [
+    `Bluntly, the Tao Te Ching keeps saying the hard, showy, controlling approach is usually the stupid one. It praises the soft, the empty, the quiet, and the unforced, then treats restraint as smarter than domination.`
+  ],
+  'dhammapada': [
+    `Bluntly, the Dhammapada says your mind is building your life whether you notice it or not. Craving, anger, negligence, and ego manufacture suffering; discipline, clarity, compassion, and detachment are the way out.`
+  ],
+  'the-guns-of-august': [
+    `Bluntly, The Guns of August shows how Europe blundered into industrial slaughter because prestige, mobilization timetables, political vanity, and bad assumptions beat common sense. Its power comes from making the opening of World War I feel less like destiny and more like a chain reaction of elite stupidity with catastrophic consequences.`
+  ],
+  'storm-of-steel': [
+    `Bluntly, Storm of Steel is not a clean sermon about patriotism or peace. It is trench warfare from the inside: mud, shellfire, waiting, wounds, adrenaline, survival, and the strange emotional hardening that modern combat can produce. That is why it feels so different from a polished history of the war.`
+  ],
+  'bloodlines': [
+    `Bluntly, Bloodlines is a hive-city detective story about what Imperial class society really looks like once you stop admiring the gothic skyline. Rich families buy discretion, poor bodies get consumed, enforcers are compromised from the start, and Zidarov's case works because the missing heir leads straight into the machinery that makes elite comfort possible in the first place.`
+  ]
+};
+
 function lowerFirst(text) {
   return text ? text.charAt(0).toLowerCase() + text.slice(1) : '';
+}
+
+function trimEndingPunctuation(text) {
+  return text ? text.replace(/[.!?]+$/, '') : '';
+}
+
+function joinWithCommasAnd(items) {
+  if (!items.length) return '';
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(', ')}, and ${items[items.length - 1]}`;
+}
+
+function getSlugSeed(slug) {
+  return Array.from(slug || '').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+}
+
+function pickVariant(seed, variants) {
+  return variants[seed % variants.length];
+}
+
+function getTopicPhrase(entry, count = 3) {
+  return joinWithCommasAnd((entry.topics || []).slice(0, count).filter(Boolean));
+}
+
+function lowerLeadingArticle(text) {
+  const trimmed = (text || '').trim();
+  if (!trimmed) return '';
+  return /^(A|An|The)\b/.test(trimmed)
+    ? trimmed.charAt(0).toLowerCase() + trimmed.slice(1)
+    : trimmed;
+}
+
+function getTldrLead(entry, cleanedSummary) {
+  if (!cleanedSummary) return `${entry.title} matters`;
+  if (/^(A|An|The)\b/.test(cleanedSummary)) {
+    return `${entry.title} is ${lowerLeadingArticle(cleanedSummary)}`;
+  }
+  return `${entry.title}: ${cleanedSummary}`;
+}
+
+function getTopicSet(entry) {
+  const topics = (entry.topics || []).filter(Boolean);
+  const first = topics[0] || 'the book\'s central concern';
+  const second = topics[1] || first;
+  const third = topics[2] || second;
+  const fourth = topics[3] || third;
+  const fifth = topics[4] || fourth;
+  return { first, second, third, fourth, fifth };
+}
+
+function isLiteraryCategory(entry) {
+  return entry.category.includes('Classics')
+    || entry.category.includes('Modern Fiction')
+    || entry.category.includes('Historical Fiction');
 }
 
 function ensureAuthorElement() {
@@ -244,49 +338,52 @@ function ensureDetailSections() {
 }
 
 function normalizeTldrParagraph(text) {
-  const normalized = text.replace(/^Bluntly,\s*/, '');
+  const normalized = (text || '').trim();
   return normalized ? normalized.charAt(0).toUpperCase() + normalized.slice(1) : normalized;
 }
 
 function getReadingGuide(entry) {
-  const [first, second, third] = entry.topics;
-  const focus = `Read it with attention to how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} develop through the book's major scenes and turning points.`;
+  const { first, second, third } = getTopicSet(entry);
+  const focus = `Use ${first}, ${second}, and ${third} as your anchors; they show you where the book gets concrete and where its real pressure sits.`;
 
   if (entry.category.includes('Poetry & Drama')) {
-    return `${focus} Pay special attention to imagery, speeches, symbols, and changes in tone.`;
+    return `${focus} Watch how speeches, imagery, repetition, and tonal shifts make those pressures heavier instead of treating them like detachable themes.`;
   }
   if (entry.category.includes('Epic & Myth')) {
-    return `${focus} Track the hero's choices, the role of fate, and what the journey says about honor, duty, or identity.`;
+    return `${focus} Track each oath, detour, divine intervention, and ordeal to see what the journey says about fate, honor, loyalty, or identity.`;
   }
   if (entry.category.includes('Manifestos & Politics')) {
-    return `${focus} Follow the main claim, the reasons given for it, and the change in society the author wants or predicts.`;
+    return `${focus} Follow how the author defines the crisis, assigns blame, and turns description into a demand for action, discipline, or obedience.`;
   }
   if (entry.category.includes('Religion & Philosophy')) {
-    return `${focus} Look closely at the central teaching or argument and how the text defines wisdom, truth, or human duty.`;
+    return `${focus} Notice how the teaching method—verse, dialogue, command, meditation, or sacred story—shapes what counts as wisdom, duty, or right order.`;
+  }
+  if (isLiteraryCategory(entry)) {
+    return `${focus} Watch how scenes, relationships, narration, and recurring symbols keep changing what those pressures mean; in novels like this, the real judgment builds through accumulation, not just plot beats.`;
   }
   if (entry.category.includes('Modern History')) {
-    return `${focus} Follow the author's evidence, how events connect across time, and how ideology, institutions, or public opinion shape the historical outcome.`;
+    return `${focus} Keep asking what evidence is being used, which causal chain is being emphasized, and where the author's interpretation goes beyond bare chronology.`;
   }
   if (entry.category.includes('Art, Music & Culture')) {
-    return `${focus} Notice how style, patronage, ritual, craft, and everyday taste help explain the larger culture the book is describing.`;
+    return `${focus} Stay with the concrete examples—buildings, performances, patrons, rituals, craft, foodways, or court life—because that is where the larger culture actually becomes visible.`;
   }
   if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
-    return `${focus} Follow the causes of each conflict, the decisions made by leaders, and how battles reshape the larger political order.`;
+    return `${focus} Track who decides, with what information, under what constraints, and how those decisions reshape the political order beyond the immediate clash.`;
   }
   if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
-    return `${focus} Ask what warning the imagined world is making about real life, power, language, or technology.`;
+    return `${focus} Ask what part of the invented system is supposed to look uncomfortably familiar once the book strips away the futuristic packaging.`;
   }
   if (entry.category.includes('Gothic & Horror')) {
-    return `${focus} Notice how fear, isolation, and the unknown create meaning as much as the plot does.`;
+    return `${focus} Pay attention to setting, secrecy, obsession, and bodily threat, because the fear is carrying the book's argument as much as the plot is.`;
   }
   if (entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
-    return `${focus} Watch how the journey tests character, leadership, loyalty, and survival.`;
+    return `${focus} Watch how landscapes, companions, enemies, and trials keep testing what kind of person the protagonist really is.`;
   }
   if (entry.category.includes('War & Satire')) {
-    return `${focus} Notice what is being mocked and how absurd scenes reveal the deeper message.`;
+    return `${focus} Notice which official language, routines, or institutions are being made ridiculous and what moral ugliness the comedy is exposing.`;
   }
 
-  return `${focus} Track character choices, relationships, and what the ending says about society, identity, or values.`;
+  return `${focus} Stay with the pressure points, not just the plot beats, and use the ending to show what the book finally clarifies about character, power, or value.`;
 }
 
 function getKeyPoints(entry) {
@@ -296,140 +393,524 @@ function getKeyPoints(entry) {
     return bespokePoints;
   }
 
-  const [first, second, third, fourth, fifth] = entry.topics;
-  return [
-    `${entry.title} mainly explores ${lowerFirst(first)} and ${lowerFirst(second)} through its central conflict or argument.`,
-    `${lowerFirst(third)} develops through the book's major scenes, examples, or turning points rather than appearing as a single isolated idea.`,
-    `${entry.title} also gives special weight to ${lowerFirst(fourth || first)}, which helps reveal what the author values most under pressure.`,
-    `By the later chapters, ${lowerFirst(fifth || second)} becomes important because it helps connect the middle of the book to the ending.`,
-    `The conclusion usually gathers ${lowerFirst(fifth || first)} and ${lowerFirst(second)} into a final message that feels earned rather than sudden.`
-  ];
-}
+  const { first, second, third, fourth, fifth } = getTopicSet(entry);
+  const seed = getSlugSeed(entry.slug);
 
-function getImportantLines(entry) {
-  const [first, second, third, fourth, fifth] = entry.topics;
-  return [
-    `Mark lines that clearly reveal ${lowerFirst(first)} or show a character responding to it.`,
-    `Notice passages where ${lowerFirst(second)} clashes with ${lowerFirst(third)}.`,
-    `Flag a scene, example, or argument that makes ${lowerFirst(fourth || first)} concrete instead of abstract.`,
-    `Save a line that makes ${lowerFirst(fifth || second)} especially vivid, memorable, or controversial.`,
-    `Use a turning-point or ending passage to explain the book's final view of ${lowerFirst(fourth || first)}.`
-  ];
-}
+  if (entry.category.includes('Religion & Philosophy')) {
+    return [
+      `${first} is one of the clearest places to start, because it shows what the text thinks wisdom, order, or devotion actually are.`,
+      `${second} matters because the book is not just naming an ideal there; it is trying to train conduct, attention, or loyalty around it.`,
+      `${third} is usually where the teaching stops sounding ornamental and starts demanding a way of life.`,
+      `${fourth} often reveals what kind of discipline, memory, or spiritual posture the book wants to produce in its reader.`,
+      `By the end, ${fifth} helps explain why ${entry.title} lasted as a guide for living, not just a source of quotable lines.`
+    ];
+  }
 
-function getContextNotes(entry) {
-  const [first, second, third, fourth] = entry.topics;
+  if (isLiteraryCategory(entry)) {
+    return [
+      `${first} is one of the clearest ways the novel tells you what kind of emotional, social, or moral world you are entering.`,
+      `${second} matters because it changes relationships, not just events, and that is usually where the book's pressure really sits.`,
+      `${third} often turns private feeling into a judgment about class, love, guilt, ambition, or power.`,
+      `${fourth} keeps the middle alive by exposing motive, consequence, or self-deception that a simpler plot summary would miss.`,
+      `By the end, ${fifth} gathers the book's human cost into its real conclusion.`
+    ];
+  }
 
   if (entry.category.includes('Modern History')) {
     return [
-      `${entry.title} matters because it turns ${lowerFirst(first)} into a way of understanding a much larger historical moment. The book should be read not only for events, but for the wider system of institutions, ideologies, and decisions surrounding them.`,
-      `${lowerFirst(second)} and ${lowerFirst(third)} are connected into an interpretation of cause and consequence. History books are not just timelines; they are arguments about why events unfolded as they did.`,
-      `Its lasting value comes from the way it links the past to larger questions about ${lowerFirst(fourth || first)}, public memory, and political judgment. That is what makes the subject feel bigger than one place, leader, or crisis.`
+      `${first} gets the book moving because it ties the period to concrete governments, actors, or crises instead of vague historical “forces.”`,
+      `${second} matters because it shows how institutions, personalities, and contingency keep colliding rather than yielding a one-cause explanation.`,
+      `${third} is often where the author's real argument about responsibility, error, or consequence becomes hardest to dodge.`,
+      `${fourth} keeps the narrative from becoming date-stacking; it links events to judgment, memory, and aftermath.`,
+      `By the end, ${fifth} clarifies what the period changed and why the book still expects later readers to care.`
     ];
   }
 
   if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
     return [
-      `${entry.title} matters because it treats conflict as a test of leadership, organization, and human judgment rather than as a mere sequence of battles. The political stakes and strategic setting are essential from the start.`,
-      `The deeper interest of the book often lies in how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} interact under pressure. Strong military or strategic writing shows that victory and defeat grow from decisions, morale, timing, and structure as much as from force.`,
-      `Its long-term significance usually comes from what it teaches about ${lowerFirst(fourth || first)}, power, and the consequences of leadership. That is why these books often remain relevant well beyond the original conflict they describe.`
-    ];
-  }
-
-  if (entry.category.includes('Religion & Philosophy')) {
-    return [
-      `${entry.title} matters because it is trying to shape how the reader thinks about truth, discipline, and the purpose of human life. It should be read as a guide to formation, not merely as a source of famous quotations.`,
-      `Its importance comes partly from how it defines the relationship between ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)}. The teaching and the method used to deliver it are equally important.`,
-      `The book remains influential because it offers a durable way of thinking about ${lowerFirst(fourth || first)}, moral duty, and spiritual order. That larger vision is what gives the text its authority across time.`
+      `${first} shows the strategic setting, not just the clash on the surface.`,
+      `${second} is where leadership, morale, legitimacy, or logistics usually start deciding outcomes.`,
+      `${third} makes clear how political aims and military action keep colliding inside the book.`,
+      `${fourth} usually marks the cost of bad judgment, overreach, or institutional weakness rather than serving as a generic “lesson.”`,
+      `${fifth} is what keeps the book relevant after the campaign itself ends.`
     ];
   }
 
   if (entry.category.includes('Self-Development')) {
     return [
-      `${entry.title} matters because it presents more than advice: it offers a model of the kind of person the reader is supposed to become. Its ideal of character, action, or self-command is part of the book's real substance.`,
-      `Its real argument is usually built on assumptions about ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)}. The advice makes the most sense when those underlying assumptions are made clear.`,
-      `The book's broader importance lies in the way it connects ${lowerFirst(fourth || first)} to everyday conduct, ambition, discipline, and long-term growth. That is why these books are often judged by both their inspiration and their realism.`
+      `${first} is part of the book's diagnosis of what people usually do badly by default.`,
+      `${second} matters because it shows what habit, practice, or discipline is supposed to replace that failure.`,
+      `${third} is where the advice becomes concrete enough to test in ordinary life instead of sitting there as motivational fog.`,
+      `${fourth} usually reveals the kind of person the book is trying to build, not just the tactic it recommends.`,
+      `${fifth} gathers the book's idea of long-term change into something sturdier than a temporary burst of enthusiasm.`
     ];
   }
 
   if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
     return [
-      `${entry.title} matters because it takes a big question and makes it understandable through examples, cases, or historical explanation. The central puzzle or claim is what gives the whole book its shape.`,
-      `The work becomes stronger when the reader follows how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are connected into a line of reasoning. Good nonfiction teaches the reader a way of thinking, not just a collection of facts.`,
-      `Its lasting value usually comes from the way it changes how we think about ${lowerFirst(fourth || first)}, evidence, judgment, and the hidden structure of ordinary events or major discoveries.`
+      `${first} identifies the real puzzle or blind spot the author wants the reader to see clearly.`,
+      `${second} matters because it turns cases and examples into a method rather than a pile of interesting trivia.`,
+      `${third} is often where the argument becomes persuasive instead of merely clever or surprising.`,
+      `${fourth} shows what the book thinks ordinary judgment, institutions, or received wisdom keep misreading.`,
+      `${fifth} is part of the larger shift in perception ${entry.title} is trying to install.`
     ];
   }
 
   if (entry.category.includes('Art, Music & Culture')) {
     return [
-      `${entry.title} matters because it treats culture as a record of what a society values, admires, displays, and preserves. Style and taste are never detached from power, ritual, status, or everyday life.`,
-      `The book becomes richer when the reader tracks how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} move from individual examples to a larger cultural pattern. Works of art, buildings, music, or foodways are being used to explain a whole social world.`,
-      `Its deeper significance lies in what it reveals about ${lowerFirst(fourth || first)}, memory, craftsmanship, and collective identity. That is why the subject remains valuable even after the specific period has passed.`
-    ];
-  }
-
-  if (entry.category.includes('Poetry & Drama')) {
-    return [
-      `${entry.title} matters because its meaning is carried not only by events, but by speech, imagery, rhythm, and dramatic structure. Form is part of the argument rather than decoration.`,
-      `The work gains force when the reader notices how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are intensified through repetition, contrast, performance, or symbolic language.`,
-      `Its enduring importance comes from the way it turns ${lowerFirst(fourth || first)} into an experience for the audience rather than a simple statement. That fusion of form and theme is what keeps the work alive.`
-    ];
-  }
-
-  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
-    return [
-      `${entry.title} matters because the journey or quest is being used to test character, loyalty, endurance, and identity. The larger challenge matters more than a simple list of episodes along the way.`,
-      `The story becomes more meaningful when ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are treated as part of a pattern of growth, danger, and moral testing rather than as disconnected adventures.`,
-      `Its lasting appeal comes from what it says about ${lowerFirst(fourth || first)}, belonging, courage, and the cost of reaching one's goal. That is why these works endure as more than entertainment.`
+      `${first} lets the book move from object-level detail into a whole culture of taste, ritual, or power.`,
+      `${second} matters because the craft details are carrying social meaning rather than sitting there as decoration.`,
+      `${third} is often where patrons, audiences, institutions, or court life come sharply into view.`,
+      `${fourth} keeps the subject from flattening into a style list by showing what these forms did in lived settings.`,
+      `${fifth} is part of why the book treats culture as evidence instead of trivia.`
     ];
   }
 
   if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
     return [
-      `${entry.title} matters because the imagined world is a warning as well as a setting. Institutions, technology, or social rules create pressure on ordinary life and reveal the book's warning.`,
-      `Its real power comes from how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} reveal the book's critique of the world it has invented. The personal conflict and the social argument should be read together.`,
-      `The book remains important because it turns ${lowerFirst(fourth || first)} into a question about the future of truth, freedom, identity, or human dignity. That relevance is what gives the story its force.`
+      `${first} is one of the clearest pieces of the machine the book wants you to distrust.`,
+      `${second} shows how the invented setting pressures ordinary human choices instead of staying background lore.`,
+      `${third} is where the warning stops being worldbuilding and starts biting.`,
+      `${fourth} usually reveals what the system actually consumes—truth, dignity, loyalty, bodies, or freedom.`,
+      `${fifth} is what makes the future setting point straight back at the present.`
     ];
   }
 
   if (entry.category.includes('Gothic & Horror')) {
     return [
-      `${entry.title} matters because fear in this kind of book is never just about shock. The work turns emotional, moral, or social anxiety into story.`,
-      `The book becomes more meaningful when ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are read as pressures acting on the mind, the body, or the social order. Atmosphere and theme work together here.`,
-      `Its lasting strength comes from the way it connects ${lowerFirst(fourth || first)} to deeper questions about guilt, corruption, desire, repression, or the limits of human control.`
+      `${first} is part of the threat architecture, not just a spooky motif floating at the edge of the story.`,
+      `${second} matters because it shows where desire, vanity, guilt, or corruption start deforming the book from within.`,
+      `${third} is often the pressure point where the fear turns moral or psychological instead of merely atmospheric.`,
+      `${fourth} gives the horror lasting force because it stains the body, the home, or the conscience.`,
+      `${fifth} gathers the book's warning into something uglier than a single scare.`
+    ];
+  }
+
+  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
+    return [
+      `${first} gives the journey its first serious test, calling, or pull forward.`,
+      `${second} matters because it changes the quest from motion into moral pressure.`,
+      `${third} is where the landscape, ally, enemy, or ordeal starts reshaping the protagonist.`,
+      `${fourth} keeps the middle from becoming episodic by tying each trial to consequence.`,
+      `${fifth} helps show what kind of home, honor, power, or identity the story thinks is worth earning.`
     ];
   }
 
   if (entry.category.includes('War & Satire')) {
     return [
-      `${entry.title} matters because it uses humor, absurdity, or exaggeration to expose systems that have become morally upside down. Beneath the comedy, the book is attacking a real logic, institution, or habit of mind.`,
-      `Its force comes from the way ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} are made to look ridiculous without becoming trivial. The laughter is part of the critique.`,
-      `The work remains important because it turns ${lowerFirst(fourth || first)} into a wider judgment about bureaucracy, war, survival, and the human ability to normalize madness.`
+      `${first} shows what absurd piece of official logic the book is putting on trial.`,
+      `${second} matters because it turns the humor into accusation instead of disposable comedy.`,
+      `${third} is usually where the joke becomes a structural criticism of a larger institution.`,
+      `${fourth} keeps the satire from floating away by making the underlying damage visible.`,
+      `${fifth} is what the ending leaves behind as the part of the madness nobody has really solved.`
     ];
   }
 
   return [
-    `${entry.title} matters because it turns ${lowerFirst(first)} and ${lowerFirst(second)} into a larger reflection on character, society, and human motivation. The book is doing more than telling a story.`,
-    `Its deeper interest often lies in how ${lowerFirst(third)} and ${lowerFirst(fourth || first)} develop through conflict, relationships, and changing pressure. The middle of the book usually reveals what the opening only hints at.`,
+    pickVariant(seed, [
+      `A strong way into ${entry.title} is ${first}; that is one of the earliest places the book's real shape becomes visible.`,
+      `${first} is one of the clearest entry points into the book, because it gives the rest of the material its first real grip.`
+    ]),
+    pickVariant(seed + 1, [
+      `${second} keeps changing the stakes instead of sitting there as background material.`,
+      `${second} matters because it keeps redefining what success, failure, danger, or meaning actually look like.`
+    ]),
+    pickVariant(seed + 2, [
+      `${third} is usually where the book stops sounding abstract and starts showing its logic in action.`,
+      `One of the clearest pressure points in the book is ${third}, because that is where the conflict or argument becomes concrete.`
+    ]),
+    pickVariant(seed + 3, [
+      `${fourth} is what keeps the middle from feeling like filler; it links development to consequence.`,
+      `Watch how ${fourth} connects major scenes, examples, or reversals rather than appearing once and disappearing.`
+    ]),
+    pickVariant(seed + 4, [
+      `By the end, ${fifth} helps gather the earlier material into the book's actual conclusion.`,
+      `Taken together, ${first}, ${second}, and ${fifth} show what ${entry.title} is really trying to make unavoidable.`
+    ])
+  ];
+}
+
+function getImportantLines(entry) {
+  const { first, second, third, fourth, fifth } = getTopicSet(entry);
+  const seed = getSlugSeed(entry.slug);
+
+  if (entry.category.includes('Religion & Philosophy')) {
+    return [
+      `Mark an early verse, command, scene, or saying that makes ${first} concrete instead of leaving it as a pious abstraction.`,
+      `Save a passage where ${second} is attached to actual duty, discipline, devotion, or self-command.`,
+      `Underline the line or exchange where ${third} stops sounding like doctrine and starts sounding like lived demand.`,
+      `Keep a passage where ${fourth} shows the reader what kind of spiritual or moral posture the text is trying to form.`,
+      `Hold onto an ending or late passage that shows what the book finally decides about ${fifth}.`
+    ];
+  }
+
+  if (isLiteraryCategory(entry)) {
+    return [
+      `Mark the early scene, exchange, or description that makes ${first} emotionally live from the start.`,
+      `Save a passage where ${second} changes how two characters see each other or themselves.`,
+      `Underline the moment where ${third} stops being background and becomes a moral or psychological pressure point.`,
+      `Keep a scene where narration, imagery, or dialogue makes ${fourth} sharper than summary could.`,
+      `Use a late passage that reveals what the novel finally decides about ${fifth}.`
+    ];
+  }
+
+  if (entry.category.includes('Modern History')) {
+    return [
+      `Mark the early passage that names the crisis, regime, or setting making ${first} historically urgent.`,
+      `Save a paragraph where ${second} is tied to evidence, institutions, or actors rather than broad historical mood.`,
+      `Underline a decision point, diplomatic move, reform, or collapse that turns ${third} into a real causal pressure.`,
+      `Keep a passage where ${fourth} is used to move from chronology into responsibility, interpretation, or memory.`,
+      `Use a late passage that reveals what the author finally wants readers to conclude about ${fifth}.`
+    ];
+  }
+
+  if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
+    return [
+      `Mark the passage that establishes the strategic problem behind ${first}, not just the battle surface.`,
+      `Save a line where ${second} clearly narrows the available options for a commander, army, or state.`,
+      `Underline a speech, order, maneuver, or battlefield reversal that makes ${third} concrete under pressure.`,
+      `Keep a scene where ${fourth} exacts a visible cost in blood, legitimacy, morale, or political stability.`,
+      `Use an ending judgment that shows what the book finally thinks ${fifth} reveals about power or leadership.`
+    ];
+  }
+
+  if (entry.category.includes('Self-Development')) {
+    return [
+      `Mark the line where the book diagnoses the bad habit, confusion, or failure that makes ${first} necessary.`,
+      `Save a passage where ${second} is turned into a practice someone could actually attempt.`,
+      `Underline an exercise, rule, or scenario that makes ${third} testable in everyday life.`,
+      `Keep the moment where ${fourth} reveals the kind of person the book is trying to build.`,
+      `Hold onto a late passage that shows how ${fifth} fits the book's long-game picture of change.`
+    ];
+  }
+
+  if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
+    return [
+      `Mark the sentence where the book states the puzzle, blind spot, or misconception that makes ${first} worth pursuing.`,
+      `Save the case, experiment, proof, or example that turns ${second} into method instead of anecdote.`,
+      `Underline the point where ${third} overturns a lazy assumption or forces a sharper interpretation.`,
+      `Keep a passage where ${fourth} shows what the author thinks most readers or institutions keep getting wrong.`,
+      `Use an ending paragraph that makes clear how ${fifth} is supposed to change the reader's judgment.`
+    ];
+  }
+
+  if (entry.category.includes('Art, Music & Culture')) {
+    return [
+      `Mark the place where a building, performance, object, or practice first makes ${first} visible in concrete detail.`,
+      `Save a passage where craft, form, or style turns ${second} into social evidence rather than decoration.`,
+      `Underline the example that makes ${third} legible through one patron, audience, ritual, or institution.`,
+      `Keep the paragraph where ${fourth} is tied to lived use, prestige, hierarchy, or collective memory.`,
+      `Use a late passage showing how ${fifth} explains the larger culture the book is reconstructing.`
+    ];
+  }
+
+  if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
+    return [
+      `Mark the first scene or description that shows how ${first} is built into the system's machinery.`,
+      `Save the moment where ${second} starts shaping a character's actual choices instead of sitting in the background.`,
+      `Underline the revelation, investigation, or rupture that turns ${third} into the book's real warning.`,
+      `Keep a passage where ${fourth} exposes the human cost of the invented order.`,
+      `Use an ending line that makes clear what the book finally decides about ${fifth} and why it points back at the present.`
+    ];
+  }
+
+  if (entry.category.includes('Gothic & Horror')) {
+    return [
+      `Mark the first image, temptation, or setting detail that makes ${first} threatening rather than decorative.`,
+      `Save the line where ${second} curdles from attraction or vanity into dread, guilt, or corruption.`,
+      `Underline the scene where ${third} becomes physically or morally unavoidable.`,
+      `Keep a passage where tone or atmosphere makes ${fourth} feel stained, claustrophobic, or damned.`,
+      `Use a late passage that shows how ${fifth} is the part of the horror the book refuses to wash clean.`
+    ];
+  }
+
+  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
+    return [
+      `Mark the call, omen, challenge, or departure that makes ${first} matter from the start.`,
+      `Save the passage where ${second} turns travel into testing instead of just motion.`,
+      `Underline the ally, enemy, ordeal, or landscape encounter that makes ${third} a genuine turning point.`,
+      `Keep the moment where ${fourth} starts exacting a clear cost in loyalty, identity, endurance, or honor.`,
+      `Use a late scene that shows what the story finally decides about ${fifth}.`
+    ];
+  }
+
+  if (entry.category.includes('War & Satire')) {
+    return [
+      `Mark the first passage that reveals the absurd official logic hiding inside ${first}.`,
+      `Save the scene where ${second} turns a joke into an accusation against an institution or routine.`,
+      `Underline a contradiction, circular rule, or performance of authority that makes ${third} concrete.`,
+      `Keep a line where ${fourth} shows the damage underneath the comedy.`,
+      `Use an ending passage that reveals what the book finally decides about ${fifth} and the system wrapped around it.`
+    ];
+  }
+
+  return [
+    pickVariant(seed, [
+      `Mark the first passage that makes ${first} concrete instead of merely thematic.`,
+      `Save the earliest scene, example, or claim that locks ${first} into place.`
+    ]),
+    pickVariant(seed + 1, [
+      `Notice where ${second} starts changing the stakes for a character, institution, or argument.`,
+      `Flag a moment where ${second} stops being background context and starts driving decisions.`
+    ]),
+    pickVariant(seed + 2, [
+      `Find the point where ${third} becomes impossible to treat as an abstract idea.`,
+      `Underline a scene, case, speech, or example that turns ${third} into a pressure point.`
+    ]),
+    pickVariant(seed + 3, [
+      `Keep a passage where ${fourth} is made especially vivid, costly, or revealing.`,
+      `Save the line or paragraph that shows ${fourth} doing real work inside the book's structure.`
+    ]),
+    pickVariant(seed + 4, [
+      `Use an ending passage that reveals the book's final position on ${fifth}.`,
+      `Hold onto the late passage that best explains what the book finally decides about ${fifth}.`
+    ])
+  ];
+}
+
+function getContextNotes(entry) {
+  const { first, second, third, fourth } = getTopicSet(entry);
+
+  if (entry.category.includes('Modern History')) {
+    return [
+      `${entry.title} matters because it uses ${first} to open up a much larger historical field. The point is not only to know what happened, but to see which institutions, ideologies, and decisions made the period take the shape it did.`,
+      `${second} and ${third} are usually where the book stops being a timeline and becomes an argument about causation, responsibility, and consequence.`,
+      `${fourth} helps explain why the subject stays alive outside the archive. Books like this are also arguments about memory, judgment, and what later readers are supposed to learn from the period.`
+    ];
+  }
+
+  if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
+    return [
+      `${entry.title} matters because it treats conflict as politics under pressure, not as a scoreboard of battles. The strategic setting and the stakes behind the fighting matter from the start.`,
+      `${first}, ${second}, and ${third} are where the book usually shows what really decides outcomes: command, morale, intelligence, timing, logistics, or legitimacy.`,
+      `${fourth} is part of why the book stays relevant after the immediate campaign ends. The deeper argument is usually about power, leadership, and the cost of bad judgment.`
+    ];
+  }
+
+  if (entry.category.includes('Religion & Philosophy')) {
+    return [
+      `${entry.title} matters because it is trying to train judgment, conduct, and attention, not just hand the reader a stack of quotable lines.`,
+      `${first}, ${second}, and ${third} show how the text defines right order, right action, and the kind of person it wants to form. The teaching and the form of the teaching belong together here.`,
+      `${fourth} is part of why the book remains influential. Texts like this survive when they give readers a durable framework for duty, discipline, and ultimate meaning.`
+    ];
+  }
+
+  if (isLiteraryCategory(entry)) {
+    return [
+      `${entry.title} matters because it turns private lives into a way of judging a whole social and moral world. Character, desire, class, loyalty, and self-deception usually matter as much as outward event.`,
+      `${first}, ${second}, and ${third} are where the book shows how relationships carry its real pressure. In fiction like this, meaning often accumulates through scenes, voice, symbols, and repeated choices rather than direct thesis statements.`,
+      `${fourth} is part of why the novel lasts. Books in this lane stay alive when they make inward conflict, social pressure, and consequence feel inseparable.`
+    ];
+  }
+
+  if (entry.category.includes('Self-Development')) {
+    return [
+      `${entry.title} matters because it is selling a model of the person as much as a list of tips. Its image of character, action, and self-command is part of the real argument.`,
+      `${first}, ${second}, and ${third} are the book's deeper assumptions about what people do wrong and how change is supposed to happen.`,
+      `${fourth} is where the advice usually reaches everyday life. That is why books in this category get judged by whether they feel merely energizing or actually usable.`
+    ];
+  }
+
+  if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
+    return [
+      `${entry.title} matters because it takes a real puzzle and turns it into an intelligible argument through cases, examples, or historical explanation.`,
+      `${first}, ${second}, and ${third} are what give the reasoning its shape. Good nonfiction does not just hand over facts; it teaches the reader what to notice and how to connect it.`,
+      `${fourth} is part of why the book lasts. The best books in this lane sharpen judgment by changing how ordinary evidence, institutions, or discoveries are interpreted.`
+    ];
+  }
+
+  if (entry.category.includes('Art, Music & Culture')) {
+    return [
+      `${entry.title} matters because it treats culture as evidence. Style, taste, ritual, and craft are not detached from power, status, or ordinary life.`,
+      `${first}, ${second}, and ${third} are where the book usually moves from isolated examples to a wider account of how a whole society imagines prestige, beauty, or order.`,
+      `${fourth} is part of the payoff. The subject becomes a way of thinking about memory, craftsmanship, hierarchy, and collective identity instead of a museum label.`
+    ];
+  }
+
+  if (entry.category.includes('Poetry & Drama')) {
+    return [
+      `${entry.title} matters because its meaning is carried by language and structure as much as by raw event. Form is part of the pressure, not decoration laid on afterward.`,
+      `${first}, ${second}, and ${third} gain force through repetition, contrast, voice, staging, and symbolic language rather than through summary alone.`,
+      `${fourth} helps explain why the work still lands. The audience is made to experience the pressure instead of merely hearing about it.`
+    ];
+  }
+
+  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
+    return [
+      `${entry.title} matters because the journey is being used to test character, loyalty, endurance, or identity rather than to provide a random string of episodes.`,
+      `${first}, ${second}, and ${third} are what turn the quest into a pattern of growth, danger, and moral testing.`,
+      `${fourth} is part of why the story lasts. Books like this keep speaking because adventure becomes a way of asking who deserves power, home, honor, or survival.`
+    ];
+  }
+
+  if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
+    return [
+      `${entry.title} matters because its imagined world is a warning as well as a setting. Institutions, technologies, and social rules are there to show what becomes dangerous once a system hardens.`,
+      `${first}, ${second}, and ${third} are usually where the critique bites hardest. The personal conflict matters because it exposes the moral logic of the invented world.`,
+      `${fourth} is part of why the story keeps its force. The book stays relevant when its warning clearly points back toward real problems in truth, freedom, identity, or human dignity.`
+    ];
+  }
+
+  if (entry.category.includes('Gothic & Horror')) {
+    return [
+      `${entry.title} matters because fear here is doing interpretive work, not just delivering shocks. The book turns moral, social, or psychological anxiety into narrative pressure.`,
+      `${first}, ${second}, and ${third} are what make the atmosphere count for something. They show where the threat is acting on the mind, the body, the home, or the social order.`,
+      `${fourth} is part of the reason the book lingers. The fear keeps opening into guilt, corruption, desire, repression, or the limits of human control.`
+    ];
+  }
+
+  if (entry.category.includes('War & Satire')) {
+    return [
+      `${entry.title} matters because it uses comedy to expose systems that have become morally upside down. Beneath the absurdity, the book is attacking a real institution or habit of mind.`,
+      `${first}, ${second}, and ${third} are what the book makes ridiculous without letting them become trivial. The laughter is part of the indictment.`,
+      `${fourth} is what keeps the satire from being disposable. The work lands because it turns jokes into a wider judgment about bureaucracy, war, survival, or the normalization of madness.`
+    ];
+  }
+
+  return [
+    `${entry.title} matters because ${first} and ${second} are not ornamental themes; they are the pressure points that tell you what the book is really doing.`,
+    `${third} and ${fourth} show where the conflict, argument, or emotional weight actually develops instead of just decorating the plot.`,
     `The work endures because it gives lasting shape to questions about identity, morality, memory, power, and consequence. That broader significance is what makes the book worth reporting on carefully.`
   ];
 }
 
 function getReportAngles(entry) {
-  const [first, second, third, fourth, fifth] = entry.topics;
+  const { first, second, third, fourth, fifth } = getTopicSet(entry);
+
+  if (entry.category.includes('Religion & Philosophy')) {
+    return [
+      `Start with the spiritual, moral, or metaphysical problem that makes ${first} urgent instead of treating it as a detached theme.`,
+      `Show how ${second} shapes duty, discipline, devotion, or right order for the kind of person the book wants to form.`,
+      `Use a command, parable, dialogue turn, aphorism, or ritual scene to prove what ${third} actually does in the text.`,
+      `Pay attention to form—verse, law, meditation, story, commentary—because it changes how ${fourth} is taught.`,
+      `Do not let ${fifth} float at the end by itself; connect it to the larger vision of the good life or sacred order prepared earlier.`,
+      `Close by stating what kind of soul, community, or loyalty ${entry.title} is trying to produce.`
+    ];
+  }
+
+  if (isLiteraryCategory(entry)) {
+    return [
+      `Open with the relationship, wound, desire, or social pressure that makes ${first} matter in this specific novel.`,
+      `Show how ${second} changes the emotional or moral stakes instead of merely advancing the plot.`,
+      `Use one scene, confrontation, or narrated realization to prove what ${third} actually does.`,
+      `Explain how voice, point of view, or recurring imagery makes ${fourth} land harder than summary alone would.`,
+      `Tie ${fifth} to the ending as the part of the book that gathers the human cost or judgment.`,
+      `Close by stating what the novel sees clearly about love, class, guilt, memory, ambition, or social order.`
+    ];
+  }
+
+  if (entry.category.includes('Modern History')) {
+    return [
+      `Open with the concrete crisis, state, or period that makes ${first} historically live.`,
+      `Show how ${second} links personalities, institutions, and contingency instead of pretending one cause explains everything.`,
+      `Use one decision point, diplomatic move, reform, or collapse to prove what ${third} changes.`,
+      `Keep ${fourth} tied to evidence, interpretation, and aftermath rather than reciting dates.`,
+      `When you reach ${fifth}, explain how the book wants later readers to assign responsibility, memory, or warning.`,
+      `Close with the author's real argument about why this period still matters now.`
+    ];
+  }
+
+  if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
+    return [
+      `Begin with the strategic problem or political stake that makes ${first} more than battlefield scenery.`,
+      `Show how ${second} affects decision-making, morale, timing, legitimacy, or logistics.`,
+      `Use a campaign, speech, maneuver, or breakdown to demonstrate ${third} under pressure.`,
+      `Treat ${fourth} as a consequence of command choices, not as an abstract lesson pasted on later.`,
+      `Tie ${fifth} to what the war reveals about power once the immediate fighting is over.`,
+      `Close by stating what the book sees clearly about leadership, conflict, or statecraft.`
+    ];
+  }
+
+  if (entry.category.includes('Self-Development')) {
+    return [
+      `Start with the failure of habit or judgment that makes ${first} necessary.`,
+      `Show how ${second} moves from slogan to discipline with real behavioral consequences.`,
+      `Use an exercise, principle, or scenario to make ${third} testable in daily life.`,
+      `Explain what kind of person ${fourth} is supposed to build rather than listing it as a tip.`,
+      `Tie ${fifth} to the book's long-game idea of change instead of a single wave of motivation.`,
+      `Close by saying what version of maturity, effectiveness, or self-command the book is actually selling.`
+    ];
+  }
+
+  if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
+    return [
+      `Open with the exact puzzle or misconception that makes ${first} worth arguing about.`,
+      `Explain how ${second} turns examples into reasoning instead of a pile of facts.`,
+      `Use one case, experiment, proof, or historical episode to show ${third} doing real explanatory work.`,
+      `Let ${fourth} reveal what the author thinks normal judgment or normal institutions keep missing.`,
+      `Carry ${fifth} into the ending as the broader change in how the reader is supposed to think.`,
+      `Close with the habit of mind ${entry.title} is trying to install.`
+    ];
+  }
+
+  if (entry.category.includes('Art, Music & Culture')) {
+    return [
+      `Begin with the object, style, or practice that makes ${first} visible on the ground.`,
+      `Show how ${second} connects craft detail to patronage, ritual, class, or power.`,
+      `Use one building, performance, artwork, court, or meal to make ${third} concrete.`,
+      `Treat ${fourth} as social evidence, not just aesthetic description.`,
+      `Let ${fifth} explain why the subject carries prestige, memory, or identity beyond the object itself.`,
+      `Close by stating what kind of culture the book reconstructs through these details.`
+    ];
+  }
+
+  if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
+    return [
+      `Open with the system, city, institution, or technology that makes ${first} dangerous.`,
+      `Show how ${second} presses on ordinary lives rather than staying background lore.`,
+      `Use one investigation, rebellion, revelation, or breakdown to make ${third} bite.`,
+      `Explain what ${fourth} reveals about the human cost of the invented order.`,
+      `Tie ${fifth} to the book's warning about the present, not just its fictional future.`,
+      `Close by stating what this imagined world exposes more clearly than realism could.`
+    ];
+  }
+
+  if (entry.category.includes('Gothic & Horror')) {
+    return [
+      `Start with the temptation, secret, or setting that makes ${first} threatening from the beginning.`,
+      `Show how ${second} links beauty, desire, repression, or corruption to the book's fear.`,
+      `Use one portrait, room, letter, confession, or encounter to make ${third} physically vivid.`,
+      `Explain how tone and atmosphere make ${fourth} morally charged rather than merely eerie.`,
+      `Bring ${fifth} into the ending as the stain the book refuses to wash clean.`,
+      `Close by stating what rot in the person or social world the horror exposes.`
+    ];
+  }
+
+  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
+    return [
+      `Begin with the call, exile, quest, or journey pressure that makes ${first} matter.`,
+      `Show how ${second} turns travel into testing instead of a string of episodes.`,
+      `Use one ally, enemy, landscape, or ordeal to prove what ${third} changes in the protagonist.`,
+      `Explain how ${fourth} ties the adventure to questions of worth, loyalty, or identity.`,
+      `Bring ${fifth} into the ending as the earned or lost thing the quest was really about.`,
+      `Close by saying what sort of person the story thinks deserves home, honor, or survival.`
+    ];
+  }
+
+  if (entry.category.includes('War & Satire')) {
+    return [
+      `Open with the absurd system or official logic that makes ${first} ridiculous in the first place.`,
+      `Show how ${second} turns laughter into accusation instead of light entertainment.`,
+      `Use one scene of bureaucratic madness, contradiction, or circular logic to prove what ${third} does.`,
+      `Explain how ${fourth} exposes the moral ugliness underneath the joke.`,
+      `Tie ${fifth} to the ending as the part of the madness that never really goes away.`,
+      `Close by stating what institution or habit of mind the book is actually trying to indict.`
+    ];
+  }
+
   return [
-    `Explain the opening situation clearly and show why ${lowerFirst(first)} matters from the beginning.`,
-    `Trace how ${lowerFirst(second)} shapes the middle of the book instead of jumping too quickly from opening to ending.`,
-    `Use at least one turning point, scene, or major example to show how ${lowerFirst(third)} changes the direction of the work.`,
-    `Point out how the author uses structure, voice, evidence, or symbolism to make ${lowerFirst(first)} and ${lowerFirst(second)} more convincing.`,
-    `Connect ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} to the ending so the conclusion feels prepared rather than sudden.`,
-    `Close by explaining why ${entry.title} still matters and what it teaches about society, history, belief, character, or power.`
+    `Open with the specific situation, argument, or relationship that makes ${first} matter in this book, not just in books generally.`,
+    `Show how ${second} changes the stakes once the opening setup gives way to real pressure.`,
+    `Use one scene, speech, case study, or turning point to prove what ${third} actually does inside the work.`,
+    `Explain how structure, tone, evidence, imagery, or symbolism makes ${fourth} hit harder than a bare plot summary would.`,
+    `Do not let the ending float by itself; connect ${fifth} back to the earlier material that prepared it.`,
+    `Close by stating what ${entry.title} sees clearly about society, history, belief, character, or power that a generic summary would miss.`
   ];
 }
 
 function getDetailedSummary(entry) {
-  const [first, second, third, fourth, fifth] = entry.topics;
-  const intro = `${entry.title} is a book about ${lowerFirst(first)} and ${lowerFirst(second)}. ${entry.summary}`;
+  const { first, second, third, fourth, fifth } = getTopicSet(entry);
+  const intro = `${entry.summary} The book keeps returning to ${first} and ${second}, which is where its deeper pressure sits.`;
   const bespokeReport = bespokeDetailedReports[entry.slug];
 
   if (bespokeReport) {
@@ -439,10 +920,10 @@ function getDetailedSummary(entry) {
   if (entry.category.includes('Manifestos & Politics')) {
     return [
       `${entry.title} works as an extended political argument rather than a neutral piece of analysis. ${entry.summary} The opening usually defines a crisis, names the forces said to be responsible for it, and presents the existing order as weak, corrupt, or incapable of solving the problem on its own.`,
-      `From there, the book builds its case by linking ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} into a single explanation of how power operates and why change is necessary. The ideas are rarely presented as isolated observations; they are arranged so that each claim strengthens the next and makes the argument feel internally complete.`,
+      `From there, the book builds its case by linking ${first}, ${second}, and ${third} into a single explanation of how power operates and why change is necessary. The ideas are arranged so that each claim strengthens the next and makes the worldview feel internally complete.`,
       `The middle sections usually turn that analysis into a worldview. Opponents are simplified, causes are ranked, and political conflict is framed as a struggle between necessity and failure rather than as a debate between legitimate alternatives.`,
       `Tone is part of the book's substance. Certainty, blame, urgency, prophecy, and ideological language are used to make the argument feel inevitable and to turn interpretation into momentum.`,
-      `Later chapters move from diagnosis to prescription, showing how ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} are supposed to justify a program, a warning, or a political future. The book's practical claims only make sense once its picture of crisis and authority has been fully established.`,
+      `Later chapters move from diagnosis to prescription, showing how ${fourth} and ${fifth} are supposed to justify a program, a warning, or a political future. The book's practical claims only make sense once its picture of crisis and authority has been fully established.`,
       `By the end, ${entry.title} stands as both an argument and a political artifact. Its importance lies not only in what it advocates, but in the kind of world it imagines, the fears and hopes it organizes, and the kind of action or obedience it tries to make seem reasonable.`
     ];
   }
@@ -451,20 +932,31 @@ function getDetailedSummary(entry) {
     return [
       `${entry.title} is structured as a sustained reflection on truth, moral order, and human purpose rather than as a loose collection of inspirational lines. ${entry.summary} The opening typically establishes the spiritual problem or philosophical tension at the center of the work and defines the kind of life the text treats as serious, disciplined, or worthy.`,
       `Early sections often lay out the book's basic vocabulary: what counts as wisdom, what counts as error, and how the soul, the self, duty, or the sacred world are meant to be understood. Those starting assumptions shape everything that follows.`,
-      `In the main body, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} become the main channels through which the book teaches. Depending on the text, those ideas may be developed through verse, dialogue, mythic narrative, command, meditation, or repeated contrasts between the higher and lower ways of living.`,
+      `In the main body, the book keeps returning to ${first}, ${second}, and ${third}. Depending on the text, those ideas may be developed through verse, dialogue, mythic narrative, command, meditation, or repeated contrasts between the higher and lower ways of living.`,
       `Method matters because the form is part of the message. Some works persuade by argument, some by sacred story, and some by repetition meant to reform attention itself. The result is that the reader is not only given claims, but also trained in a particular way of seeing and judging.`,
-      `Later sections bring ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} into sharper focus and show what the earlier teaching is trying to produce: peace, discipline, devotion, self-command, memory, enlightenment, or right relation to the sacred.`,
+      `Later sections bring ${fourth} and ${fifth} into sharper focus and show what the earlier teaching is trying to produce: peace, discipline, devotion, self-command, memory, enlightenment, or right relation to the sacred.`,
       `By the end, ${entry.title} offers a larger vision of what a human being is for and how a meaningful life is supposed to be ordered. That is why these books endure: they do not just present ideas, they try to reshape conduct, identity, and ultimate loyalty.`
+    ];
+  }
+
+  if (isLiteraryCategory(entry)) {
+    return [
+      `${entry.title} is built as a literary narrative in which character, setting, and social pressure matter as much as overt plot. ${entry.summary} The opening usually establishes the wound, desire, class position, or moral imbalance that will govern how the reader sees everything afterward.`,
+      `Very quickly, the book shows that outward events only matter because of what they do to relationships. ${first}, ${second}, and ${third} become the main lines through which attachment, resentment, ambition, guilt, memory, or longing are made legible.`,
+      `The middle of the work usually deepens through scenes of conversation, misreading, exposure, temptation, or reversal. Instead of pushing only toward action, the novel keeps asking what people want, what they hide, and what they are willing to sacrifice to keep a self-image intact.`,
+      `Form matters here as much as event. Voice, point of view, symbolic detail, recurring places, and the rhythm of scenes make the moral pressure accumulate gradually rather than arriving as a thesis statement.`,
+      `Later sections bring ${fourth} and ${fifth} into sharper focus and show what the earlier choices have really cost. The ending usually matters because it clarifies whether the book believes insight, reconciliation, punishment, endurance, or loss is the truest response to what has happened.`,
+      `By the end, ${entry.title} has used individual lives to say something broader about society and the human heart. That is why books like this last: they turn specific people and situations into a durable judgment about love, class, guilt, desire, memory, or moral responsibility.`
     ];
   }
 
   if (entry.category.includes('Modern History')) {
     return [
       `${entry.title} works as an interpretive history, not just a chronology of events. ${entry.summary} The opening chapters usually set the period, introduce the major actors and institutions, and make clear why the subject carries political or moral weight beyond the immediate timeline.`,
-      `Once that frame is established, the book starts linking incidents into an argument. ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} become the main structure through which documents, speeches, policies, movements, and individual decisions are turned into a coherent explanation of the past.`,
+      `Once that frame is established, the book starts linking incidents into an argument. ${first}, ${second}, and ${third} become the main structure through which documents, speeches, policies, movements, and individual decisions are turned into a coherent explanation of the past.`,
       `The middle of the book is where causation becomes more important than sequence. Instead of merely telling the reader what happened next, the author explains why certain pressures built up, why particular decisions were taken, and how institutions or beliefs shaped what followed.`,
       `Good historical writing also moves constantly between people and systems. Leaders matter, but so do bureaucracies, public moods, ideological habits, economic constraints, and the inherited structures that make some outcomes more likely than others.`,
-      `Later chapters usually widen the focus and show why ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} matter beyond the immediate case. The book turns a specific narrative into a larger argument about memory, responsibility, nationalism, empire, social change, or political judgment.`,
+      `Later chapters usually widen the focus and show why ${fourth} and ${fifth} matter beyond the immediate case. The book turns a specific narrative into a larger argument about memory, responsibility, nationalism, empire, social change, or political judgment.`,
       `By the end, ${entry.title} is making a claim about meaning as much as about fact. It tells the reader not only what happened, but what ought to be understood about the period, why the subject still matters, and how that past continues to shape the present.`
     ];
   }
@@ -473,9 +965,9 @@ function getDetailedSummary(entry) {
     return [
       `${entry.title} reads as a cultural history of taste, creativity, and social meaning. ${entry.summary} The opening normally establishes the period, setting, and institutions that shape the culture under discussion so the reader can see how art, music, food, or style are produced, ranked, and consumed.`,
       `That setting matters because culture in books like this is never just decorative. Courts, cities, workshops, salons, religious spaces, theaters, restaurants, and patrons all determine what counts as refinement, prestige, authenticity, or excellence.`,
-      `As the discussion expands, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} become the main way the book explains how works and practices take on meaning. Style is tied to status, ritual, identity, labor, craft, and historical change rather than treated as an isolated aesthetic object.`,
+      `As the discussion expands, ${first}, ${second}, and ${third} become the main way the book explains how works and practices take on meaning. Style is tied to status, ritual, identity, labor, craft, and historical change rather than treated as an isolated aesthetic object.`,
       `The middle chapters usually become strongest when they focus on examples: specific buildings, performances, menus, artworks, or habits of taste that reveal a whole social world. Concrete cases show how beauty, pleasure, authority, and discipline get embodied in everyday cultural forms.`,
-      `Later sections often shift from description to legacy and show why ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} continue to matter. The subject becomes a way of thinking about heritage, memory, aspiration, creativity, and the public display of values.`,
+      `Later sections often shift from description to legacy and show why ${fourth} and ${fifth} continue to matter. The subject becomes a way of thinking about heritage, memory, aspiration, creativity, and the public display of values.`,
       `By the end, ${entry.title} teaches the reader to interpret culture historically. Its larger claim is that artistic or everyday forms are never only personal preferences; they store power, hierarchy, identity, and collective memory.`
     ];
   }
@@ -484,9 +976,9 @@ function getDetailedSummary(entry) {
     return [
       `${entry.title} studies conflict as a problem of leadership, organization, and judgment rather than as a simple sequence of fights. ${entry.summary} The opening usually explains the political setting, the rival powers involved, and the pressures that make confrontation seem inevitable.`,
       `Very quickly, the book establishes what is really at stake: territory, legitimacy, survival, revenge, prestige, imperial power, or the maintenance of order. Those stakes give the campaigns and battles their meaning.`,
-      `In the central movement, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} shape the major turning points. The book usually shows that outcomes depend on planning, morale, intelligence, timing, terrain, logistics, alliances, and command discipline as much as on raw force.`,
+      `In the central movement, ${first}, ${second}, and ${third} shape the major turning points. The book usually shows that outcomes depend on planning, morale, intelligence, timing, terrain, logistics, alliances, and command discipline as much as on raw force.`,
       `The middle chapters often reveal deeper patterns underneath the action. Individual decisions matter, but so do political structures, institutional habits, fear, ambition, and the quality of leadership under pressure.`,
-      `Later sections widen the lens and show why ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} matter beyond the battlefield itself. Military events become part of a larger argument about kingship, empire, state power, social order, memory, or strategic thought.`,
+      `Later sections widen the lens and show why ${fourth} and ${fifth} matter beyond the battlefield itself. Military events become part of a larger argument about kingship, empire, state power, social order, memory, or strategic thought.`,
       `By the end, ${entry.title} is explaining what conflict teaches about power and judgment. Its lasting value comes from the kind of leadership it rewards, the mistakes it exposes, and the way it connects victory or defeat to larger political and human realities.`
     ];
   }
@@ -495,9 +987,9 @@ function getDetailedSummary(entry) {
     return [
       `${intro} The opening establishes the dramatic situation, the central relationships, and the emotional pressure that gives the first scenes their force. Conflict is usually present from the start, even before it has fully expanded into tragedy, revelation, or collapse.`,
       `Early speeches, confrontations, and symbolic details matter because they reveal motive and expose the values at stake. In poetry and drama, the language is never separate from the action; it is one of the main ways the work tells the audience what kind of world they are in.`,
-      `As the work develops, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} intensify through conflict, misunderstanding, hesitation, temptation, or moral weakness. The pressure builds through scenes and reversals rather than through simple plot summary.`,
+      `As the work develops, ${first}, ${second}, and ${third} intensify through conflict, misunderstanding, hesitation, temptation, or moral weakness. The pressure builds through scenes and reversals rather than through simple plot summary.`,
       `The middle of the work often deepens the meaning through imagery, repetition, irony, contrast, and tonal change. These formal choices make the emotional movement feel inevitable and give the drama its interpretive weight.`,
-      `By the final movement, ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} come fully into view through recognition, reversal, catastrophe, or hard-won understanding. The ending does not just close the story; it reveals what the conflict has really been about.`,
+      `By the final movement, ${fourth} and ${fifth} come fully into view through recognition, reversal, catastrophe, or hard-won understanding. The ending does not just close the story; it reveals what the conflict has really been about.`,
       `That is why the work endures. ${entry.title} leaves the reader or audience with a sharpened sense of power, guilt, love, ambition, identity, fate, or human weakness, and its form makes those insights feel heavier than paraphrase alone can capture.`
     ];
   }
@@ -506,9 +998,9 @@ function getDetailedSummary(entry) {
     return [
       `${intro} The opening sets the larger journey, quest, or ordeal in motion and establishes the world through which the characters will be tested. Stakes are usually defined early through exile, danger, prophecy, loyalty, inheritance, or the threat of disorder.`,
       `The first encounters matter because they establish the story's moral direction. Companions, promises, enemies, sacred obligations, or family ties give the later episodes their meaning and make the adventure feel like more than movement from one obstacle to another.`,
-      `As the narrative unfolds, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} organize the main trials. Each test reveals something about courage, endurance, leadership, loyalty, cunning, or the cost of pursuing a larger purpose.`,
+      `As the narrative unfolds, ${first}, ${second}, and ${third} organize the main trials. Each test reveals something about courage, endurance, leadership, loyalty, cunning, or the cost of pursuing a larger purpose.`,
       `The middle of the work usually becomes richer as the setting expands. Landscapes, monsters, rival peoples, rituals, magical forces, or dangerous choices turn the journey into a map of the world's order and disorder.`,
-      `By the final movement, ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} show what the journey has actually achieved. The ending clarifies whether the hero has merely survived, restored something, discovered an identity, or learned what kind of power can be carried without corruption.`,
+      `By the final movement, ${fourth} and ${fifth} show what the journey has actually achieved. The ending clarifies whether the hero has merely survived, restored something, discovered an identity, or learned what kind of power can be carried without corruption.`,
       `That larger meaning is why these books last. ${entry.title} finally speaks about courage, belonging, destiny, leadership, and moral endurance, using adventure to ask what kind of person can move through danger without losing the center of the self.`
     ];
   }
@@ -517,9 +1009,9 @@ function getDetailedSummary(entry) {
     return [
       `${intro} The opening establishes an imagined system with its own rules, technologies, institutions, and methods of control. In books like this, the world is part of the argument: the setting itself shows what the author thinks becomes dangerous when power, knowledge, or innovation take a particular shape.`,
       `Early chapters usually show how ordinary life is disciplined by that system. Thought, memory, language, work, desire, status, and social routine are shaped so that control feels normal before the main conflict fully emerges.`,
-      `As the story develops, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} become the main pressure points through which the book tests its own world. Individual decisions matter because they expose the moral logic hidden inside the larger system.`,
+      `As the story develops, ${first}, ${second}, and ${third} become the main pressure points through which the book tests its own world. Individual decisions matter because they expose the moral logic hidden inside the larger system.`,
       `The middle of the work usually sharpens the warning by revealing that what first looked efficient, rational, or progressive is also manipulative, dehumanizing, or spiritually empty. The book's critique becomes clearer as the costs of the system become harder to ignore.`,
-      `By the end, ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} make the larger message unmistakable. The fate of the characters shows what the imagined society believes about truth, freedom, conformity, resistance, or the future of human life.`,
+      `By the end, ${fourth} and ${fifth} make the larger message unmistakable. The fate of the characters shows what the imagined society believes about truth, freedom, conformity, resistance, or the future of human life.`,
       `That is what gives the story its force beyond its plot. ${entry.title} uses an invented world to push recognizable fears in the real one into clearer focus, turning fiction into a warning about politics, technology, language, culture, or human behavior.`
     ];
   }
@@ -528,9 +1020,9 @@ function getDetailedSummary(entry) {
     return [
       `${intro} The opening establishes dread, instability, or mystery long before the full threat is visible. In gothic and horror fiction, atmosphere is part of the substance of the book because fear changes how space, time, and even ordinary perception are experienced.`,
       `Very early on, the story usually introduces a place, obsession, absence, secret, or invading force that disturbs the emotional order of the world. That disturbance sets the tone and makes the reader feel that reality itself has become unreliable or contaminated.`,
-      `As the plot deepens, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} intensify through isolation, secrecy, temptation, obsession, bodily threat, or psychic pressure. The fear becomes a way of uncovering what characters cannot master or safely admit.`,
+      `As the plot deepens, ${first}, ${second}, and ${third} intensify through isolation, secrecy, temptation, obsession, bodily threat, or psychic pressure. The fear becomes a way of uncovering what characters cannot master or safely admit.`,
       `The middle of the work often reveals that the horror is social or psychological as much as physical. Questions of guilt, repression, desire, power, corruption, identity, and forbidden knowledge start to emerge beneath the immediate danger.`,
-      `By the ending, ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} explain why the fear mattered in the first place. The final events usually expose a larger argument about moral weakness, collapse, vulnerability, or the thinness of civilized control.`,
+      `By the ending, ${fourth} and ${fifth} explain why the fear mattered in the first place. The final events usually expose a larger argument about moral weakness, collapse, vulnerability, or the thinness of civilized control.`,
       `That deeper pressure is why the book lingers. ${entry.title} turns fear into meaning by showing what happens when the mind, the body, the home, or the social order can no longer keep darkness at a distance.`
     ];
   }
@@ -538,10 +1030,10 @@ function getDetailedSummary(entry) {
    if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
     return [
       `${entry.title} is organized around explanation, interpretation, and the gradual development of a central claim. ${entry.summary} The opening usually frames the main puzzle clearly and explains why the topic matters before moving into evidence or case material.`,
-      `Once that question is in place, the book builds its argument by linking ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} through examples, case studies, comparisons, or historical episodes. Each section adds another layer to the explanation rather than simply repeating the headline idea.`,
+      `Once that question is in place, the book builds its argument by linking ${first}, ${second}, and ${third} through examples, case studies, comparisons, or historical episodes. Each section adds another layer to the explanation rather than simply repeating the headline idea.`,
       `The middle of the work is usually where the method becomes clearest. Facts are not left sitting on the page by themselves; they are interpreted so the reader can see patterns, hidden mechanisms, or mistaken assumptions that were easy to miss at first.`,
       `This is what gives the book its intellectual shape. The author moves from illustration to interpretation, showing not only what happened or what exists, but what way of thinking makes the evidence meaningful.`,
-      `Later sections bring ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} into sharper focus and widen the scope of the argument. The immediate topic starts to connect to larger questions about judgment, institutions, history, behavior, science, or social life.`,
+      `Later sections bring ${fourth} and ${fifth} into sharper focus and widen the scope of the argument. The immediate topic starts to connect to larger questions about judgment, institutions, history, behavior, science, or social life.`,
       `By the end, ${entry.title} leaves the reader with a more specific claim about how the world works and how it should be interpreted. Its value lies in the habits of thought it encourages, the assumptions it challenges, and the sharper lens it gives the reader for seeing familiar things differently.`
     ];
   }
@@ -550,9 +1042,9 @@ function getDetailedSummary(entry) {
     return [
       `${entry.title} is a practical argument about how a person is supposed to change. ${entry.summary} The opening usually identifies a common weakness or confusion in the reader's life and then presents the kind of transformation the book believes is possible.`,
       `Very early, the author lays out a view of human behavior built around mindset, habit, awareness, ambition, fear, discipline, or responsibility. That model of the person gives the later advice its logic.`,
-      `As the book progresses, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} become the main principles the reader is asked to adopt. The ideas are usually arranged as a sequence or system so that one change in thought or behavior supports the next.`,
+      `As the book progresses, ${first}, ${second}, and ${third} become the main principles the reader is asked to adopt. The ideas are usually arranged as a sequence or system so that one change in thought or behavior supports the next.`,
       `The middle chapters often reinforce the message through stories, examples, contrasts, and memorable formulas. The point is not only to explain the principle, but to make it feel usable, emotionally convincing, and repeatable in ordinary life.`,
-      `Later sections bring ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} into practice and show what the transformed person is meant to look like in action: more disciplined, more effective, calmer, more responsible, more decisive, or more internally ordered.`,
+      `Later sections bring ${fourth} and ${fifth} into practice and show what the transformed person is meant to look like in action: more disciplined, more effective, calmer, more responsible, more decisive, or more internally ordered.`,
       `By the end, ${entry.title} has also revealed its deeper vision of the good life. It is not just offering tips; it is promoting a picture of character, success, and self-command that explains why the advice feels powerful to some readers and limited to others.`
     ];
   }
@@ -561,9 +1053,9 @@ function getDetailedSummary(entry) {
     return [
       `${intro} The book uses absurdity to expose the logic of a real institution or system. Its opening usually presents a world that is already irrational, morally compromised, or bureaucratically distorted, so the reader can feel the target of the satire from the start.`,
       `Because the setting is already warped, ordinary actions begin to look revealing. Rules cancel each other out, authority becomes self-protective, and language starts to hide reality instead of describing it.`,
-      `As the story develops, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} intensify through repetition, contradiction, and comic escalation. The humor does not soften the critique; it makes the disorder impossible to ignore.`,
+      `As the story develops, ${first}, ${second}, and ${third} intensify through repetition, contradiction, and comic escalation. The humor does not soften the critique; it makes the disorder impossible to ignore.`,
       `The middle sections are usually where the satire becomes most damaging. Ridiculous episodes show how institutions keep working even when everyone inside them can see that the logic is cruel, stupid, or empty.`,
-      `By the end, ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} reveal what remains after the official slogans and polite justifications have been stripped away. The plot resolves, but it also leaves the system morally exposed.`,
+      `By the end, ${fourth} and ${fifth} reveal what remains after the official slogans and polite justifications have been stripped away. The plot resolves, but it also leaves the system morally exposed.`,
       `That is the book's lasting force. ${entry.title} uses laughter, shock, and exaggeration to reveal truths about war, bureaucracy, power, survival, or moral compromise that would sound flatter in direct argument alone.`
     ];
   }
@@ -571,190 +1063,222 @@ function getDetailedSummary(entry) {
   return [
     `${intro} The opening establishes the main characters or subjects, the social setting, and the first pressure shaping the book. Those early pages matter because they define the conflict, desire, or question that will organize everything that follows.`,
     `Once that foundation is in place, the work begins building its deeper meaning through scene, argument, or example. What first looks simple usually starts to widen into a more serious claim about relationships, identity, morality, memory, or power.`,
-    `As the book develops, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} become the main pattern through which its meaning unfolds. Turning points matter because they show how those forces change the direction of the story or the argument.`,
+    `As the book develops, ${first}, ${second}, and ${third} become the main pattern through which its meaning unfolds. Turning points matter because they show how those forces change the direction of the story or the argument.`,
     `The middle sections often reveal what is hidden underneath the surface: motives, tensions, mistaken assumptions, or consequences that were only partly visible at the beginning. Pressure makes the deeper structure of the work easier to see.`,
-    `By the later stages, ${lowerFirst(fourth || first)} and ${lowerFirst(fifth || second)} bring the central meaning into sharper focus. The ending gains force because it gathers the earlier material into a clearer judgment about what has been won, lost, exposed, or finally understood.`,
+    `By the later stages, ${fourth} and ${fifth} bring the central meaning into sharper focus. The ending gains force because it gathers the earlier material into a clearer judgment about what has been won, lost, exposed, or finally understood.`,
     `That final movement is what gives ${entry.title} its larger significance. The book ends up saying something broader about society, belief, desire, identity, memory, or human nature, which is why it remains worth reading as more than a bare plot or summary.`
   ];
 }
 
 function getExpandedSummaryNotes(entry) {
-  const [first, second, third, fourth, fifth] = entry.topics;
+  const { first, second, third, fourth, fifth } = getTopicSet(entry);
 
   if (entry.category.includes('Manifestos & Politics')) {
     return [
-      `The argument gains force through rhetoric as much as through evidence. Repetition, blame, certainty, urgency, and dramatic simplification make ${lowerFirst(first)} and ${lowerFirst(second)} feel not merely plausible, but historically necessary.`,
-      `The book is often just as revealing in what it excludes. The treatment of ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} can show where the worldview becomes selective, distorted, or dangerous.`
+      `The argument gains force through rhetoric as much as through evidence. Repetition, blame, certainty, urgency, and dramatic simplification make ${first} and ${second} feel not merely plausible, but historically necessary.`,
+      `The book is often just as revealing in what it excludes. The treatment of ${third}, ${fourth}, and ${fifth} can show where the worldview becomes selective, distorted, or dangerous.`
     ];
   }
 
   if (entry.category.includes('Religion & Philosophy')) {
     return [
-      `These works also shape the reader through posture as much as through doctrine. Contemplation, obedience, recollection, dialogue, repetition, or mythic imagination can all be part of how ${lowerFirst(first)} and ${lowerFirst(second)} are supposed to enter the reader's life.`,
-      `Difficulty is usually central rather than accidental. Suffering, failure, temptation, duty, and moral struggle are often the conditions through which ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} become spiritually or philosophically real.`
+      `These works also shape the reader through posture as much as through doctrine. Contemplation, obedience, recollection, dialogue, repetition, or mythic imagination can all be part of how ${first} and ${second} are supposed to enter the reader's life.`,
+      `Difficulty is usually central rather than accidental. Suffering, failure, temptation, duty, and moral struggle are often the conditions through which ${third}, ${fourth}, and ${fifth} become spiritually or philosophically real.`
+    ];
+  }
+
+  if (isLiteraryCategory(entry)) {
+    return [
+      `Novels like this do their real work through accumulation. Gesture, dialogue, silence, setting, and recurring symbols can make ${first} and ${second} more revealing than any single plot event.`,
+      `The ending usually reinterprets what came before. The treatment of ${third}, ${fourth}, and ${fifth} shows whether the book finally leans toward irony, pity, reconciliation, indictment, or tragic exposure.`
     ];
   }
 
   if (entry.category.includes('Modern History')) {
     return [
-      `The strongest history books move between individual actors and larger structures without letting either level dominate. That movement is especially important when ${lowerFirst(first)} and ${lowerFirst(second)} could otherwise be reduced to a few famous names or dates.`,
-      `They are also arguments about memory. The treatment of ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} shows how the author wants later readers to interpret the past, not merely remember it.`
+      `The strongest history books move between individual actors and larger structures without letting either level dominate. That movement is especially important when ${first} and ${second} could otherwise be reduced to a few famous names or dates.`,
+      `They are also arguments about memory. The treatment of ${third}, ${fourth}, and ${fifth} shows how the author wants later readers to interpret the past, not merely remember it.`
     ];
   }
 
   if (entry.category.includes('Art, Music & Culture')) {
     return [
-      `Books in this category are strongest when they keep moving between the object and the world around it. Buildings, artworks, performances, and traditions matter because ${lowerFirst(first)} and ${lowerFirst(second)} are always tied to patrons, audiences, institutions, and everyday habits of taste.`,
-      `By the end, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} usually become part of a broader lesson in how culture stores identity, hierarchy, memory, and power.`
+      `Books in this category are strongest when they keep moving between the object and the world around it. Buildings, artworks, performances, and traditions matter because ${first} and ${second} are always tied to patrons, audiences, institutions, and everyday habits of taste.`,
+      `By the end, ${third}, ${fourth}, and ${fifth} usually become part of a broader lesson in how culture stores identity, hierarchy, memory, and power.`
     ];
   }
 
   if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
     return [
-      `The real substance of these books often lies in the link between immediate action and long-term structure. Battles matter, but command, logistics, morale, fear, and political purpose are what give ${lowerFirst(first)} and ${lowerFirst(second)} their explanatory depth.`,
-      `They also reveal what kind of judgment the author respects. The treatment of ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} usually shows whether the book values patience, adaptability, deception, audacity, moral authority, or ruthless efficiency.`
+      `The real substance of these books often lies in the link between immediate action and long-term structure. Battles matter, but command, logistics, morale, fear, and political purpose are what give ${first} and ${second} their explanatory depth.`,
+      `They also reveal what kind of judgment the author respects. The treatment of ${third}, ${fourth}, and ${fifth} usually shows whether the book values patience, adaptability, deception, audacity, moral authority, or ruthless efficiency.`
     ];
   }
 
   if (entry.category.includes('Poetry & Drama')) {
     return [
-      `In literary works like these, language carries meaning as heavily as plot. Metaphor, rhythm, recurring images, speeches, pauses, and reversals give ${lowerFirst(first)} and ${lowerFirst(second)} their emotional and interpretive force.`,
-      `By the final scenes or closing lines, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} usually feel intensified or tragically clarified, which is why the ending lands with more force than a simple summary can convey.`
+      `In literary works like these, language carries meaning as heavily as plot. Metaphor, rhythm, recurring images, speeches, pauses, and reversals give ${first} and ${second} their emotional and interpretive force.`,
+      `By the final scenes or closing lines, ${third}, ${fourth}, and ${fifth} usually feel intensified or tragically clarified, which is why the ending lands with more force than a simple summary can convey.`
     ];
   }
 
   if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
     return [
-      `The worlds in these books are rarely random backdrops. Roads, seas, monsters, rival peoples, sacred places, and trials help explain what kind of order or disorder the hero is moving through, giving ${lowerFirst(first)} and ${lowerFirst(second)} a larger symbolic weight.`,
-      `The journey is also a test of maturity. By the end, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} usually reveal whether the hero has merely survived or has actually learned something about duty, identity, fate, belonging, or leadership.`
+      `The worlds in these books are rarely random backdrops. Roads, seas, monsters, rival peoples, sacred places, and trials help explain what kind of order or disorder the hero is moving through, giving ${first} and ${second} a larger symbolic weight.`,
+      `The journey is also a test of maturity. By the end, ${third}, ${fourth}, and ${fifth} usually reveal whether the hero has merely survived or has actually learned something about duty, identity, fate, belonging, or leadership.`
     ];
   }
 
   if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
     return [
-      `A key part of the book's argument is usually how the imagined system reproduces itself. Rules, technologies, routines, myths, and incentives make distortion feel normal, which is where ${lowerFirst(first)} and ${lowerFirst(second)} become especially revealing.`,
-      `The warning also becomes sharper when it is named precisely. ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} usually point back toward dangers that already exist in real politics, culture, technology, or human behavior.`
+      `A key part of the book's argument is usually how the imagined system reproduces itself. Rules, technologies, routines, myths, and incentives make distortion feel normal, which is where ${first} and ${second} become especially revealing.`,
+      `The warning also becomes sharper when it is named precisely. ${third}, ${fourth}, and ${fifth} usually point back toward dangers that already exist in real politics, culture, technology, or human behavior.`
     ];
   }
 
   if (entry.category.includes('Gothic & Horror')) {
     return [
-      `The fear in these books usually has a shape and an argument behind it. Settings, secrets, bodies, doubles, voices, and forbidden knowledge make ${lowerFirst(first)} and ${lowerFirst(second)} mean more than simple atmosphere.`,
-      `The ending often refuses total closure, which is part of the effect. ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} usually remain unsettled even after the final event, and that lingering pressure is what makes the work continue to haunt the reader.`
+      `The fear in these books usually has a shape and an argument behind it. Settings, secrets, bodies, doubles, voices, and forbidden knowledge make ${first} and ${second} mean more than simple atmosphere.`,
+      `The ending often refuses total closure, which is part of the effect. ${third}, ${fourth}, and ${fifth} usually remain unsettled even after the final event, and that lingering pressure is what makes the work continue to haunt the reader.`
     ];
   }
 
   if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
     return [
-      `The force of good nonfiction lies in the movement of the argument, not just the final claim. Questions, examples, distinctions, and reinterpretations are what make ${lowerFirst(first)} and ${lowerFirst(second)} persuasive rather than merely asserted.`,
-      `These books also train habits of mind. The treatment of ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} usually shows whether the author is cultivating skepticism, curiosity, historical awareness, clearer reasoning, or a new way of interpreting familiar evidence.`
+      `The force of good nonfiction lies in the movement of the argument, not just the final claim. Questions, examples, distinctions, and reinterpretations are what make ${first} and ${second} persuasive rather than merely asserted.`,
+      `These books also train habits of mind. The treatment of ${third}, ${fourth}, and ${fifth} usually shows whether the author is cultivating skepticism, curiosity, historical awareness, clearer reasoning, or a new way of interpreting familiar evidence.`
     ];
   }
 
   if (entry.category.includes('Self-Development')) {
     return [
-      `Advice books usually rest on an implicit theory of the person. ${lowerFirst(first)} and ${lowerFirst(second)} become clearer once they are seen as parts of a larger view of weakness, motivation, discipline, and personal agency.`,
-      `The later sections also show how the book translates principle into practice. ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} reveal whether the advice is concrete, demanding, flexible, idealistic, or repetitive.`
+      `Advice books usually rest on an implicit theory of the person. ${first} and ${second} become clearer once they are seen as parts of a larger view of weakness, motivation, discipline, and personal agency.`,
+      `The later sections also show how the book translates principle into practice. ${third}, ${fourth}, and ${fifth} reveal whether the advice is concrete, demanding, flexible, idealistic, or repetitive.`
     ];
   }
 
   if (entry.category.includes('War & Satire')) {
     return [
-      `Satire works here through tone as much as through event. Repetition, contradiction, deadpan description, circular logic, and absurd escalation expose the emptiness of institutions more effectively than direct denunciation, which is why ${lowerFirst(first)} and ${lowerFirst(second)} cannot be separated from the book's style.`,
-      `The ending usually leaves unease rather than comfort. ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} reveal what people have learned to accept as normal, and that normalization is often the book's deepest target.`
+      `Satire works here through tone as much as through event. Repetition, contradiction, deadpan description, circular logic, and absurd escalation expose the emptiness of institutions more effectively than direct denunciation, which is why ${first} and ${second} cannot be separated from the book's style.`,
+      `The ending usually leaves unease rather than comfort. ${third}, ${fourth}, and ${fifth} reveal what people have learned to accept as normal, and that normalization is often the book's deepest target.`
     ];
   }
 
   return [
-    `Method still matters in the background of the summary. Point of view, structure, contrast, repetition, and the arrangement of scenes or examples shape how ${lowerFirst(first)} and ${lowerFirst(second)} are actually felt by the reader.`,
-    `The ending also changes the meaning of what came before. Whether the work closes with victory, loss, uncertainty, or reflection, ${lowerFirst(third)}, ${lowerFirst(fourth || first)}, and ${lowerFirst(fifth || second)} help explain what the final pages want the reader to understand more deeply.`
+    `Method still matters in the background of the summary. Point of view, structure, contrast, repetition, and the arrangement of scenes or examples shape how ${first} and ${second} are actually felt by the reader.`,
+    `The ending also changes the meaning of what came before. Whether the work closes with victory, loss, uncertainty, or reflection, ${third}, ${fourth}, and ${fifth} help explain what the final pages want the reader to understand more deeply.`
   ];
 }
 
 function getBluntConclusion(entry) {
-  const [first, second, third] = entry.topics;
-
-  if (entry.slug === 'the-great-gatsby') {
-    return [
-      `Bluntly, The Great Gatsby says almost everybody here is full of shit: old money, new money, and the hustlers hanging around the edges, all of them dressing up insecurity with houses, cars, parties, and polished manners. Gatsby can build the mansion, invent the persona, and throw the perfect show, but he still cannot turn Daisy into the dream in his head, and after all that sad striving he ends up dead while the careless people keep moving. If you want the casual takeaway, it is that money and status are never just about head knowledge; they are mostly behavior, vanity, fantasy, and the stories people tell to hide what they lack.`
-    ];
+  const bespoke = bespokeTldrs[entry.slug];
+  if (bespoke) {
+    return bespoke;
   }
 
-  if (entry.category.includes('Manifestos & Politics')) {
-    return [
-      `Bluntly, books like this are often what happens when grievance, ego, and certainty get dressed up as destiny. Strip away the grand language and ${entry.title} usually comes down to somebody insisting that ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} justify power, blame, or control.`
-    ];
-  }
+  const seed = getSlugSeed(entry.slug);
+  const { first, second, third, fourth, fifth } = getTopicSet(entry);
+  const cleanedSummary = trimEndingPunctuation(entry.summary || `${entry.title} matters`);
+  const tldrLead = getTldrLead(entry, cleanedSummary);
+  const coreTopics = joinWithCommasAnd([first, second, third].filter(Boolean));
+
+  const opener = pickVariant(seed, [
+    `Bluntly, ${tldrLead}. The part that gives it teeth is ${coreTopics}.`,
+    `At bottom, ${tldrLead}. What keeps it from reading like a generic blurb is ${first} running straight into ${second} and ${third}.`,
+    `The short version: ${tldrLead}. It works because ${first}, ${second}, and ${third} are not decorative topics here; they drive the whole book.`,
+    `Stripped down, ${tldrLead}. Its real engine is the pressure between ${first}, ${second}, and ${third}.`,
+    `Forget the packaging for a second: ${tldrLead}. ${first}, ${second}, and ${third} are where it stops being broad and starts being specific.`
+  ]);
+
+  let closer;
 
   if (entry.category.includes('Religion & Philosophy')) {
-    return [
-      `Bluntly, big spiritual or philosophical books keep asking one awkward question: are you actually going to live differently, or are you just collecting noble sentences that make you feel wise for five minutes? ${entry.title} matters because it pushes ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} out of the abstract and into the problem of how a person really lives.`
-    ];
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are not decorative spirituality; they are the part where the text tells you what obedience, discipline, awakening, or right order should actually look like.`,
+      `That is why ${fourth} and ${fifth} carry so much weight: they turn sacred language into a demanded posture of life, not just a mood.`,
+      `The real test arrives with ${fourth} and ${fifth}, because that is where the book stops sounding wise and starts asking what it wants from your conduct.`
+    ]);
+  } else if (isLiteraryCategory(entry)) {
+    closer = pickVariant(seed + 1, [
+      `That is why ${fourth} and ${fifth} do real damage: they turn the book’s ideas into betrayal, class pressure, guilt, memory, or loss that actual people have to live through.`,
+      `That is why ${fourth} and ${fifth} matter more than the “themes” list: they show where the novel cashes its moral argument out in human wreckage.`,
+      `The sting is in ${fourth} and ${fifth}, because that is where private feeling hardens into consequence instead of staying literary atmosphere.`
+    ]);
+  } else if (entry.category.includes('Modern History')) {
+    closer = pickVariant(seed + 1, [
+      `That is why ${fourth} and ${fifth} are the part to watch: they show who made the decisions, who paid for them, and what later memory tries to excuse or bury.`,
+      `${fourth} and ${fifth} keep the book honest, because they force the story out of broad inevitability and back onto judgment, responsibility, and aftermath.`,
+      `The payoff is in ${fourth} and ${fifth}: that is where the author stops reciting events and starts telling you what kind of failure, myth, or warning the period really was.`
+    ]);
+  } else if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are where the book tells you who actually had judgment, who mistook force for wisdom, and why the cost kept widening.`,
+      `That is why ${fourth} and ${fifth} matter: they reveal the command decisions, blind spots, and political stakes that make conflict more than bodies colliding.`,
+      `The hard lesson usually sits in ${fourth} and ${fifth}, where planning, morale, or leadership either hold together or collapse under pressure.`
+    ]);
+  } else if (entry.category.includes('Poetry & Drama')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are where the language starts cutting deepest, because image, rhythm, and speech turn the conflict into something harsher than plot summary can hold.`,
+      `The real blow lands with ${fourth} and ${fifth}, where the play or poem stops stating its pressure and starts sounding it.`,
+      `That is why ${fourth} and ${fifth} linger: they show how the form sharpens the judgment instead of merely carrying it.`
+    ]);
+  } else if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are what keep the journey from being scenery, because they show what the road is testing and what kind of person comes out the other side.`,
+      `The book earns its scale through ${fourth} and ${fifth}, where ordeal turns into judgment about loyalty, fate, belonging, or leadership.`,
+      `That is where the story stops being movement and becomes transformation: ${fourth} and ${fifth} show what survival cost and what it taught.`
+    ]);
+  } else if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are where the mechanism shows itself: how the system keeps reproducing itself and what it costs the people trapped inside it.`,
+      `That is why ${fourth} and ${fifth} matter: they reveal whether the nightmare runs on language, code, bureaucracy, appetite, or some uglier mixture.`,
+      `The warning gets specific with ${fourth} and ${fifth}, because that is where the invented world lines up most clearly with real human bad habits.`
+    ]);
+  } else if (entry.category.includes('Gothic & Horror')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are why the fear lingers, because the monster or secret is really carrying an argument about desire, guilt, responsibility, or corruption.`,
+      `The haunting part is ${fourth} and ${fifth}; that is where the horror stops being atmosphere and starts exposing what the book thinks is rotten.`,
+      `That is why ${entry.title} sticks: ${fourth} and ${fifth} keep turning dread into judgment instead of letting it stay a cheap scare.`
+    ]);
+  } else if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are where the author has to cash the argument out in real judgments instead of clever framing, which is why those sections tell you whether the book actually has teeth.`,
+      `The telling part is ${fourth} and ${fifth}, because that is where the book either survives contact with reality or collapses into TED-talk varnish.`,
+      `That is why ${fourth} and ${fifth} matter: they show how the argument handles messy evidence, tradeoffs, and the reader’s obvious objections.`
+    ]);
+  } else if (entry.category.includes('Self-Development')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are the part to test, because that is where the advice either becomes a usable discipline or dissolves into motivational wallpaper.`,
+      `The real question sits in ${fourth} and ${fifth}: can the book turn its principles into habits, or is it just another pep talk wearing a framework?`,
+      `That is where ${entry.title} earns or loses credibility: ${fourth} and ${fifth} show whether the advice can survive ordinary human weakness.`
+    ]);
+  } else if (entry.category.includes('Manifestos & Politics')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are where the program hiding inside the rhetoric becomes obvious, which is exactly why these books deserve suspicion as well as attention.`,
+      `The ugly part usually sits in ${fourth} and ${fifth}, because that is where diagnosis hardens into command, discipline, exclusion, or obedience.`,
+      `That is where the manifesto shows its real face: ${fourth} and ${fifth} turn grievance into a plan for action and a story about who must submit.`
+    ]);
+  } else if (entry.category.includes('Art, Music & Culture')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are what keep the book from turning into tasteful fog; they tie the object back to craft, ritual, patronage, power, or performance.`,
+      `The real payoff is in ${fourth} and ${fifth}, where the work stops being an isolated artifact and becomes a whole cultural system you can actually see.`,
+      `That is why ${fourth} and ${fifth} matter: they drag beauty back into institutions, materials, and habits instead of leaving it floating as prestige.`
+    ]);
+  } else if (entry.category.includes('War & Satire')) {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are where the joke curdles, because the absurdity only works once you see the bureaucracy chewing through real bodies and consciences.`,
+      `The nastiest part sits in ${fourth} and ${fifth}, where the comedy reveals what everybody has learned to call normal.`,
+      `That is why the satire lands: ${fourth} and ${fifth} stop being funny the second the human cost becomes impossible to dodge.`
+    ]);
+  } else {
+    closer = pickVariant(seed + 1, [
+      `${fourth} and ${fifth} are the giveaway: they show where the book cashes its broader ideas out in specific consequences instead of leaving them as polite abstractions.`,
+      `The real point usually sharpens around ${fourth} and ${fifth}, because that is where the book has to prove it is about more than a shelf-ready summary.`,
+      `That is where ${entry.title} stops sounding broad and starts sounding like itself: ${fourth} and ${fifth} force the final judgment into focus.`
+    ]);
   }
 
-  if (entry.category.includes('Modern History')) {
-    return [
-      `Bluntly, a lot of history is the same miserable pattern: ambitious people make huge decisions, ordinary people pay for them, and later everyone tries to rename the mess as inevitability or strategy. ${entry.title} lasts because it makes ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} look like real forces with real human costs instead of polished textbook language.`
-    ];
-  }
-
-  if (entry.category.includes('Art, Music & Culture')) {
-    return [
-      `Bluntly, half of what gets called taste is status wearing better clothes. ${entry.title} is good because it does not just admire beautiful things; it shows how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} get tied to power, prestige, and the need people have to prove they belong.`
-    ];
-  }
-
-  if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
-    return [
-      `Bluntly, war gets sold as honor, genius, and glory, but most of the time it is ego, fear, logistics, and human beings getting crushed by decisions made above them. ${entry.title} still matters because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} show what conflict looks like once the heroic slogans wear off.`
-    ];
-  }
-
-  if (entry.category.includes('Poetry & Drama')) {
-    return [
-      `Bluntly, people can speak beautifully and still wreck themselves. That is why ${entry.title} lands: beneath the style and emotion, ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} expose how pride, desire, fear, or blindness keep pushing people toward consequences they could almost see coming.`
-    ];
-  }
-
-  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
-    return [
-      `Bluntly, once you strip away the monsters, maps, and heroic speeches, these stories usually ask whether someone can actually grow up, carry responsibility, and pay the cost of what they want. ${entry.title} earns its place because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} turn the adventure into a test of character instead of empty spectacle.`
-    ];
-  }
-
-  if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
-    return [
-      `Bluntly, the gadgets may change, but the control freaks stay the same. ${entry.title} works because it shows how ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} let people dress domination up as order, progress, safety, or common sense.`
-    ];
-  }
-
-  if (entry.category.includes('Gothic & Horror')) {
-    return [
-      `Bluntly, the monster is usually not the whole problem; it just drags hidden rot into the light. ${entry.title} sticks with people because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} reveal the fear, guilt, obsession, or corruption that was already there under the surface.`
-    ];
-  }
-
-  if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
-    return [
-      `Bluntly, the world runs on systems most people never think about until something breaks. ${entry.title} is worth reading because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} stop looking like random facts and start looking like the hidden machinery underneath everyday life.`
-    ];
-  }
-
-  if (entry.category.includes('Self-Development')) {
-    return [
-      `Bluntly, books like this usually come down to one annoying truth: the problem is rarely that people need a little more information; it is that behavior, discipline, and self-deception matter more than motivational talk. ${entry.title} works best when ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} stop being slogans and start becoming habits.`
-    ];
-  }
-
-  if (entry.category.includes('War & Satire')) {
-    return [
-      `Bluntly, a lot of institutions are insane, but they sound official enough that people keep obeying them anyway. ${entry.title} bites because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} show how absurdity becomes normal once bureaucracy, fear, and self-interest get a uniform and a script.`
-    ];
-  }
-
-  return [
-    `Bluntly, whatever the setting, people spend a lot of time dressing up insecurity, desire, fear, or pride in nicer language. ${entry.title} lasts because ${lowerFirst(first)}, ${lowerFirst(second)}, and ${lowerFirst(third)} eventually strip that performance down and show what the characters or ideas are really made of.`
-  ];
+  return [opener, closer];
 }
 
 function renderList(target, items, className) {
