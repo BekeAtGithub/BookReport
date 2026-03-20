@@ -176,28 +176,28 @@ const bespokeTldrs = {
     `Bluntly, The Great Gatsby says almost everybody here is full of shit: old money, new money, and the hustlers hanging around the edges, all of them dressing up insecurity with houses, cars, parties, and polished manners. Gatsby can build the mansion, invent the persona, and throw the perfect show, but he still cannot turn Daisy into the dream in his head, and after all that sad striving he ends up dead while the careless people keep moving.`
   ],
   'the-holy-bible': [
-    `Bluntly, The Holy Bible is not one neat slogan but a huge running drama about creation, covenant, rebellion, judgment, mercy, suffering, and redemption. It keeps returning to the same hard point: human beings wreck things constantly, and the real question is whether they can be judged, forgiven, reshaped, or saved.`
+    `The Holy Bible is not one neat slogan but a huge running drama about creation, covenant, rebellion, judgment, mercy, suffering, and redemption. It keeps returning to the same hard point: human beings wreck things constantly, and the real question is whether they can be judged, forgiven, reshaped, or saved.`
   ],
   'torah': [
-    `Bluntly, the Torah is the foundation layer: origins, patriarchs, Egypt, Moses, Sinai, law, wilderness, and the formation of Israel as a people under covenant. It is not just spiritual uplift. It is memory, law, identity, and obligation fused together.`
+    `The Torah is the foundation layer: origins, patriarchs, Egypt, Moses, Sinai, law, wilderness, and the formation of Israel as a people under covenant. It is not just spiritual uplift. It is memory, law, identity, and obligation fused together.`
   ],
   'tanakh': [
-    `Bluntly, the Tanakh takes that Torah foundation and shows what happens when a people actually tries to live under it: conquest, judges, kings, prophetic warning, collapse, exile, poetry, wisdom, and stubborn hope. If the Torah is the charter, the Tanakh is the full civilizational story plus the voices that keep judging it.`
+    `The Tanakh takes that Torah foundation and shows what happens when a people actually tries to live under it: conquest, judges, kings, prophetic warning, collapse, exile, poetry, wisdom, and stubborn hope. If the Torah is the charter, the Tanakh is the full civilizational story plus the voices that keep judging it.`
   ],
   'talmud': [
-    `Bluntly, the Talmud is what happens when a civilization refuses to let law stay simple. It is argument, interpretation, precedent, disagreement, and practical reasoning on an enormous scale. The point is not smooth inspiration. The point is disciplined thought about how to live.`
+    `The Talmud is what happens when a civilization refuses to let law stay simple. It is argument, interpretation, precedent, disagreement, and practical reasoning on an enormous scale. The point is not smooth inspiration. The point is disciplined thought about how to live.`
   ],
   'the-quran': [
-    `Bluntly, the Qur’an is revelation as warning, command, recitation, and judgment: one God, earlier prophets, accountability, communal order, and the constant reminder that human beings answer for what they do.`
+    `The Qur’an comes as revelation, warning, command, and judgment: one God, earlier prophets, accountability, communal order, and the constant reminder that human beings answer for what they do.`
   ],
   'bhagavad-gita': [
-    `Bluntly, the Bhagavad Gita begins with Arjuna wanting out and Krishna refusing the easy escape. It turns battlefield panic into a hard argument about duty, detached action, devotion, knowledge, and what it means to act without being owned by fear or outcome.`
+    `The Bhagavad Gita begins with Arjuna wanting out and Krishna refusing the easy escape. It turns battlefield panic into a hard argument about duty, detached action, devotion, knowledge, and what it means to act without being owned by fear or outcome.`
   ],
   'tao-te-ching': [
-    `Bluntly, the Tao Te Ching keeps saying the hard, showy, controlling approach is usually the stupid one. It praises the soft, the empty, the quiet, and the unforced, then treats restraint as smarter than domination.`
+    `The Tao Te Ching keeps saying the hard, showy, controlling approach is usually the stupid one. It praises the soft, the empty, the quiet, and the unforced, then treats restraint as smarter than domination.`
   ],
   'dhammapada': [
-    `Bluntly, the Dhammapada says your mind is building your life whether you notice it or not. Craving, anger, negligence, and ego manufacture suffering; discipline, clarity, compassion, and detachment are the way out.`
+    `The Dhammapada is brutally simple about the source of suffering: your mind is building your life whether you notice it or not. Craving, anger, negligence, and ego manufacture suffering; discipline, clarity, compassion, and detachment are the way out.`
   ],
   'the-guns-of-august': [
     `Bluntly, The Guns of August shows how Europe blundered into industrial slaughter because prestige, mobilization timetables, political vanity, and bad assumptions beat common sense. Its power comes from making the opening of World War I feel less like destiny and more like a chain reaction of elite stupidity with catastrophic consequences.`
@@ -245,12 +245,216 @@ function lowerLeadingArticle(text) {
     : trimmed;
 }
 
+function ensureSentence(text) {
+  const trimmed = (text || '').trim();
+  if (!trimmed) return '';
+  return /[.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`;
+}
+
 function getTldrLead(entry, cleanedSummary) {
-  if (!cleanedSummary) return `${entry.title} matters`;
+  if (!cleanedSummary) return `${entry.title} matters.`;
   if (/^(A|An|The)\b/.test(cleanedSummary)) {
-    return `${entry.title} is ${lowerLeadingArticle(cleanedSummary)}`;
+    return `${entry.title} is ${lowerLeadingArticle(cleanedSummary)}.`;
   }
-  return `${entry.title}: ${cleanedSummary}`;
+  return ensureSentence(cleanedSummary);
+}
+
+function getTldrMode(entry) {
+  if (entry.category.includes('Manifestos & Politics')) return 'argument';
+  if (entry.category.includes('Religion & Philosophy')) return 'scripture';
+  if (entry.category.includes('Modern History') || entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) return 'history';
+  if (entry.category.includes('Self-Development') || entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) return 'nonfiction';
+  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) return 'journey';
+  if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) return 'speculative';
+  if (entry.category.includes('Gothic & Horror')) return 'horror';
+  if (entry.category.includes('Poetry & Drama')) return 'drama';
+  if (entry.category.includes('War & Satire')) return 'satire';
+  return 'narrative';
+}
+
+function getTldrFocusSentence(entry, mode, topics, seed) {
+  const [first, second, third] = topics;
+  const trio = joinWithCommasAnd(topics.filter(Boolean));
+
+  if (mode === 'argument') {
+    return pickVariant(seed, [
+      `${trio} are the machinery of the case, not decorative side topics.`,
+      `If you want the book in concrete terms, start with ${first}, then watch ${second} and ${third} lock the worldview into place.`,
+      `The real pressure sits in ${trio}, because that is where the rhetoric turns into a program.`,
+      `${first}, ${second}, and ${third} are how the book tries to make its picture of power and conflict feel unavoidable.`
+    ]);
+  }
+
+  if (mode === 'scripture') {
+    return pickVariant(seed, [
+      `${first}, ${second}, and ${third} are the parts that tell you what sort of life, devotion, or discipline the text is trying to form.`,
+      `Its center of gravity is ${trio}, because that is where the teaching stops floating and becomes concrete.`,
+      `If you want more than pious fog, stay with ${first}, ${second}, and ${third}; that is where the text makes its demands clear.`,
+      `${trio} are the pressure points that reveal what the book thinks obedience, wisdom, or awakening should actually look like.`
+    ]);
+  }
+
+  if (mode === 'history') {
+    return pickVariant(seed, [
+      `${first}, ${second}, and ${third} are what keep the story anchored in decisions, actors, and consequences instead of vague historical weather.`,
+      `The history gets concrete through ${trio}, not through empty talk about “forces.”`,
+      `If the book has real bite, it is because ${first}, ${second}, and ${third} keep dragging the period back to actual choices under pressure.`,
+      `${trio} are the sequence that turns background context into a real causal chain.`
+    ]);
+  }
+
+  if (mode === 'nonfiction') {
+    return pickVariant(seed, [
+      `${first}, ${second}, and ${third} are the operating logic, not just chapter headings.`,
+      `The argument gets usable through ${trio}; that is where the book either becomes practical or stays presentation-deck fluff.`,
+      `If you strip away the branding, ${first}, ${second}, and ${third} are the moving parts doing the actual work.`,
+      `${trio} are where the author’s main claim has to start proving itself.`
+    ]);
+  }
+
+  if (mode === 'journey') {
+    return pickVariant(seed, [
+      `${first}, ${second}, and ${third} are the trials and turns that give the journey its meaning.`,
+      `The story earns its scale through ${trio}, because that is where movement turns into testing.`,
+      `If you want the book’s real backbone, it is the movement through ${first}, ${second}, and ${third}.`,
+      `${trio} are where the quest stops being scenery and starts becoming judgment.`
+    ]);
+  }
+
+  if (mode === 'speculative') {
+    return pickVariant(seed, [
+      `${first}, ${second}, and ${third} are the mechanisms that make the invented world actually work.`,
+      `The nightmare gets specific through ${trio}, not just through a generic “future bad” mood.`,
+      `If the book sticks, it is because ${first}, ${second}, and ${third} build a system you can feel operating on people.`,
+      `${trio} are where the satire, tech, or dystopian machinery becomes concrete.`
+    ]);
+  }
+
+  if (mode === 'horror') {
+    return pickVariant(seed, [
+      `${first}, ${second}, and ${third} are the rot underneath the surface.`,
+      `The dread gets real through ${trio}, because that is where fear joins guilt, obsession, or moral failure.`,
+      `If the book has claws, it is because ${first}, ${second}, and ${third} keep turning atmosphere into threat.`,
+      `${trio} are where the horror stops hiding and starts telling you what kind of corruption is in play.`
+    ]);
+  }
+
+  if (mode === 'drama') {
+    return pickVariant(seed, [
+      `${first}, ${second}, and ${third} are where speech, performance, and conflict do the real cutting.`,
+      `The force sits in ${trio}, because that is where language stops sounding ornamental and starts drawing blood.`,
+      `If you want the pressure points, they are ${first}, ${second}, and ${third}.`,
+      `${trio} are where the form sharpens the conflict instead of merely carrying it.`
+    ]);
+  }
+
+  if (mode === 'satire') {
+    return pickVariant(seed, [
+      `${first}, ${second}, and ${third} are where the joke turns into indictment.`,
+      `The comedy has teeth because ${trio} keep exposing what everybody has learned to call normal.`,
+      `If the book lands, it is because ${first}, ${second}, and ${third} make the absurdity feel bureaucratically real.`,
+      `${trio} are what turn the humor from amusement into accusation.`
+    ]);
+  }
+
+  return pickVariant(seed, [
+    `${first}, ${second}, and ${third} are where the book stops being a premise and becomes lived pressure.`,
+    `What makes it more than plot is the collision between ${first}, ${second}, and ${third}.`,
+    `The book really lives in ${trio}, not in a shelf-ready theme list.`,
+    `${trio} are the parts doing the real human and moral work.`
+  ]);
+}
+
+function getTldrVerdictSentence(entry, mode, topics, seed) {
+  const [fourth, fifth] = topics;
+
+  if (mode === 'argument') {
+    return pickVariant(seed, [
+      `${fourth} and ${fifth} are where the book stops diagnosing and tells you what it wants to justify, demand, or tear down.`,
+      `By the time you hit ${fourth} and ${fifth}, the program hiding inside the rhetoric is fully visible.`,
+      `The tell is ${fourth} together with ${fifth}; that is where worldview hardens into prescription.`,
+      `${fourth} and ${fifth} are where the pose becomes policy.`
+    ]);
+  }
+
+  if (mode === 'scripture') {
+    return pickVariant(seed, [
+      `${fourth} and ${fifth} show what the teaching finally asks of conduct, devotion, or self-command.`,
+      `By the end, ${fourth} and ${fifth} are where doctrine turns into practice, judgment, or hope.`,
+      `${fourth} and ${fifth} are the part that tells you what kind of person or community the text is trying to form.`,
+      `The real demand arrives with ${fourth} and ${fifth}, because that is where sacred language becomes a way of life.`
+    ]);
+  }
+
+  if (mode === 'history') {
+    return pickVariant(seed, [
+      `${fourth} and ${fifth} are where the judgment shows up: who chose what, who paid, and what later memory tries to do with it.`,
+      `By the time you reach ${fourth} and ${fifth}, the book is no longer just narrating events; it is assigning responsibility.`,
+      `${fourth} and ${fifth} are where the author cashes the chronology out into warning, blame, or aftermath.`,
+      `That is why ${fourth} and ${fifth} matter: they reveal what the period finally meant, not just what happened.`
+    ]);
+  }
+
+  if (mode === 'nonfiction') {
+    return pickVariant(seed, [
+      `If the book earns its keep anywhere, it is in ${fourth} and ${fifth}, where the claim has to survive contact with reality.`,
+      `${fourth} and ${fifth} are the stress test: that is where the argument either becomes usable or starts sounding like conference-room incense.`,
+      `By the time you get to ${fourth} and ${fifth}, you can tell whether the author has a framework or just a slogan.`,
+      `${fourth} and ${fifth} are where the book has to answer the obvious objections instead of waving past them.`
+    ]);
+  }
+
+  if (mode === 'journey') {
+    return pickVariant(seed, [
+      `${fourth} and ${fifth} show what the ordeal finally meant and what it cost.`,
+      `By the end, ${fourth} and ${fifth} are what turn travel or war into transformation.`,
+      `${fourth} and ${fifth} are where the journey reveals what kind of person, kingdom, or world is left standing.`,
+      `The real payoff lands in ${fourth} and ${fifth}, because that is where the quest’s judgment becomes unmistakable.`
+    ]);
+  }
+
+  if (mode === 'speculative') {
+    return pickVariant(seed, [
+      `${fourth} and ${fifth} show what the system is really doing to the people inside it.`,
+      `By the time ${fourth} and ${fifth} arrive, the invented world has stopped being clever décor and become a social diagnosis.`,
+      `${fourth} and ${fifth} are where the warning cashes out into actual control, damage, or collapse.`,
+      `That is where the book stops showing off the premise and starts exposing the trap: ${fourth} and ${fifth}.`
+    ]);
+  }
+
+  if (mode === 'horror') {
+    return pickVariant(seed, [
+      `${fourth} and ${fifth} are what keep the fear from being cheap; they tell you what the book thinks is actually rotten.`,
+      `By the time ${fourth} and ${fifth} hit, the book has made clear that the monster is carrying a judgment, not just a scare.`,
+      `${fourth} and ${fifth} are where dread turns into consequence.`,
+      `The horror really declares itself in ${fourth} and ${fifth}, because that is where terror becomes indictment.`
+    ]);
+  }
+
+  if (mode === 'drama') {
+    return pickVariant(seed, [
+      `${fourth} and ${fifth} are where the language stops announcing the pressure and starts making you feel it.`,
+      `By the end, ${fourth} and ${fifth} carry the blow that the earlier speeches have been preparing.`,
+      `${fourth} and ${fifth} are what turn the formal conflict into a final judgment.`,
+      `The last real cut usually comes through ${fourth} and ${fifth}.`
+    ]);
+  }
+
+  if (mode === 'satire') {
+    return pickVariant(seed, [
+      `${fourth} and ${fifth} are where the comedy curdles and the human damage becomes impossible to laugh off.`,
+      `By the time ${fourth} and ${fifth} show up, the joke has fully become an autopsy of normality.`,
+      `${fourth} and ${fifth} are what make the satire mean instead of merely funny.`,
+      `That is where the laughter dies: ${fourth} and ${fifth}.`
+    ]);
+  }
+
+  return pickVariant(seed, [
+    `${fourth} and ${fifth} are where the cost lands.`,
+    `By the time ${fourth} and ${fifth} arrive, the book has turned its ideas into consequence.`,
+    `${fourth} and ${fifth} are what keep the whole thing from staying abstract.`,
+    `The final judgment usually sharpens around ${fourth} and ${fifth}.`
+  ]);
 }
 
 function getTopicSet(entry) {
@@ -1179,106 +1383,12 @@ function getBluntConclusion(entry) {
   const seed = getSlugSeed(entry.slug);
   const { first, second, third, fourth, fifth } = getTopicSet(entry);
   const cleanedSummary = trimEndingPunctuation(entry.summary || `${entry.title} matters`);
-  const tldrLead = getTldrLead(entry, cleanedSummary);
-  const coreTopics = joinWithCommasAnd([first, second, third].filter(Boolean));
+  const mode = getTldrMode(entry);
+  const opener = getTldrLead(entry, cleanedSummary);
+  const focus = getTldrFocusSentence(entry, mode, [first, second, third], seed);
+  const closer = getTldrVerdictSentence(entry, mode, [fourth, fifth], seed + 1);
 
-  const opener = pickVariant(seed, [
-    `Bluntly, ${tldrLead}. The part that gives it teeth is ${coreTopics}.`,
-    `At bottom, ${tldrLead}. What keeps it from reading like a generic blurb is ${first} running straight into ${second} and ${third}.`,
-    `The short version: ${tldrLead}. It works because ${first}, ${second}, and ${third} are not decorative topics here; they drive the whole book.`,
-    `Stripped down, ${tldrLead}. Its real engine is the pressure between ${first}, ${second}, and ${third}.`,
-    `Forget the packaging for a second: ${tldrLead}. ${first}, ${second}, and ${third} are where it stops being broad and starts being specific.`
-  ]);
-
-  let closer;
-
-  if (entry.category.includes('Religion & Philosophy')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are not decorative spirituality; they are the part where the text tells you what obedience, discipline, awakening, or right order should actually look like.`,
-      `That is why ${fourth} and ${fifth} carry so much weight: they turn sacred language into a demanded posture of life, not just a mood.`,
-      `The real test arrives with ${fourth} and ${fifth}, because that is where the book stops sounding wise and starts asking what it wants from your conduct.`
-    ]);
-  } else if (isLiteraryCategory(entry)) {
-    closer = pickVariant(seed + 1, [
-      `That is why ${fourth} and ${fifth} do real damage: they turn the book’s ideas into betrayal, class pressure, guilt, memory, or loss that actual people have to live through.`,
-      `That is why ${fourth} and ${fifth} matter more than the “themes” list: they show where the novel cashes its moral argument out in human wreckage.`,
-      `The sting is in ${fourth} and ${fifth}, because that is where private feeling hardens into consequence instead of staying literary atmosphere.`
-    ]);
-  } else if (entry.category.includes('Modern History')) {
-    closer = pickVariant(seed + 1, [
-      `That is why ${fourth} and ${fifth} are the part to watch: they show who made the decisions, who paid for them, and what later memory tries to excuse or bury.`,
-      `${fourth} and ${fifth} keep the book honest, because they force the story out of broad inevitability and back onto judgment, responsibility, and aftermath.`,
-      `The payoff is in ${fourth} and ${fifth}: that is where the author stops reciting events and starts telling you what kind of failure, myth, or warning the period really was.`
-    ]);
-  } else if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are where the book tells you who actually had judgment, who mistook force for wisdom, and why the cost kept widening.`,
-      `That is why ${fourth} and ${fifth} matter: they reveal the command decisions, blind spots, and political stakes that make conflict more than bodies colliding.`,
-      `The hard lesson usually sits in ${fourth} and ${fifth}, where planning, morale, or leadership either hold together or collapse under pressure.`
-    ]);
-  } else if (entry.category.includes('Poetry & Drama')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are where the language starts cutting deepest, because image, rhythm, and speech turn the conflict into something harsher than plot summary can hold.`,
-      `The real blow lands with ${fourth} and ${fifth}, where the play or poem stops stating its pressure and starts sounding it.`,
-      `That is why ${fourth} and ${fifth} linger: they show how the form sharpens the judgment instead of merely carrying it.`
-    ]);
-  } else if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are what keep the journey from being scenery, because they show what the road is testing and what kind of person comes out the other side.`,
-      `The book earns its scale through ${fourth} and ${fifth}, where ordeal turns into judgment about loyalty, fate, belonging, or leadership.`,
-      `That is where the story stops being movement and becomes transformation: ${fourth} and ${fifth} show what survival cost and what it taught.`
-    ]);
-  } else if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are where the mechanism shows itself: how the system keeps reproducing itself and what it costs the people trapped inside it.`,
-      `That is why ${fourth} and ${fifth} matter: they reveal whether the nightmare runs on language, code, bureaucracy, appetite, or some uglier mixture.`,
-      `The warning gets specific with ${fourth} and ${fifth}, because that is where the invented world lines up most clearly with real human bad habits.`
-    ]);
-  } else if (entry.category.includes('Gothic & Horror')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are why the fear lingers, because the monster or secret is really carrying an argument about desire, guilt, responsibility, or corruption.`,
-      `The haunting part is ${fourth} and ${fifth}; that is where the horror stops being atmosphere and starts exposing what the book thinks is rotten.`,
-      `That is why ${entry.title} sticks: ${fourth} and ${fifth} keep turning dread into judgment instead of letting it stay a cheap scare.`
-    ]);
-  } else if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are where the author has to cash the argument out in real judgments instead of clever framing, which is why those sections tell you whether the book actually has teeth.`,
-      `The telling part is ${fourth} and ${fifth}, because that is where the book either survives contact with reality or collapses into TED-talk varnish.`,
-      `That is why ${fourth} and ${fifth} matter: they show how the argument handles messy evidence, tradeoffs, and the reader’s obvious objections.`
-    ]);
-  } else if (entry.category.includes('Self-Development')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are the part to test, because that is where the advice either becomes a usable discipline or dissolves into motivational wallpaper.`,
-      `The real question sits in ${fourth} and ${fifth}: can the book turn its principles into habits, or is it just another pep talk wearing a framework?`,
-      `That is where ${entry.title} earns or loses credibility: ${fourth} and ${fifth} show whether the advice can survive ordinary human weakness.`
-    ]);
-  } else if (entry.category.includes('Manifestos & Politics')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are where the program hiding inside the rhetoric becomes obvious, which is exactly why these books deserve suspicion as well as attention.`,
-      `The ugly part usually sits in ${fourth} and ${fifth}, because that is where diagnosis hardens into command, discipline, exclusion, or obedience.`,
-      `That is where the manifesto shows its real face: ${fourth} and ${fifth} turn grievance into a plan for action and a story about who must submit.`
-    ]);
-  } else if (entry.category.includes('Art, Music & Culture')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are what keep the book from turning into tasteful fog; they tie the object back to craft, ritual, patronage, power, or performance.`,
-      `The real payoff is in ${fourth} and ${fifth}, where the work stops being an isolated artifact and becomes a whole cultural system you can actually see.`,
-      `That is why ${fourth} and ${fifth} matter: they drag beauty back into institutions, materials, and habits instead of leaving it floating as prestige.`
-    ]);
-  } else if (entry.category.includes('War & Satire')) {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are where the joke curdles, because the absurdity only works once you see the bureaucracy chewing through real bodies and consciences.`,
-      `The nastiest part sits in ${fourth} and ${fifth}, where the comedy reveals what everybody has learned to call normal.`,
-      `That is why the satire lands: ${fourth} and ${fifth} stop being funny the second the human cost becomes impossible to dodge.`
-    ]);
-  } else {
-    closer = pickVariant(seed + 1, [
-      `${fourth} and ${fifth} are the giveaway: they show where the book cashes its broader ideas out in specific consequences instead of leaving them as polite abstractions.`,
-      `The real point usually sharpens around ${fourth} and ${fifth}, because that is where the book has to prove it is about more than a shelf-ready summary.`,
-      `That is where ${entry.title} stops sounding broad and starts sounding like itself: ${fourth} and ${fifth} force the final judgment into focus.`
-    ]);
-  }
-
-  return [opener, closer];
+  return [`${opener} ${focus}`, closer];
 }
 
 function renderList(target, items, className) {
