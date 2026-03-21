@@ -119,7 +119,7 @@ def build_entries(data):
         slug = book['slug']
         sections = {
             'summary': clean_items([book.get('summary', '')]),
-            'main_points': clean_items(data['bespokeKeyPoints'].get(slug)) or clean_items(book.get('topics', [])),
+            'main_points': clean_items(data['bespokeKeyPoints'].get(slug)),
             'book_report': clean_items(data['bespokeDetailedReports'].get(slug)),
             'tldr': [normalize_tldr(text) for text in clean_items(data['bespokeTldrs'].get(slug))],
         }
@@ -133,6 +133,35 @@ def build_entries(data):
             'has_bespoke_tldr': bool(sections['tldr']),
         })
     return entries
+
+
+def summarize_bespoke_coverage(entries):
+    missing_by_section = {
+        'Main Points': [entry['slug'] for entry in entries if not entry['has_bespoke_points']],
+        'Book Report': [entry['slug'] for entry in entries if not entry['has_bespoke_report']],
+        'TL;DR': [entry['slug'] for entry in entries if not entry['has_bespoke_tldr']],
+    }
+    counts_by_section = {
+        label: len(entries) - len(missing)
+        for label, missing in missing_by_section.items()
+    }
+    return counts_by_section, missing_by_section
+
+
+def format_missing_coverage(label, missing_slugs):
+    if not missing_slugs:
+        return None
+    preview = ', '.join(missing_slugs[:10])
+    suffix = '' if len(missing_slugs) <= 10 else f' ... (+{len(missing_slugs) - 10} more)'
+    return f'Missing bespoke {label}: {preview}{suffix}'
+
+
+def validate_full_bespoke_coverage(missing_by_section):
+    errors = []
+    for label, missing_slugs in missing_by_section.items():
+        if missing_slugs:
+            errors.append(format_missing_coverage(label, missing_slugs))
+    return errors
 
 
 def generic_hits(entries, limit):
@@ -193,34 +222,36 @@ def similar_pairs(entries, threshold, limit):
     return flagged[:limit], rows[:limit]
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description='Audit book-report text for repetition and slop.')
     parser.add_argument('--top', type=int, default=12, help='Number of rows to show per section.')
     parser.add_argument('--min-similarity', type=float, default=0.12, help='Minimum Jaccard score for similar pair output.')
     parser.add_argument('--starter-width', type=int, default=5, help='Word count used for repeated opening phrases.')
-    args = parser.parse_args()
+    parser.add_argument(
+        '--require-full-bespoke',
+        action='store_true',
+        help='Exit non-zero if any book is missing bespoke Main Points, Book Report, or TL;DR.',
+    )
+    args = parser.parse_args(argv)
 
     repo_root = Path(__file__).resolve().parents[1]
     data = load_data(repo_root)
     entries = build_entries(data)
 
-    bespoke_points = sum(entry['has_bespoke_points'] for entry in entries)
-    bespoke_reports = sum(entry['has_bespoke_report'] for entry in entries)
-    bespoke_tldrs = sum(entry['has_bespoke_tldr'] for entry in entries)
+    counts_by_section, missing_by_section = summarize_bespoke_coverage(entries)
 
     print(f'Loaded {len(entries)} books.')
     print('')
     print('Bespoke coverage')
-    print(f'  Main Points: {bespoke_points}/{len(entries)}')
-    print(f'  Book Report: {bespoke_reports}/{len(entries)}')
-    print(f'  TL;DR:       {bespoke_tldrs}/{len(entries)}')
+    print(f"  Main Points: {counts_by_section['Main Points']}/{len(entries)}")
+    print(f"  Book Report: {counts_by_section['Book Report']}/{len(entries)}")
+    print(f"  TL;DR:       {counts_by_section['TL;DR']}/{len(entries)}")
 
-    missing_reports = [entry['slug'] for entry in entries if not entry['has_bespoke_report']]
-    if missing_reports:
-        preview = ', '.join(missing_reports[:10])
-        suffix = '' if len(missing_reports) <= 10 else f' ... (+{len(missing_reports) - 10} more)'
+    coverage_errors = validate_full_bespoke_coverage(missing_by_section)
+    if coverage_errors:
         print('')
-        print(f'Missing bespoke Book Report: {preview}{suffix}')
+        for error in coverage_errors:
+            print(error)
 
     hits = generic_hits(entries, args.top)
     print('')
@@ -248,10 +279,17 @@ def main():
     for score, left, right in (flagged_pairs or top_pairs):
         print(f'  {score:.3f}  {left} <-> {right}')
 
+    if args.require_full_bespoke and coverage_errors:
+        print('')
+        print('Full bespoke coverage required but missing entries remain.', file=sys.stderr)
+        return 1
+
+    return 0
+
 
 if __name__ == '__main__':
     try:
-        main()
+        sys.exit(main())
     except subprocess.CalledProcessError as exc:
         sys.stderr.write(exc.stderr or str(exc))
         sys.exit(exc.returncode or 1)
