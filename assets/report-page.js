@@ -167,18 +167,20 @@ const bespokeDetailedReports = {
     `The ending feels inevitable. Dorian's attempt to destroy the portrait is really an attempt to escape judgment without transformation, and that is why it kills him. Wilde's novel lasts because it combines wit, atmosphere, and moral seriousness in a way that makes its warning unforgettable: no surface can remain innocent once the soul beneath it has been trained to love corruption.`
   ],
   '7-habits-of-highly-effective-people': [
-    `The 7 Habits of Highly Effective People is a practical argument that lasting success has to be built on character rather than on quick tricks or surface techniques. Covey begins by contrasting a shallow personality ethic with a deeper character ethic, arguing that effectiveness comes from principles such as responsibility, integrity, and disciplined self-government rather than from image management alone. That contrast explains the logic of the whole book.`,
-    `The first three habits form what Covey calls a movement toward private victory. Be Proactive asks the reader to take responsibility for choices instead of living reactively. Begin with the End in Mind pushes the reader to define purpose, values, and desired direction before acting. Put First Things First then turns those values into practice through time management, discipline, and the ordering of priorities. These habits build on one another rather than standing alone.`,
-    `The next three habits move from self-mastery to relationships and public life. Think Win-Win argues that healthy cooperation depends on mutual benefit rather than domination. Seek First to Understand, Then to Be Understood teaches deep listening before persuasion. Synergize presents teamwork as something more than compromise: it is the creation of better outcomes through trust, difference, and creative cooperation. At this stage Covey shifts from independence toward interdependence.`,
-    `The seventh habit, Sharpen the Saw, gives the system its long-term rhythm by insisting on renewal. Covey argues that physical, mental, emotional, and spiritual maintenance are not extras but conditions for sustaining effectiveness. That emphasis prevents the framework from collapsing into a one-time productivity formula; instead, it presents growth as something that must be renewed continuously.`,
-    `Its long influence comes from a core claim that personal effectiveness is not mainly about speed or ambition, but about aligning habits with enduring principles. Whether readers find Covey inspiring or idealistic, the appeal lies in the way he links personal responsibility, purpose, discipline, communication, cooperation, and renewal into one coherent model of self-development.`
+    `The 7 Habits of Highly Effective People is built on Covey's rejection of the quick-fix “personality ethic.” He argues that durable effectiveness starts with character, principles, and what he calls an inside-out change of life rather than with charm, hacks, or surface performance. That distinction governs the whole book, because the habits are supposed to reshape judgment before they ever improve productivity. Covey is not mainly offering tricks for getting more done; he is trying to build a morally disciplined person whose decisions hold together under pressure.`,
+    `The first habit, Be Proactive, is where Covey starts drawing the line between reactive people and responsible ones. He keeps returning to the idea that stimulus does not have to dictate response, which is why language, self-command, and the circle of influence matter so much in this section. Habit 2, Begin with the End in Mind, adds a teleological frame: you are supposed to know what kind of life, work, family, and legacy you are trying to build before you start grinding through tasks. Covey's point is that drift feels busy while still producing a badly organized life.`,
+    `Habit 3, Put First Things First, is where the system stops sounding inspirational and turns operational. Mission, roles, priorities, and calendar discipline all come into view, especially through Covey's emphasis on doing important but non-urgent work before crisis management eats the week alive. This is the part most people remember as time management, but he is after something stricter than scheduling. He wants priorities to govern the schedule rather than the schedule governing the person. Without that step, the earlier talk about principles and purpose never becomes visible behavior.`,
+    `The middle of the book shifts from private victory to public victory through Habits 4, 5, and 6. Think Win-Win argues against zero-sum reflexes and insists that trust, fairness, and mutual benefit are practical advantages rather than sentimental extras. Seek First to Understand, Then to Be Understood makes listening a discipline instead of a performance, and Covey's idea of the emotional bank account explains why relationships deteriorate when people keep demanding understanding without first earning credibility. Synergize then pushes beyond compromise toward creative cooperation, where difference becomes productive rather than threatening.`,
+    `Sharpen the Saw gives the whole framework its rhythm by insisting that renewal is part of effectiveness itself. Covey divides that renewal into physical, mental, emotional-social, and spiritual dimensions so the system cannot collapse into a workaholic efficiency cult. The habit keeps the book from pretending that good judgment runs forever on willpower alone. If the first six habits explain how to act well, the seventh explains how to keep the machinery of action from wearing down, hardening, or becoming hypocritical over time.`,
+    `The book lasts because it offers more structure than most self-help and more moral ambition than most productivity manuals. Covey links responsibility, purpose, priority, listening, cooperation, and renewal into one ladder that moves from self-command to trustworthy relationships and then to long-game maintenance. Even readers who dislike the corporate earnestness usually recognize why it hit so hard: the seven habits are memorable because they are ordered, cumulative, and broad enough to function as a whole operating system for conduct rather than as isolated tips.`
   ],
   'how-spies-think': [
-    `David Omand's How Spies Think is a guide to disciplined judgment under conditions of uncertainty. He is not only describing intelligence agencies; he is also showing how ordinary readers can think more carefully when information is partial, motives are hidden, and events are still unfolding. Its real subject is reasoning under pressure.`,
-    `The opening lessons focus on how analysts build order out of incomplete information. Situational awareness stresses that our picture of reality is always fragmentary. Explanation then asks what model best makes sense of the facts. Estimations moves from explanation toward probabilistic judgment about what may happen next. Strategic notice widens the frame further by emphasizing the need to detect threats and opportunities early enough to act. These first four lessons create a method for seeing, explaining, estimating, and anticipating.`,
-    `The middle chapters become more psychological by examining the ways judgment goes wrong. Omand warns that our own demons, biases, and fixed ideas can distort analysis. He adds that obsessive states of mind make people cling to false patterns, while deception and manipulation mean that even apparently solid evidence may be staged or misleading. The argument treats error as both internal and external.`,
-    `The later lessons move from analysis to interaction and strategy. Readers are urged to imagine themselves in the shoes of the person on the other side, to recognize trustworthiness as the basis of durable partnerships, and to understand that modern subversion increasingly operates through digital channels. This final movement connects intelligence not just to secret information, but to empathy, alliances, and the changing character of conflict in the information age.`,
-    `These lessons remain useful beyond espionage because the central claim is that good thinking requires humility, probabilistic reasoning, resistance to bias, alertness to deception, and awareness of long-term risk. Omand turns intelligence practice into a broader model for reasoning well when certainty is impossible and mistakes can be costly.`
+    `How Spies Think is David Omand's attempt to translate intelligence tradecraft into a general discipline of judgment. The book is not really about gadgets, glamour, or agency folklore. It is about how people reason when facts are fragmentary, adversaries are active, and the cost of a bad conclusion may arrive before certainty ever does. That makes it stronger than a simple spy-book curiosity piece. Omand is trying to teach readers how intelligence officers move from raw signals to usable judgment without pretending that ambiguity can ever be abolished.`,
+    `The first four lessons create the book's analytic spine. Lesson 1, Situational Awareness, says you begin by assembling the clearest picture you can while knowing the picture will stay incomplete. Lesson 2, Explanation, asks which account of events best fits the known evidence instead of treating facts as self-interpreting. Lesson 3, Estimations, pushes the reader into probability and conditional forecasting rather than false certainty. Lesson 4, Strategic Notice, then asks whether weak signals are being noticed early enough for action to be possible before crisis hardens into fait accompli.`,
+    `Lessons 5 through 7 explain why analysis so often goes wrong even when the information flow looks respectable. Omand warns that our own demons — ego, bias, vanity, wishful thinking, institutional habit — can mislead us before an opponent ever needs to intervene. He then shows how obsessive states of mind trap people inside one narrative and make them force every new fact to fit it. Lesson 7, on deception and faking, is the external version of the same problem: what you see may have been staged precisely because someone knows you are looking.`,
+    `The final three lessons widen intelligence into a social and strategic craft. Lesson 8 asks the reader to imagine the world from the other side's point of view, because motive, fear, and incentive are rarely visible from one's own mental habits alone. Lesson 9 argues that trustworthiness is operational, not sentimental; partnerships, liaison work, and shared assessments fail when credibility erodes. Lesson 10 brings the argument into the present by showing that subversion and sedition now travel through digital networks, influence campaigns, and online information systems as much as through classic espionage channels.`,
+    `What makes the book useful is that the ten lessons build on one another instead of sitting there as isolated slogans. Situational awareness without explanation becomes noise; explanation without estimation becomes retrospective cleverness; estimation without bias-checking turns into pundit certainty; and all of it collapses if deception, motive, trust, and digital manipulation are ignored. Omand's method keeps insisting that good analysis is provisional, adversarially aware, and humble enough to revise itself when new evidence arrives. That is what gives the book real bite outside the intelligence world.`,
+    `Its broader value is that it gives ordinary readers a better mental toolkit for politics, business, security, and everyday decision-making. Omand keeps steering the reader away from fantasy precision and toward calibrated judgment, strategic patience, and suspicion of easy narratives. The book lasts because it does something rare: it makes uncertainty feel manageable without lying about how dangerous or permanent uncertainty really is. The ten lessons are memorable not because they simplify the world, but because they show how to think without being paralyzed once the world refuses to simplify.`
   ],
   'arvisura': [
     `Arvisura presents sacred ancestry and legendary origins as the foundation of a people's spiritual identity. Rather than reading like detached academic history, it blends myth, memory, and national tradition so that origins become a source of meaning, continuity, and obligation in the present.`,
@@ -426,7 +428,11 @@ const bespokeDetailedReports = {
     `A. K. Pradeep treats neuromarketing as a way of asking what attention, reward, novelty, memory, and emotion are doing before consumers can explain themselves in surveys. Packaging, branding, advertising, and purchase behavior get linked to salience and decision shortcuts, giving marketers a more biological vocabulary for persuasion. The interesting tension in The Buying Brain is that it promises precision while also acknowledging how noisy and limited brain-based evidence can be in practice. That leaves the study balancing excitement about neural insight against the risk of turning neuroscience into decorated common sense.`
   ],
   'advanced-interviewing-techniques': [
-    `The core discipline in Advanced Interviewing Techniques is control without visible force. Rapport has to be established before resistance hardens, questions have to be sequenced so the subject keeps walking deeper into disclosure, and behavioral baselines have to be noticed before “tells” mean anything. What this manual understands well is that an interview is not a neutral information exchange but a managed social environment in which pace, framing, silence, and perceived safety alter what can be obtained. Its practical value comes from making conversational structure feel tactical.`
+    `Advanced Interviewing Techniques treats the interview as a designed environment rather than as a random conversation with a list of questions attached. Schafer and Navarro keep stressing that disclosure depends on pace, framing, rapport, and psychological safety long before it depends on some killer question. That starting point is what gives the manual its usefulness. The interviewer is not supposed to bully information out of a subject or sit back passively waiting for honesty to appear. He is supposed to structure the exchange so resistance rises late, contradictions surface naturally, and the subject keeps talking long enough to expose what matters.`,
+    `Rapport is the first real tool in the book, not a soft preface before the “serious” work begins. The authors treat rapport as the condition that makes later challenge possible because people disclose more when they feel seen, heard, and socially stabilized than when they feel immediately cornered. That is why sequencing matters so much. Broad, low-threat prompts come first; clarifying and narrowing questions come later; and confrontation, if it comes at all, is more effective after the interviewer has learned the subject's rhythm, vocabulary, comfort level, and habits of evasion.`,
+    `A lot of the book's practical value sits in its treatment of baselines and behavioral leakage. Schafer and Navarro are careful not to promise a cartoon lie detector where one gesture magically reveals deception. Instead, they emphasize clusters, shifts, incongruence, and deviations from established normal behavior. The point of a baseline is to know what this particular person looks and sounds like when calm so that stress, avoidance, overcontrol, or verbal leakage can be judged against something real. That makes observation cumulative and disciplined instead of superstitious.`,
+    `The elicitation sections are strong because they show how information can be drawn out without making the interaction feel like an overt interrogation too early. Wording, silence, selective disclosure, topic sequencing, and small conversational nudges all matter because people often reveal more while trying to appear comfortable than while answering direct accusations. The interviewer is meant to manage tempo, preserve enough dignity for the subject to keep participating, and avoid blowing the exchange up with premature aggression. Control works best here when it looks calm, ordinary, and almost invisible.`,
+    `What keeps the book from collapsing into manipulation theater is that it repeatedly returns to preparation, patience, and discipline. Good interviewing is shown as cumulative work: know the objective, know the environment, establish rapport, build a baseline, sequence intelligently, and only then interpret what starts leaking out. That makes the manual more useful than the usual pop material about “reading people.” Its real lesson is not that there is one trick to make someone confess, but that structured attention and controlled conversation can make hidden information progressively harder to protect.`
   ],
   'mining-capital': [
     `Mining Capital treats a mine not as a hole in the ground but as a financing problem that changes form across discovery, feasibility, construction, and production. Equity dilution, debt, royalties, streams, jurisdictional risk, metallurgy, and commodity cycles all have to be understood together because capital providers are pricing geology through structure. It is strongest when it shows how technical reports, timelines, and project quality become legible to money rather than to engineers alone. In that sense it is a translation manual between rock and capital markets.`
@@ -1003,9 +1009,13 @@ const bespokeKeyPoints = {
     `Freedom begins when reaction stops governing attention`
   ],
   '7-habits-of-highly-effective-people': [
-    `Character matters more than technique because habits scale the kind of person using them`,
-    `Effective living begins with self-governance before it reaches leadership or collaboration`,
-    `Renewal is part of effectiveness itself, not a reward that comes after it`
+    `Habit 1: Be Proactive — take responsibility for your responses, choices, and conduct instead of blaming circumstances or other people.`,
+    `Habit 2: Begin with the End in Mind — define your principles, long-term goals, and desired direction before deciding what to do day to day.`,
+    `Habit 3: Put First Things First — organize time around what matters most so values and priorities control the schedule rather than urgency alone.`,
+    `Habit 4: Think Win-Win — aim for solutions that create mutual benefit instead of treating relationships as zero-sum contests.`,
+    `Habit 5: Seek First to Understand, Then to Be Understood — listen deeply and accurately before trying to persuade, defend, or correct.`,
+    `Habit 6: Synergize — use difference, trust, and cooperation to create better outcomes than any one person could produce alone.`,
+    `Habit 7: Sharpen the Saw — renew yourself physically, mentally, emotionally, and spiritually so effectiveness can be sustained over time.`
   ],
   'the-buying-brain': [
     `Consumer choice is driven by attention, emotion, and memory long before tidy rational explanation`,
@@ -1013,9 +1023,11 @@ const bespokeKeyPoints = {
     `Brain science is most useful when it clarifies influence without pretending to eliminate complexity`
   ],
   'advanced-interviewing-techniques': [
-    `Good interviewing is about managing a social environment, not just asking questions`,
-    `Rapport and sequencing matter because disclosure depends on timing as much as pressure`,
-    `Control works best when it feels calm, structured, and non-theatrical`
+    `Rapport has to be built before resistance hardens.`,
+    `Question sequencing should move from broad narrative to focused verification.`,
+    `Behavior only becomes meaningful after a real baseline has been established.`,
+    `Elicitation works best when disclosure still feels conversational rather than coerced.`,
+    `Control is strongest when the interview stays calm, structured, and non-theatrical.`
   ],
   'mining-capital': [
     `Resource projects live or die by how risk is priced, not just by what is underground`,
@@ -1073,9 +1085,16 @@ const bespokeKeyPoints = {
     `Structure, not intelligence alone, determines whether incumbents can adapt`
   ],
   'how-spies-think': [
-    `Intelligence is the disciplined management of uncertainty rather than the elimination of it`,
-    `Analysis fails most often through bias, narrative fixation, and deceptive evidence`,
-    `Sound judgment depends on probabilities, strategic notice, and understanding the other side`
+    `Lesson 1: Situational Awareness — begin by building the clearest possible picture of reality, knowing that information is always incomplete and sometimes wrong.`,
+    `Lesson 2: Explanation — facts do not speak for themselves, so the analyst must test which explanation best accounts for what is known.`,
+    `Lesson 3: Estimations — judgments about what happens next should be framed as reasoned probabilities, not false certainty.`,
+    `Lesson 4: Strategic notice — look early for signals of danger or opportunity so surprise does not force rushed, unprepared reactions.`,
+    `Lesson 5: It is our own demons that are most likely to mislead us — bias, ego, and wishful thinking can distort analysis from within.`,
+    `Lesson 6: We are all susceptible to obsessive states of mind — people can become trapped in fixed narratives and keep forcing evidence to fit them.`,
+    `Lesson 7: Seeing is not always believing: beware manipulation, deception and faking — evidence may be staged, filtered, or designed to mislead.`,
+    `Lesson 8: Imagine yourself in the shoes of the person on the other side — understand motives, fears, and incentives by reasoning from the opponent's point of view.`,
+    `Lesson 9: Trustworthiness creates lasting partnerships — intelligence works best when cooperation is built on credibility, reliability, and shared confidence.`,
+    `Lesson 10: Subversion and sedition are now digital — modern influence campaigns and destabilization increasingly move through networks, platforms, and online information systems.`
   ],
   'the-ellipsis-manual': [
     `Influence works through framing, status, and baseline disruption more than through explicit force`,
@@ -1359,7 +1378,7 @@ const bespokeTldrs = {
     `The Odyssey is less about wandering than about return under pressure: disguise, restraint, testing, and recognition all matter as much as brute survival. Odysseus has to earn homecoming, while Penelope and Telemachus keep Ithaca from dissolving before he gets there.`
   ],
   'the-holy-bible': [
-    `In a nutshell, The Holy Bible is a long argument that human beings keep breaking covenant, justice, and each other, and that the real drama is whether judgment and mercy can belong in the same story. It matters because it is not one slogan but creation, law, prophecy, gospel, and apocalypse all wrestling over what redemption would actually have to cost.`
+    `The Holy Bible is a long argument that human beings keep breaking covenant, justice, and each other, and that the real drama is whether judgment and mercy can belong in the same story. Its scale matters because creation, law, prophecy, gospel, and apocalypse keep wrestling over what redemption would actually have to cost.`
   ],
   'frankenstein': [
     `Frankenstein is the horror story that begins after the experiment works. Shelley's real accusation is not against knowledge alone but against creation without responsibility, since Victor's greatest sin is abandoning the life he was arrogant enough to make.`
@@ -1755,7 +1774,145 @@ function getDisplayKeyPoints(entry) {
 }
 
 function getDisplayDetailedSummary(entry) {
-  return getCleanItems(bespokeDetailedReports[entry.slug]);
+  const bespoke = getCleanItems(bespokeDetailedReports[entry.slug]);
+  if (bespoke.length >= 5) {
+    return strengthenDetailedSummary(entry, bespoke);
+  }
+
+  const generated = getCleanItems(getDetailedSummary(entry));
+  if (!bespoke.length || !generated.length) {
+    return strengthenDetailedSummary(entry, generated.length ? generated : bespoke);
+  }
+
+  return strengthenDetailedSummary(entry, [...bespoke, ...generated.slice(bespoke.length)]);
+}
+
+function countWords(text) {
+  return ((text || '').match(/[A-Za-z0-9]+(?:['’:-][A-Za-z0-9]+)*/g) || []).length;
+}
+
+function getDetailedParagraphBooster(entry, index) {
+  const { first, second, third, fourth, fifth } = getTopicSet(entry);
+  const stage = index <= 1 ? 'early' : index <= 3 ? 'middle' : 'late';
+
+  if (entry.category.includes('Manifestos & Politics')) {
+    if (stage === 'early') return `Here, ${first} and ${second} frame the crisis in the author's preferred terms, which is how competing explanations get crowded out before they can breathe.`;
+    if (stage === 'middle') return `${third} is usually where rhetoric turns into a demand about who deserves authority, who deserves blame, and what kind of obedience is being normalized.`;
+    return `${fourth} and ${fifth} are what show whether the book is really driving toward reform, mobilization, discipline, or outright submission.`;
+  }
+
+  if (entry.category.includes('Religion & Philosophy')) {
+    if (stage === 'early') return `In ${entry.title}, ${first} and ${second} set the terms on which obedience, wisdom, error, or revelation will be judged from the start.`;
+    if (stage === 'middle') return `${third} keeps the teaching tied to ritual, law, meditation, prayer, discipline, or communal memory rather than letting it float off as abstraction.`;
+    return `${fourth} and ${fifth} show what kind of conscience, community, or spiritual posture the text is actually trying to form.`;
+  }
+
+  if (isLiteraryCategory(entry)) {
+    if (stage === 'early') return `That is where ${first} and ${second} stop being plot furniture and start exposing what these people cannot say honestly about themselves.`;
+    if (stage === 'middle') return `${third} keeps the middle from flattening into event by showing how scenes, symbols, and narration keep reinterpreting the same desire, shame, or self-deception.`;
+    return `${fourth} and ${fifth} are what turn the ending into a judgment about these lives rather than a simple report of what happened to them.`;
+  }
+
+  if (entry.category.includes('Modern History')) {
+    if (stage === 'early') return `In practice, ${first} and ${second} are the handles that let the author turn isolated episodes into a readable chain of causation.`;
+    if (stage === 'middle') return `${third} is usually where one leader, bureaucracy, or public mood stops looking accidental and starts revealing the structure behind events.`;
+    return `${fourth} and ${fifth} are what make the history linger as argument rather than as chronology alone.`;
+  }
+
+  if (entry.category.includes('Art, Music & Culture')) {
+    if (stage === 'early') return `In books like this, ${first} and ${second} only become legible once objects and styles are tied back to use, patronage, ritual, labor, and social display.`;
+    if (stage === 'middle') return `${third} is usually where one building, performance, meal, or artwork suddenly reveals an entire hierarchy of taste, discipline, and prestige.`;
+    return `${fourth} and ${fifth} keep the subject connected to memory, identity, and the public staging of value rather than to empty connoisseurship.`;
+  }
+
+  if (entry.category.includes('History & Warfare') || entry.category.includes('Strategy & Philosophy')) {
+    if (stage === 'early') return `Here, ${first} and ${second} show why no campaign can be read as tactics alone; political purpose and institutional capacity are already embedded in the fighting.`;
+    if (stage === 'middle') return `${third} is often where command decisions, fear, logistics, or legitimacy become visible as forces stronger than battlefield bravado.`;
+    return `${fourth} and ${fifth} are what keep the book arguing about power long after the smoke clears.`;
+  }
+
+  if (entry.category.includes('Poetry & Drama')) {
+    if (stage === 'early') return `From there, ${first} and ${second} keep gathering force through speech, silence, metaphor, accusation, and staged reversal rather than through plot summary alone.`;
+    if (stage === 'middle') return `${third} is often the hinge where performance itself becomes the argument and language starts doing damage in public.`;
+    return `${fourth} and ${fifth} explain why the last scene lands as judgment rather than mere event.`;
+  }
+
+  if (entry.category.includes('Epic & Myth') || entry.category.includes('Adventure') || entry.category.includes('Fantasy')) {
+    if (stage === 'early') return `Here, ${first} and ${second} establish what kind of world the traveler has entered and what form of belonging, danger, or disorder the road will keep testing.`;
+    if (stage === 'middle') return `${third} is where the route stops being sightseeing and starts exposing the terms of loyalty, maturity, deception, or survival.`;
+    return `${fourth} and ${fifth} show what the road has changed, earned, or stripped away by the end.`;
+  }
+
+  if (entry.category.includes('Dystopian') || entry.category.includes('Science Fiction')) {
+    if (stage === 'early') return `In ${entry.title}, ${first} and ${second} show how the system gets inside ordinary routine long before open rebellion or catastrophe arrives.`;
+    if (stage === 'middle') return `${third} is usually the hinge where clever worldbuilding turns into a direct accusation about what this order does to minds, bodies, or loyalties.`;
+    return `${fourth} and ${fifth} are what make the warning land in the reader's world instead of staying trapped inside the premise.`;
+  }
+
+  if (entry.category.includes('Gothic & Horror')) {
+    if (stage === 'early') return `In this case, ${first} and ${second} name the intrusion early enough that dread becomes organized around the home's failure to keep corruption outside.`;
+    if (stage === 'middle') return `${third} is where the fear stops being atmosphere and starts revealing appetite, shame, vanity, or helplessness in human form.`;
+    return `${fourth} and ${fifth} are the stains the ending leaves behind, which is why the book keeps working after the scare itself is over.`;
+  }
+
+  if (entry.category.includes('Ideas & Nonfiction') || entry.category.includes('Science & Math History')) {
+    if (stage === 'early') return `Here, ${first} and ${second} are not just headings; they are the steps by which the author teaches the reader what counts as a serious explanation.`;
+    if (stage === 'middle') return `${third} is usually where a proof, case study, experiment, or comparison stops being interesting trivia and starts restructuring the argument.`;
+    return `${fourth} and ${fifth} show the broader habit of thought the book wants to leave behind in the reader.`;
+  }
+
+  if (entry.category.includes('Self-Development')) {
+    if (stage === 'early') return `In practice, ${first} and ${second} are meant to replace drift with repeatable discipline, which is why the advice keeps returning to behavior rather than mood alone.`;
+    if (stage === 'middle') return `${third} is where the book tries to prove it can survive ordinary fatigue, distraction, ego, and social pressure.`;
+    return `${fourth} and ${fifth} reveal the actual person the book wants produced after the slogans wear off.`;
+  }
+
+  if (entry.category.includes('War & Satire')) {
+    if (stage === 'early') return `In practice, ${first} and ${second} are how the book turns absurdity into institutional evidence instead of into disposable jokes.`;
+    if (stage === 'middle') return `${third} is where the comedy curdles into moral damage and the laughter stops feeling innocent.`;
+    return `${fourth} and ${fifth} are the residues of madness the ending refuses to clear away.`;
+  }
+
+  if (stage === 'early') return `That is where ${first} and ${second} stop looking detachable and start telling the reader what pressure the work is really organized around.`;
+  if (stage === 'middle') return `${third} is usually where the conflict, argument, or emotional strain becomes concrete instead of staying thematic.`;
+  return `${fourth} and ${fifth} are what make the ending feel like a verdict rather than a recap.`;
+}
+
+function getThinReportCloser(entry) {
+  const { first, second, third, fourth, fifth } = getTopicSet(entry);
+  return `${entry.title} is strongest when ${first}, ${second}, and ${third} keep resolving into ${fourth} and ${fifth} instead of sitting there as detachable themes.`;
+}
+
+function strengthenDetailedSummary(entry, paragraphs) {
+  const cleaned = getCleanItems(paragraphs);
+  if (!cleaned.length) return cleaned;
+
+  const originalWordCount = cleaned.reduce((sum, paragraph) => sum + countWords(paragraph), 0);
+  const shortParagraphs = cleaned.filter(paragraph => countWords(paragraph) < 40).length;
+
+  if (originalWordCount >= 330 && shortParagraphs < 2) {
+    return cleaned;
+  }
+
+  const strengthened = cleaned.map((paragraph, index) => {
+    if (index === 0) return paragraph;
+
+    const minimumWords = index >= 4 ? 48 : 52;
+    if (countWords(paragraph) >= minimumWords) {
+      return paragraph;
+    }
+
+    return `${paragraph} ${getDetailedParagraphBooster(entry, index)}`;
+  });
+
+  const strengthenedWordCount = strengthened.reduce((sum, paragraph) => sum + countWords(paragraph), 0);
+  if (strengthenedWordCount >= 330) {
+    return strengthened;
+  }
+
+  const lastIndex = strengthened.length - 1;
+  strengthened[lastIndex] = `${strengthened[lastIndex]} ${getThinReportCloser(entry)}`;
+  return strengthened;
 }
 
 function joinWithCommasAnd(items) {
@@ -1794,108 +1951,108 @@ function ensureSentence(text) {
 function getTldrLead(entry, mode, seed) {
   if (mode === 'argument') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} is trying to make its worldview feel necessary rather than debatable.`,
-      `At bottom, ${entry.title} is less an open inquiry than a push toward a political conclusion.`,
-      `The short version is that ${entry.title} wants to make its side look inevitable.`,
-      `${entry.title}, in one sentence, is argument trying to pass itself off as settled truth.`
+      `${entry.title} is trying to make its worldview feel necessary rather than debatable.`,
+      `${entry.title} is less an open inquiry than a push toward a political conclusion.`,
+      `${entry.title} wants to make its side look inevitable.`,
+      `${entry.title} is argument trying to pass itself off as settled truth.`
     ]);
   }
 
   if (mode === 'scripture') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} is trying to form a way of life, not just state beliefs.`,
-      `At bottom, ${entry.title} is about shaping conduct, devotion, and memory rather than offering vague uplift.`,
-      `The short version is that ${entry.title} cares about what kind of person or people gets formed.`,
-      `${entry.title}, in one sentence, is sacred teaching aimed at lived order rather than abstract inspiration.`
+      `${entry.title} is trying to form a way of life, not just state beliefs.`,
+      `${entry.title} is about shaping conduct, devotion, and memory rather than offering vague uplift.`,
+      `${entry.title} cares about what kind of person or people gets formed.`,
+      `${entry.title} is sacred teaching aimed at lived order rather than abstract inspiration.`
     ]);
   }
 
   if (mode === 'philosophy') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} is philosophy trying to change how a person lives, not just what they can repeat.`,
-      `At bottom, ${entry.title} is a discipline of thought aimed at character, perception, and self-command.`,
-      `The short version is that ${entry.title} wants its ideas lived, tested, and internalized rather than admired from a distance.`,
-      `${entry.title}, in one sentence, is reflection used as training for judgment, conduct, or inner steadiness.`
+      `${entry.title} is philosophy trying to change how a person lives, not just what they can repeat.`,
+      `${entry.title} is a discipline of thought aimed at character, perception, and self-command.`,
+      `${entry.title} wants its ideas lived, tested, and internalized rather than admired from a distance.`,
+      `${entry.title} is reflection used as training for judgment, conduct, or inner steadiness.`
     ]);
   }
 
   if (mode === 'mythic') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} uses mythic origins to explain how a people or sacred order understands itself.`,
-      `At bottom, ${entry.title} is not just legend collecting; it is ancestry, sacred memory, and legitimacy being fused together.`,
-      `The short version is that ${entry.title} treats myth as a way of grounding identity, authority, and belonging.`,
-      `${entry.title}, in one sentence, is origin story doing cultural and political work at the same time.`
+      `${entry.title} uses mythic origins to explain how a people or sacred order understands itself.`,
+      `${entry.title} is not just legend collecting; it is ancestry, sacred memory, and legitimacy being fused together.`,
+      `${entry.title} treats myth as a way of grounding identity, authority, and belonging.`,
+      `${entry.title} is origin story doing cultural and political work at the same time.`
     ]);
   }
 
   if (mode === 'history') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} is history with an argument about responsibility built into it.`,
-      `At bottom, ${entry.title} is trying to show how events become consequences rather than mere chronology.`,
-      `The short version is that ${entry.title} cares about decisions, costs, and aftermath more than date-stamping events.`,
-      `${entry.title}, in one sentence, is a bid to turn history back into human choice and human damage.`
+      `${entry.title} is history with an argument about responsibility built into it.`,
+      `${entry.title} is trying to show how events become consequences rather than mere chronology.`,
+      `${entry.title} cares about decisions, costs, and aftermath more than date-stamping events.`,
+      `${entry.title} is a bid to turn history back into human choice and human damage.`
     ]);
   }
 
   if (mode === 'nonfiction') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} is trying to turn an idea into a usable method.`,
-      `At bottom, ${entry.title} only matters if its main claim survives contact with real life.`,
-      `The short version is that ${entry.title} wants to be more framework than slogan.`,
-      `${entry.title}, in one sentence, is advice or analysis trying to prove it is not just packaging.`
+      `${entry.title} is trying to turn an idea into a usable method.`,
+      `${entry.title} only matters if its main claim survives contact with real life.`,
+      `${entry.title} wants to be more framework than slogan.`,
+      `${entry.title} is advice or analysis trying to prove it is not just packaging.`
     ]);
   }
 
   if (mode === 'journey') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} uses movement and ordeal to test what its people are really made of.`,
-      `At bottom, ${entry.title} turns travel, quest, or war into a judgment on character and world.`,
-      `The short version is that ${entry.title} cares less about scenery than about what the journey exposes.`,
-      `${entry.title}, in one sentence, is a story of passage where the road itself becomes the test.`
+      `${entry.title} uses movement and ordeal to test what its people are really made of.`,
+      `${entry.title} turns travel, quest, or war into a judgment on character and world.`,
+      `${entry.title} cares less about scenery than about what the journey exposes.`,
+      `${entry.title} is a story of passage where the road itself becomes the test.`
     ]);
   }
 
   if (mode === 'speculative') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} uses an invented system to show what certain kinds of power do to human beings.`,
-      `At bottom, ${entry.title} is not about clever worldbuilding; it is about what a designed order does to real lives.`,
-      `The short version is that ${entry.title} turns a premise into a machine for social and psychological pressure.`,
-      `${entry.title}, in one sentence, is speculative fiction using its setup as a diagnosis rather than a gimmick.`
+      `${entry.title} uses an invented system to show what certain kinds of power do to human beings.`,
+      `${entry.title} is not about clever worldbuilding; it is about what a designed order does to real lives.`,
+      `${entry.title} turns a premise into a machine for social and psychological pressure.`,
+      `${entry.title} is speculative fiction using its setup as a diagnosis rather than a gimmick.`
     ]);
   }
 
   if (mode === 'horror') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} uses fear to expose the rot ordinary realism would soften.`,
-      `At bottom, ${entry.title} is horror with an accusation hiding inside it.`,
-      `The short version is that ${entry.title} cares less about jump scares than about what the terror means.`,
-      `${entry.title}, in one sentence, is dread turned into moral or psychological judgment.`
+      `${entry.title} uses fear to expose the rot ordinary realism would soften.`,
+      `${entry.title} is horror with an accusation hiding inside it.`,
+      `${entry.title} cares less about jump scares than about what the terror means.`,
+      `${entry.title} is dread turned into moral or psychological judgment.`
     ]);
   }
 
   if (mode === 'drama') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} compresses pressure into speech, performance, and collision.`,
-      `At bottom, ${entry.title} is conflict sharpened by form rather than softened by it.`,
-      `The short version is that ${entry.title} makes language itself do the cutting.`,
-      `${entry.title}, in one sentence, is drama using voice and confrontation as the real battlefield.`
+      `${entry.title} compresses pressure into speech, performance, and collision.`,
+      `${entry.title} is conflict sharpened by form rather than softened by it.`,
+      `${entry.title} makes language itself do the cutting.`,
+      `${entry.title} is drama using voice and confrontation as the real battlefield.`
     ]);
   }
 
   if (mode === 'satire') {
     return pickVariant(seed, [
-      `In a nutshell, ${entry.title} uses humor as a delivery system for contempt, diagnosis, or accusation.`,
-      `At bottom, ${entry.title} makes you laugh just long enough to show you what is rotten.`,
-      `The short version is that ${entry.title} turns absurdity into a weapon against what people call normal.`,
-      `${entry.title}, in one sentence, is comedy bait wrapped around a harsher judgment.`
+      `${entry.title} uses humor as a delivery system for contempt, diagnosis, or accusation.`,
+      `${entry.title} makes you laugh just long enough to show you what is rotten.`,
+      `${entry.title} turns absurdity into a weapon against what people call normal.`,
+      `${entry.title} is comedy bait wrapped around a harsher judgment.`
     ]);
   }
 
   return pickVariant(seed, [
-    `In a nutshell, ${entry.title} is about what pressure reveals in people.`,
-    `At bottom, ${entry.title} cares about human cost more than shelf-ready themes.`,
-    `The short version is that ${entry.title} becomes itself when its people are cornered.`,
-    `${entry.title}, in one sentence, is a story interested in judgment, consequence, and what survives them.`
+    `${entry.title} is about what pressure reveals in people.`,
+    `${entry.title} cares about human cost more than shelf-ready themes.`,
+    `${entry.title} becomes itself when its people are cornered.`,
+    `${entry.title} is a story interested in judgment, consequence, and what survives them.`
   ]);
 }
 
@@ -2230,12 +2387,18 @@ function ensureDetailSections() {
 }
 
 function normalizeTldrParagraph(text) {
-  const normalized = (text || '').trim();
+  const normalized = (text || '').trim()
+    .replace(/^(?:bluntly|put simply|put bluntly|in a nutshell|at bottom)\s*,?\s*/i, '')
+    .replace(/^the short version is that\s+/i, '')
+    .replace(/^in one sentence,\s*/i, '')
+    .replace(/^([^,]+),\s*in one sentence,\s*/i, '$1 ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
   return normalized ? normalized.charAt(0).toUpperCase() + normalized.slice(1) : normalized;
 }
 
 function getDisplayTldr(entry) {
-  return getCleanItems(bespokeTldrs[entry.slug]).map(normalizeTldrParagraph);
+  return getCleanItems(getBluntConclusion(entry)).map(normalizeTldrParagraph);
 }
 
 function getReadingGuide(entry) {
@@ -2806,12 +2969,13 @@ function getReportAngles(entry) {
 
 function getDetailedSummary(entry) {
   const { first, second, third, fourth, fifth } = getTopicSet(entry);
-  const intro = `${entry.summary} The book keeps returning to ${first} and ${second}, which is where its deeper pressure sits.`;
-  const bespokeReport = bespokeDetailedReports[entry.slug];
-
-  if (bespokeReport) {
-    return bespokeReport;
-  }
+  const seed = getSlugSeed(entry.slug);
+  const intro = pickVariant(seed, [
+    `${entry.summary} The book keeps returning to ${first} and ${second}, which is where its deeper pressure sits.`,
+    `${entry.summary} Again and again, ${first} and ${second} turn out to be the places where the real strain gathers.`,
+    `${entry.summary} What keeps surfacing is the tension between ${first} and ${second}, and that is usually where the book does its hardest work.`,
+    `${entry.summary} The deeper weight sits in how ${first} keeps colliding with ${second}, not in bare plot movement alone.`
+  ]);
 
   if (entry.category.includes('Manifestos & Politics')) {
     return [
@@ -2819,8 +2983,14 @@ function getDetailedSummary(entry) {
       `From there, the book builds its case by linking ${first}, ${second}, and ${third} into a single explanation of how power operates and why change is necessary. The ideas are arranged so that each claim strengthens the next and makes the worldview feel internally complete.`,
       `The middle sections usually turn that analysis into a worldview. Opponents are simplified, causes are ranked, and political conflict is framed as a struggle between necessity and failure rather than as a debate between legitimate alternatives.`,
       `Tone is part of the book's substance. Certainty, blame, urgency, prophecy, and ideological language are used to make the argument feel inevitable and to turn interpretation into momentum.`,
-      `Later chapters move from diagnosis to prescription, showing how ${fourth} and ${fifth} are supposed to justify a program, a warning, or a political future. The book's practical claims only make sense once its picture of crisis and authority has been fully established.`,
-      `By the end, ${entry.title} stands as both an argument and a political artifact. Its importance lies not only in what it advocates, but in the kind of world it imagines, the fears and hopes it organizes, and the kind of action or obedience it tries to make seem reasonable.`
+      pickVariant(seed + 1, [
+        `Once the diagnosis is in place, ${fourth} and ${fifth} get recruited as proof that the program, warning, or promised future is justified. The book's practical demands only make sense after it has already taught the reader what to fear and whom to blame.`,
+        `The later movement converts analysis into marching orders. ${fourth} and ${fifth} become the pressure points where crisis language hardens into a program, a purge, or a political future that is presented as mandatory.`
+      ]),
+      pickVariant(seed + 2, [
+        `${entry.title} finally reads as both doctrine and historical artifact. Its significance lies not only in what it advocates, but in the world it tries to make thinkable, the emotions it organizes, and the obedience or action it works to normalize.`,
+        `What lasts about ${entry.title} is not just the platform it argues for, but the political imagination underneath it: the enemies it invents, the fears it arranges, and the kind of authority it tries to make feel natural.`
+      ])
     ];
   }
 
@@ -2829,9 +2999,18 @@ function getDetailedSummary(entry) {
       `${entry.title} is structured as a sustained reflection on truth, moral order, and human purpose rather than as a loose collection of inspirational lines. ${entry.summary} The opening typically establishes the spiritual problem or philosophical tension at the center of the work and defines the kind of life the text treats as serious, disciplined, or worthy.`,
       `Early sections often lay out the book's basic vocabulary: what counts as wisdom, what counts as error, and how the soul, the self, duty, or the sacred world are meant to be understood. Those starting assumptions shape everything that follows.`,
       `In the main body, the book keeps returning to ${first}, ${second}, and ${third}. Depending on the text, those ideas may be developed through verse, dialogue, mythic narrative, command, meditation, or repeated contrasts between the higher and lower ways of living.`,
-      `Method matters because the form is part of the message. Some works persuade by argument, some by sacred story, and some by repetition meant to reform attention itself. The result is that the reader is not only given claims, but also trained in a particular way of seeing and judging.`,
-      `Later sections bring ${fourth} and ${fifth} into sharper focus and show what the earlier teaching is trying to produce: peace, discipline, devotion, self-command, memory, enlightenment, or right relation to the sacred.`,
-      `By the end, ${entry.title} offers a larger vision of what a human being is for and how a meaningful life is supposed to be ordered. That is why these books endure: they do not just present ideas, they try to reshape conduct, identity, and ultimate loyalty.`
+      pickVariant(seed + 1, [
+        `Form is doing argumentative work here. Whether the book uses verse, dialogue, command, meditation, or commentary, the structure teaches the reader how ${first} and ${second} are supposed to be practiced, remembered, or obeyed rather than merely admired.`,
+        `The method is part of the claim. Sacred story, aphorism, law, or philosophical dialogue are not decorative shells here; they are the means by which ${first} and ${second} get pressed into conduct, memory, and judgment.`
+      ]),
+      pickVariant(seed + 2, [
+        `As the later material gathers, ${fourth} and ${fifth} stop feeling like side topics and start showing what the teaching is trying to produce in an actual life: discipline, devotion, endurance, accountability, peace, or awakening.`,
+        `The later movement makes ${fourth} and ${fifth} concrete by tying them to habits, duties, temptations, and consequences. That is where the text reveals what sort of community, conscience, or spiritual posture it is trying to build.`
+      ]),
+      pickVariant(seed + 3, [
+        `${entry.title} lasts because it is not satisfied with interesting ideas. It wants a person, a people, or a memory tradition rearranged around a stronger account of duty, desire, suffering, and ultimate order.`,
+        `What survives in ${entry.title} is the attempt to order a whole life. The book keeps its force because it ties belief to conduct, loyalty, habit, and the question of what human beings are finally for.`
+      ])
     ];
   }
 
@@ -2841,8 +3020,14 @@ function getDetailedSummary(entry) {
       `Very quickly, the book shows that outward events only matter because of what they do to relationships. ${first}, ${second}, and ${third} become the main lines through which attachment, resentment, ambition, guilt, memory, or longing are made legible.`,
       `The middle of the work usually deepens through scenes of conversation, misreading, exposure, temptation, or reversal. Instead of pushing only toward action, the novel keeps asking what people want, what they hide, and what they are willing to sacrifice to keep a self-image intact.`,
       `Form matters here as much as event. Voice, point of view, symbolic detail, recurring places, and the rhythm of scenes make the moral pressure accumulate gradually rather than arriving as a thesis statement.`,
-      `Later sections bring ${fourth} and ${fifth} into sharper focus and show what the earlier choices have really cost. The ending usually matters because it clarifies whether the book believes insight, reconciliation, punishment, endurance, or loss is the truest response to what has happened.`,
-      `By the end, ${entry.title} has used individual lives to say something broader about society and the human heart. That is why books like this last: they turn specific people and situations into a durable judgment about love, class, guilt, desire, memory, or moral responsibility.`
+      pickVariant(seed + 1, [
+        `In the later movement, ${fourth} and ${fifth} expose the cost that earlier desires and evasions have been quietly accumulating. The ending sharpens into a verdict on whether the book believes insight, reconciliation, punishment, endurance, or loss is the truest response to what has happened.`,
+        `Late scenes make ${fourth} and ${fifth} impossible to wave off as secondary material. They reveal what the earlier compromises have purchased, who pays for them, and what kind of ending the novel thinks its people have actually earned.`
+      ]),
+      pickVariant(seed + 2, [
+        `${entry.title} turns particular lives into a broader judgment about society without flattening them into symbols. Its staying power comes from how love, class, guilt, desire, memory, and moral responsibility keep colliding inside recognizably human situations.`,
+        `What gives ${entry.title} its afterlife is that the social and the intimate keep tightening around each other. Specific scenes, voices, and compromises end up carrying a durable judgment about love, status, guilt, desire, and what people owe one another.`
+      ])
     ];
   }
 
@@ -2852,19 +3037,34 @@ function getDetailedSummary(entry) {
       `Once that frame is established, the book starts linking incidents into an argument. ${first}, ${second}, and ${third} become the main structure through which documents, speeches, policies, movements, and individual decisions are turned into a coherent explanation of the past.`,
       `The middle of the book is where causation becomes more important than sequence. Instead of merely telling the reader what happened next, the author explains why certain pressures built up, why particular decisions were taken, and how institutions or beliefs shaped what followed.`,
       `Good historical writing also moves constantly between people and systems. Leaders matter, but so do bureaucracies, public moods, ideological habits, economic constraints, and the inherited structures that make some outcomes more likely than others.`,
-      `Later chapters usually widen the focus and show why ${fourth} and ${fifth} matter beyond the immediate case. The book turns a specific narrative into a larger argument about memory, responsibility, nationalism, empire, social change, or political judgment.`,
-      `By the end, ${entry.title} is making a claim about meaning as much as about fact. It tells the reader not only what happened, but what ought to be understood about the period, why the subject still matters, and how that past continues to shape the present.`
+      pickVariant(seed + 1, [
+        `The later chapters widen the focus by using ${fourth} and ${fifth} to show what survives the immediate crisis. A specific sequence of events turns into a larger argument about memory, responsibility, nationalism, empire, reform, or political judgment.`,
+        `Once ${fourth} and ${fifth} come into focus, the book stops reading like a closed episode and starts reading like an argument about aftermath. That is where the narrative widens into questions of remembrance, responsibility, and what later societies inherit from the period.`
+      ]),
+      pickVariant(seed + 2, [
+        `${entry.title} is finally making a claim about meaning as much as about fact. It tells the reader not only what happened, but what ought to be understood about the period, why the subject still matters, and how that past keeps shaping the present.`,
+        `The real achievement of ${entry.title} is that fact and judgment stay tied together. The book leaves the reader with a clearer account of what happened and a sharper sense of what later generations are supposed to learn from it.`
+      ])
     ];
   }
 
   if (entry.category.includes('Art, Music & Culture')) {
     return [
       `${entry.title} reads as a cultural history of taste, creativity, and social meaning. ${entry.summary} The opening normally establishes the period, setting, and institutions that shape the culture under discussion so the reader can see how art, music, food, or style are produced, ranked, and consumed.`,
-      `That setting matters because culture in books like this is never just decorative. Courts, cities, workshops, salons, religious spaces, theaters, restaurants, and patrons all determine what counts as refinement, prestige, authenticity, or excellence.`,
+      pickVariant(seed + 1, [
+        `The setting does real explanatory work because culture in books like this is never just decorative. Courts, cities, workshops, salons, religious spaces, theaters, restaurants, and patrons all help determine what counts as refinement, prestige, authenticity, or excellence.`,
+        `Culture here is inseparable from the social machinery around it. Courts, markets, workshops, ritual spaces, patrons, and audiences all decide what will count as beauty, sophistication, authority, or proper taste.`
+      ]),
       `As the discussion expands, ${first}, ${second}, and ${third} become the main way the book explains how works and practices take on meaning. Style is tied to status, ritual, identity, labor, craft, and historical change rather than treated as an isolated aesthetic object.`,
       `The middle chapters usually become strongest when they focus on examples: specific buildings, performances, menus, artworks, or habits of taste that reveal a whole social world. Concrete cases show how beauty, pleasure, authority, and discipline get embodied in everyday cultural forms.`,
-      `Later sections often shift from description to legacy and show why ${fourth} and ${fifth} continue to matter. The subject becomes a way of thinking about heritage, memory, aspiration, creativity, and the public display of values.`,
-      `By the end, ${entry.title} teaches the reader to interpret culture historically. Its larger claim is that artistic or everyday forms are never only personal preferences; they store power, hierarchy, identity, and collective memory.`
+      pickVariant(seed + 2, [
+        `Later sections usually move from description to legacy and use ${fourth} and ${fifth} to show why the subject still matters. What looked like style or taste alone becomes a way of thinking about heritage, memory, aspiration, labor, and the public display of values.`,
+        `As the book widens out, ${fourth} and ${fifth} show how the form under discussion outlives its immediate moment. The subject becomes a record of heritage, hierarchy, craftsmanship, aspiration, and what a culture wants to show about itself in public.`
+      ]),
+      pickVariant(seed + 3, [
+        `${entry.title} trains the reader to interpret culture historically rather than consume it as trivia. Its larger claim is that artistic and everyday forms are repositories of power, hierarchy, identity, labor, and collective memory.`,
+        `The lasting payoff in ${entry.title} is that culture stops looking like ornament and starts reading like evidence. Buildings, meals, performances, or styles end up storing hierarchy, aspiration, memory, and ideas about who gets to define excellence.`
+      ])
     ];
   }
 
@@ -2874,8 +3074,14 @@ function getDetailedSummary(entry) {
       `Very quickly, the book establishes what is really at stake: territory, legitimacy, survival, revenge, prestige, imperial power, or the maintenance of order. Those stakes give the campaigns and battles their meaning.`,
       `In the central movement, ${first}, ${second}, and ${third} shape the major turning points. The book usually shows that outcomes depend on planning, morale, intelligence, timing, terrain, logistics, alliances, and command discipline as much as on raw force.`,
       `The middle chapters often reveal deeper patterns underneath the action. Individual decisions matter, but so do political structures, institutional habits, fear, ambition, and the quality of leadership under pressure.`,
-      `Later sections widen the lens and show why ${fourth} and ${fifth} matter beyond the battlefield itself. Military events become part of a larger argument about kingship, empire, state power, social order, memory, or strategic thought.`,
-      `By the end, ${entry.title} is explaining what conflict teaches about power and judgment. Its lasting value comes from the kind of leadership it rewards, the mistakes it exposes, and the way it connects victory or defeat to larger political and human realities.`
+      pickVariant(seed + 1, [
+        `Later sections widen the lens by showing what ${fourth} and ${fifth} reveal beyond the battlefield itself. Campaigns and battles become evidence in a larger argument about kingship, empire, state power, institutional weakness, memory, or strategic thought.`,
+        `Once ${fourth} and ${fifth} come forward, the book stops being only about maneuvers and outcomes. Conflict becomes a test case for larger questions about legitimacy, political order, imperial reach, and what kinds of judgment hold under pressure.`
+      ]),
+      pickVariant(seed + 2, [
+        `${entry.title} is finally explaining what conflict teaches about power and judgment. Its lasting value comes from the kind of leadership it rewards, the mistakes it exposes, and the way it ties victory or defeat to larger political and human realities.`,
+        `The point of ${entry.title} is not merely to remember who won. It is to show what war exposes about leadership, organization, fear, ambition, and the political worlds that make some victories hollow and some defeats catastrophic.`
+      ])
     ];
   }
 
@@ -2907,8 +3113,14 @@ function getDetailedSummary(entry) {
       `Early chapters usually show how ordinary life is disciplined by that system. Thought, memory, language, work, desire, status, and social routine are shaped so that control feels normal before the main conflict fully emerges.`,
       `As the story develops, ${first}, ${second}, and ${third} become the main pressure points through which the book tests its own world. Individual decisions matter because they expose the moral logic hidden inside the larger system.`,
       `The middle of the work usually sharpens the warning by revealing that what first looked efficient, rational, or progressive is also manipulative, dehumanizing, or spiritually empty. The book's critique becomes clearer as the costs of the system become harder to ignore.`,
-      `By the end, ${fourth} and ${fifth} make the larger message unmistakable. The fate of the characters shows what the imagined society believes about truth, freedom, conformity, resistance, or the future of human life.`,
-      `That is what gives the story its force beyond its plot. ${entry.title} uses an invented world to push recognizable fears in the real one into clearer focus, turning fiction into a warning about politics, technology, language, culture, or human behavior.`
+      pickVariant(seed + 1, [
+        `In the last movement, ${fourth} and ${fifth} make the larger message unmistakable. The fate of the characters shows what the imagined society believes about truth, freedom, conformity, resistance, or the future shape of human life.`,
+        `The ending sharpens around ${fourth} and ${fifth}, because that is where the invented order has to declare what it really values and what it is willing to consume to keep itself running.`
+      ]),
+      pickVariant(seed + 2, [
+        `${entry.title} gets its force from using an invented world to push recognizable fears in the real one into clearer focus. Fiction becomes a warning about politics, technology, language, culture, or human behavior once the system's logic is allowed to finish unfolding.`,
+        `What gives ${entry.title} its afterlife is that the premise never stays a mere gimmick. The speculative setting keeps resolving into a warning about real politics, language, technology, conformity, and the damage done when human beings become manageable material.`
+      ])
     ];
   }
 
@@ -2918,8 +3130,14 @@ function getDetailedSummary(entry) {
       `Very early on, the story usually introduces a place, obsession, absence, secret, or invading force that disturbs the emotional order of the world. That disturbance sets the tone and makes the reader feel that reality itself has become unreliable or contaminated.`,
       `As the plot deepens, ${first}, ${second}, and ${third} intensify through isolation, secrecy, temptation, obsession, bodily threat, or psychic pressure. The fear becomes a way of uncovering what characters cannot master or safely admit.`,
       `The middle of the work often reveals that the horror is social or psychological as much as physical. Questions of guilt, repression, desire, power, corruption, identity, and forbidden knowledge start to emerge beneath the immediate danger.`,
-      `By the ending, ${fourth} and ${fifth} explain why the fear mattered in the first place. The final events usually expose a larger argument about moral weakness, collapse, vulnerability, or the thinness of civilized control.`,
-      `That deeper pressure is why the book lingers. ${entry.title} turns fear into meaning by showing what happens when the mind, the body, the home, or the social order can no longer keep darkness at a distance.`
+      pickVariant(seed + 1, [
+        `In the ending, ${fourth} and ${fifth} explain why the fear mattered in the first place. The last events expose a larger argument about moral weakness, collapse, vulnerability, appetite, or the thinness of civilized control.`,
+        `The closing movement uses ${fourth} and ${fifth} to show that the fear was never just atmospheric. The final damage reveals what the book thinks happens when desire, guilt, vanity, or forbidden knowledge outrun ordinary limits.`
+      ]),
+      pickVariant(seed + 2, [
+        `That deeper pressure is why ${entry.title} lingers. The book turns fear into meaning by showing what happens when the mind, the body, the home, or the social order can no longer keep darkness at a distance.`,
+        `${entry.title} stays with the reader because the horror keeps resolving into judgment. Fear becomes a way of exposing what the self, the household, or the wider social world was already failing to contain.`
+      ])
     ];
   }
 
@@ -2929,8 +3147,14 @@ function getDetailedSummary(entry) {
       `Once that question is in place, the book builds its argument by linking ${first}, ${second}, and ${third} through examples, case studies, comparisons, or historical episodes. Each section adds another layer to the explanation rather than simply repeating the headline idea.`,
       `The middle of the work is usually where the method becomes clearest. Facts are not left sitting on the page by themselves; they are interpreted so the reader can see patterns, hidden mechanisms, or mistaken assumptions that were easy to miss at first.`,
       `This is what gives the book its intellectual shape. The author moves from illustration to interpretation, showing not only what happened or what exists, but what way of thinking makes the evidence meaningful.`,
-      `Later sections bring ${fourth} and ${fifth} into sharper focus and widen the scope of the argument. The immediate topic starts to connect to larger questions about judgment, institutions, history, behavior, science, or social life.`,
-      `By the end, ${entry.title} leaves the reader with a more specific claim about how the world works and how it should be interpreted. Its value lies in the habits of thought it encourages, the assumptions it challenges, and the sharper lens it gives the reader for seeing familiar things differently.`
+      pickVariant(seed + 1, [
+        `Later sections bring ${fourth} and ${fifth} into sharper focus and widen the scope of the argument. The immediate topic starts connecting to larger questions about judgment, institutions, history, behavior, science, or social life.`,
+        `Once ${fourth} and ${fifth} are in view, the book stops looking like a narrow case study. The same material opens onto broader questions about institutions, reasoning, historical change, scientific method, or ordinary human behavior.`
+      ]),
+      pickVariant(seed + 2, [
+        `${entry.title} leaves the reader with a more specific claim about how the world works and how it should be interpreted. Its value lies in the habits of thought it encourages, the assumptions it challenges, and the sharper lens it gives the reader for seeing familiar things differently.`,
+        `The payoff in ${entry.title} is a sharpened method of seeing. The book matters when it leaves the reader not merely with facts, but with a clearer framework for judging evidence, spotting bad assumptions, and reading ordinary reality with less laziness.`
+      ])
     ];
   }
 
@@ -2940,8 +3164,14 @@ function getDetailedSummary(entry) {
       `Very early, the author lays out a view of human behavior built around mindset, habit, awareness, ambition, fear, discipline, or responsibility. That model of the person gives the later advice its logic.`,
       `As the book progresses, ${first}, ${second}, and ${third} become the main principles the reader is asked to adopt. The ideas are usually arranged as a sequence or system so that one change in thought or behavior supports the next.`,
       `The middle chapters often reinforce the message through stories, examples, contrasts, and memorable formulas. The point is not only to explain the principle, but to make it feel usable, emotionally convincing, and repeatable in ordinary life.`,
-      `Later sections bring ${fourth} and ${fifth} into practice and show what the transformed person is meant to look like in action: more disciplined, more effective, calmer, more responsible, more decisive, or more internally ordered.`,
-      `By the end, ${entry.title} has also revealed its deeper vision of the good life. It is not just offering tips; it is promoting a picture of character, success, and self-command that explains why the advice feels powerful to some readers and limited to others.`
+      pickVariant(seed + 1, [
+        `Later sections put ${fourth} and ${fifth} under everyday pressure and show what the transformed person is meant to look like in action: more disciplined, more effective, calmer, more responsible, more decisive, or more internally ordered.`,
+        `The later movement tests ${fourth} and ${fifth} against work, relationships, stress, and repeated habit. That is where the book reveals whether its advice can survive ordinary life or only sound impressive in isolated slogans.`
+      ]),
+      pickVariant(seed + 2, [
+        `${entry.title} also reveals a deeper vision of the good life. It is not just offering tips; it is promoting a picture of character, success, discipline, and self-command that explains why the advice feels powerful to some readers and limited to others.`,
+        `What sits underneath ${entry.title} is a moral picture, not just a productivity toolkit. The advice only makes full sense once you see the kind of character, success, and self-rule the book is trying to normalize.`
+      ])
     ];
   }
 
