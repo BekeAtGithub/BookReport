@@ -588,1021 +588,724 @@ const bespokeDetailedReports = {
 
 const bespokeKeyPoints = {
   'art-of-war': [
-    `Winning before battle begins`,
-    `Deception, feints, and information control`,
-    `Generalship, discipline, and command`,
-    `Terrain, timing, and positional advantage`,
-    `Knowing the enemy and knowing yourself`
+    `Strategy as the art of shaping conditions before force is needed`,
+    `Information, deception, timing, and position matter more than brute aggression`,
+    `Leadership begins with discipline, clarity, and accurate self-knowledge`
   ],
   'kite-runner': [
-    `Childhood betrayal of Hassan`,
-    `Baba, Amir, and damaged fatherhood`,
-    `Pashtun-Hazara class and ethnic tension`,
-    `Taliban brutality and return to Kabul`,
-    `Atonement through Sohrab`
+    `Guilt and betrayal become forces that can govern an entire adult life`,
+    `Friendship and fatherhood are distorted by class, shame, and the need for approval`,
+    `Atonement matters here because remorse is not enough unless it turns into action`
   ],
   'the-sun-also-rises': [
-    `Jake Barnes and the war wound`,
-    `Brett Ashley as unattainable desire`,
-    `Pamplona bullfighting and male performance`,
-    `Expat drift through Paris and Spain`,
-    `Romero as discipline against decay`
+    `Postwar disillusionment leaves desire, travel, and pleasure feeling both necessary and empty`,
+    `Love keeps appearing as performance, timing, and damage rather than stable fulfillment`,
+    `Style, ritual, and discipline offer a fragile answer to emotional drift`
   ],
   'heart-of-darkness': [
-    `Marlow moving upriver toward Kurtz`,
-    `Ivory extraction and imperial hypocrisy`,
-    `Civilization losing its moral mask`,
-    `Kurtz as charisma without restraint`,
-    `Darkness as psychological and colonial exposure`
+    `Empire is exposed as organized greed wearing the language of civilization`,
+    `Power without restraint turns charisma, ambition, and intelligence into horror`,
+    `Darkness names both colonial violence and the unsettling depths within the self`
   ],
   'a-passage-to-india': [
-    `Aziz and Fielding under empire`,
-    `Marabar Caves and collapsing certainty`,
-    `Adela Quested and the accusation crisis`,
-    `British officialdom and racial hierarchy`,
-    `Hindu, Muslim, and English worlds misfitting`
+    `Empire makes genuine friendship unstable even when individuals mean well`,
+    `Misunderstanding is not just personal failure but a structural feature of colonial rule`,
+    `India resists neat explanation, which is exactly what unsettles the novel's English mindsets`
   ],
   'catch-22': [
-    `Yossarian trying not to die`,
-    `Catch-22 as a bureaucratic trap`,
-    `Milo Minderbinder and profit without conscience`,
-    `Circular orders, missions, and military insanity`,
-    `Comedy curdling into moral horror`
+    `Bureaucracy becomes terrifying when absurdity is treated as official logic`,
+    `War turns self-preservation into something institutions can label selfish or insane`,
+    `The comedy lands because it keeps revealing organized cruelty underneath the jokes`
   ],
   'moby-dick': [
-    `Ahab hunting the white whale`,
-    `Ishmael, Queequeg, and the world of the Pequod`,
-    `Whaling labor and encyclopedic obsession`,
-    `Nature as mystery beyond mastery`,
-    `Monomania driving crew and voyage`
+    `Obsession can turn leadership into a form of collective ruin`,
+    `Nature appears as meaningful, overwhelming, and finally beyond human mastery`,
+    `Labor, myth, and metaphysical speculation are fused into one vast sea-bound world`
   ],
   '1984': [
-    `Rewriting history through Winston Smith`,
-    `Private rebellion through Julia`,
-    `Newspeak and the shrinking of thought`,
-    `Torture under O’Brien and ideological conquest`,
-    `Forced love for Big Brother`
+    `Political power becomes absolute when it controls truth instead of merely enforcing obedience`,
+    `Language and memory are the novel's real battlegrounds because they shape what can be thought`,
+    `Total domination is complete only when inward freedom itself is broken`
   ],
   'ulysses': [
-    `One Dublin day through Leopold Bloom`,
-    `Stephen Dedalus and artistic restlessness`,
-    `Domestic estrangement around Molly Bloom`,
-    `Ordinary errands treated like epic episodes`,
-    `Stream-of-consciousness form remaking the novel`
+    `Ordinary consciousness is given epic scale without ceasing to be ordinary`,
+    `Home, exile, appetite, embarrassment, and intimacy become the real substance of modern life`,
+    `The form matters because wandering thought is treated as experience, not just as style`
   ],
   'the-great-gatsby': [
-    `Gatsby reinventing himself for Daisy`,
-    `Old money contempt in the Buchanans`,
-    `Nick Carraway watching glamour rot`,
-    `The green light and the unrecoverable past`,
-    `Carelessness protected by class privilege`
+    `Self-invention collides with class boundaries that money alone cannot erase`,
+    `Wealth appears glamorous at a distance and morally vacant up close`,
+    `The dream of recovering the past becomes inseparable from illusion and loss`
   ],
   'lord-of-the-flies': [
-    `Island order collapsing into ritual violence`,
-    `Ralph and Jack fighting over leadership`,
-    `Piggy’s reason against tribal hysteria`,
-    `The beast as fear turned political`,
-    `Childhood innocence ending in murder`
+    `Fear becomes politically powerful once it can be turned into shared mythology`,
+    `Civilized restraint proves thin when status, belonging, and violence start feeding each other`,
+    `Golding treats savagery as something organized rather than merely unleashed`
   ],
   'one-hundred-years-of-solitude': [
-    `The Buendía family repeating its mistakes`,
-    `Macondo between wonder, solitude, and ruin`,
-    `Civil war and banana-company violence`,
-    `Prophecy, incest, and cyclical time`,
-    `Magical events treated as ordinary life`
+    `Family history feels trapped inside repetition, desire, and inherited blindness`,
+    `Solitude works as both an emotional condition and a generational curse`,
+    `Wonder, political violence, and everyday life occupy the same reality without contradiction`
   ],
   'the-divine-comedy': [
-    `Inferno punishing particular sins`,
-    `Purgatorio as painful moral repair`,
-    `Paradiso as ascent into ordered joy`,
-    `Virgil and Beatrice guiding the pilgrim`,
-    `The soul learning to love rightly`
+    `The universe is imagined as morally structured from damnation to beatitude`,
+    `Sin, purification, and joy are all defined by how rightly or wrongly love is ordered`,
+    `The journey is spiritual education as much as visionary spectacle`
   ],
   'great-expectations': [
-    `Pip climbing toward gentility through shame`,
-    `Magwitch returning as the true benefactor`,
-    `Miss Havisham and Estella shaping desire`,
-    `Joe’s loyalty against Pip’s vanity`,
-    `Class fantasy collapsing into moral education`
+    `Class aspiration becomes a machine for shame, pretension, and self-betrayal`,
+    `Dickens keeps testing whether gratitude and affection can survive ambition`,
+    `Gentility is stripped of prestige once moral worth and social polish come apart`
   ],
   'the-iliad': [
-    `Achilles withdrawing and returning in rage`,
-    `Honor culture around spoils and reputation`,
-    `Hector defending Troy under doomed fate`,
-    `Gods intervening in human slaughter`,
-    `Glory purchased at the price of mortality`
+    `Honor culture gives rage public consequences far beyond private feeling`,
+    `Heroic glory matters because mortality makes it urgent and tragic at once`,
+    `War is shown as magnificent in language and devastating in human cost`
   ],
   'odyssey': [
-    `Homecoming delayed by gods and monsters`,
-    `Cunning escapes engineered by Odysseus`,
-    `Penelope holding Ithaca together through delay`,
-    `Telemachus growing into public action`,
-    `Hospitality tested by suitors and strangers`
+    `Homecoming becomes a long test of identity, endurance, and belonging`,
+    `Cunning is treated as a heroic intelligence rather than a lesser form of strength`,
+    `Hospitality, marriage, and household order become the measures of civilization`
   ],
   'the-holy-bible': [
-    `Genesis creation, fall, and covenant beginnings`,
-    `Exodus, Sinai law, kingship, and prophetic warning`,
-    `Wisdom books on suffering, praise, and righteousness`,
-    `The Gospels on Jesus’s teaching, death, and resurrection`,
-    `Epistles and Revelation on church, judgment, and restoration`
+    `Creation, covenant, exile, and redemption give the Bible its large narrative arc`,
+    `Law, prophecy, wisdom, gospel, and apocalypse offer different ways of ordering life before God`,
+    `Human failure is answered again and again by judgment, mercy, and the demand for faithfulness`
   ],
   'frankenstein': [
-    `Victor creating life and fleeing responsibility`,
-    `The Creature learning through rejection`,
-    `Scientific ambition without moral foresight`,
-    `Isolation feeding violence and revenge`,
-    `Monstrosity shifting from body to behavior`
+    `Creation becomes monstrous when responsibility ends at the moment of invention`,
+    `Alienation and rejection make monstrosity feel social as well as personal`,
+    `Scientific ambition is condemned less for curiosity than for moral evasiveness`
   ],
   'gone-with-the-wind': [
-    `Scarlett O’Hara surviving Southern collapse`,
-    `War and Reconstruction wrecking plantation society`,
-    `Ashley obsession against Rhett Butler’s realism`,
-    `Female resilience tangled with selfishness`,
-    `Old-order nostalgia facing material survival`
+    `Survival is treated as both admirable toughness and moral hardening`,
+    `The collapse of the old South exposes how nostalgia can hide violence and illusion`,
+    `Scarlett's force works because resilience is never separated from appetite or selfishness`
   ],
   'oliver-twist': [
-    `Workhouse cruelty and parish hypocrisy`,
-    `Fagin’s underworld of exploited children`,
-    `Nancy and Bill Sikes inside urban brutality`,
-    `Oliver’s innocence moving through filth and crime`,
-    `Respectability versus the systems that breed misery`
+    `Innocence moves through a social order built to neglect and exploit the vulnerable`,
+    `Crime and poverty are shown as products of environment as much as of character`,
+    `Respectability looks suspect once the institutions beneath it are examined`
   ],
   'the-works-of-hp-lovecraft': [
-    `Forbidden texts and sanity-breaking knowledge`,
-    `Cosmic beings dwarfing human importance`,
-    `Decaying towns, bloodlines, and hidden corruption`,
-    `Narrators unraveling under revelation`,
-    `Fear generated by scale, age, and the unknown`
+    `Cosmic horror begins by shrinking human importance to almost nothing`,
+    `Knowledge feels dangerous because revelation destabilizes sanity instead of enlarging it`,
+    `Decay, lineage, and ancient depth make the world feel hostile before anything even appears`
   ],
   'five-weeks-in-a-balloon': [
-    `Balloon travel across colonial-era Africa`,
-    `Scientific ingenuity meeting logistical danger`,
-    `Aerial exploration as spectacle and experiment`,
-    `Companions balancing curiosity and survival`,
-    `Distance, weather, and improvisation in motion`
+    `Exploration is imagined as a mix of ingenuity, spectacle, and improvisation under pressure`,
+    `Technology matters because it changes how distance and danger are perceived`,
+    `Adventure and scientific curiosity are inseparable from the book's colonial-era gaze`
   ],
   'the-adventures-of-huckleberry-finn': [
-    `River travel with Jim as moral education`,
-    `Slaveholding society judged by a boy’s conscience`,
-    `Huck resisting “civilized” hypocrisy`,
-    `Fraud, violence, and performance along the journey`,
-    `Friendship forcing a choice against social rules`
+    `Conscience becomes meaningful only when it breaks with the morality of the surrounding society`,
+    `Friendship exposes the cruelty that respectability works hard to normalize`,
+    `Freedom on the river stays fragile because performance, fraud, and violence never disappear for long`
   ],
   'the-last-of-the-mohicans': [
-    `Frontier warfare in the French and Indian War`,
-    `Hawkeye between British forces and Native allies`,
-    `Magua turning grievance into vengeance`,
-    `Capture, rescue, and pursuit through the wilderness`,
-    `A vanishing world of tribes and old loyalties`
+    `The frontier is imagined as a zone of cultural collision rather than simple wilderness`,
+    `War turns loyalty, vengeance, and alliance into unstable categories`,
+    `The novel is haunted by the idea of a vanishing native world under empire`
   ],
   'robinson-crusoe': [
-    `Shipwreck survival turned into island mastery`,
-    `Labor, inventory, and practical self-rule`,
-    `Providence and repentance in isolation`,
-    `Friday inside hierarchy and companionship`,
-    `Civilization rebuilt through tools, property, and habit`
+    `Survival is narrated through labor, inventory, and the desire to turn chaos into order`,
+    `Isolation becomes a fantasy of control rather than pure loneliness`,
+    `Empire, hierarchy, and property return even on an apparently empty island`
   ],
   'the-jungle-books': [
-    `Mowgli between wolf pack and village life`,
-    `The Law of the Jungle as moral code`,
-    `Baloo, Bagheera, and Shere Khan as rival models`,
-    `Animal stories about belonging and hierarchy`,
-    `Growing up between wilderness and human society`
+    `Belonging is negotiated through law, instinct, and competing forms of authority`,
+    `Growing up means moving between worlds without fully belonging to either one`,
+    `The animal stories work as meditations on hierarchy, loyalty, and freedom`
   ],
   'kim-rudyard-kipling': [
-    `Kimball O’Hara between Irish and Indian worlds`,
-    `The lama’s spiritual quest beside the Great Game`,
-    `Espionage, travel, and apprenticeship across India`,
-    `Disguise, languages, and performed identity`,
-    `Empire as both system and adventure map`
+    `Identity is treated as fluid, strategic, and deeply performative`,
+    `Empire appears both as an intelligence network and as a vast travel map`,
+    `The novel balances spiritual searching against political maneuvering without fully reconciling them`
   ],
   'mother-india': [
-    `Sanitation, caste, and social-reform indictment`,
-    `Attacks on child marriage and women’s conditions`,
-    `Imperial paternalism disguised as investigation`,
-    `Nationalist backlash against Katherine Mayo`,
-    `The book as a weapon in anti-independence politics`
+    `Social criticism is inseparable from the imperial assumptions guiding the indictment`,
+    `Gender, caste, and hygiene are turned into arguments about civilizational fitness`,
+    `The book matters historically because it functioned as a political weapon, not just a critique`
   ],
   'thus-spoke-zarathustra': [
-    `Prophetic speeches from Zarathustra`,
-    `The overman against herd morality`,
-    `Self-overcoming through continual re-creation`,
-    `Eternal recurrence as a test of affirmation`,
-    `Christian pity and resentment under attack`
+    `Self-overcoming replaces obedience as the central moral demand`,
+    `Nietzsche attacks herd morality for rewarding comfort, resentment, and conformity`,
+    `Affirmation matters because the strongest life is the one that can say yes even to repetition`
   ],
   'the-futurist-manifesto': [
-    `Speed, machines, and urban violence as ideals`,
-    `Contempt for museums, libraries, and the past`,
-    `War treated as cleansing energy`,
-    `Art as shock, rupture, and provocation`,
-    `Modernity celebrated through destruction`
+    `Modernity is praised as speed, rupture, aggression, and deliberate disrespect for inheritance`,
+    `Art is asked to stop preserving culture and start attacking it`,
+    `The manifesto shows how aesthetic rebellion can slide toward political brutality`
   ],
   'the-communist-manifesto': [
-    `Bourgeoisie and proletariat as antagonists`,
-    `Capitalism revolutionizing everything it touches`,
-    `Class struggle as the motor of history`,
-    `Private property and communist demands`,
-    `International revolution against the existing order`
+    `Class struggle is presented as the hidden engine of historical change`,
+    `Capitalism is treated as both radically productive and deeply corrosive`,
+    `Communism appears as a collective answer to exploitation, property, and class domination`
   ],
   'the-changing-world-order': [
-    `Debt cycles and reserve-currency power`,
-    `Great powers rising and declining in patterns`,
-    `Domestic cohesion versus internal breakdown`,
-    `War, finance, and geopolitical succession`,
-    `China and the United States inside a larger cycle`
+    `Great powers rise and decline through recurring cycles of debt, conflict, and financial credibility`,
+    `Domestic cohesion matters as much as military or economic scale`,
+    `The United States and China are framed as one episode inside a larger historical pattern`
   ],
   'the-decline-of-the-west': [
-    `Cultures treated as living organisms`,
-    `Faustian civilization and Western exhaustion`,
-    `History read morphologically rather than progressively`,
-    `Democracy, money, and Caesarism as late symptoms`,
-    `Civilizational pessimism about renewal`
+    `Civilizations are treated as living forms with growth, maturity, and decline`,
+    `Spengler rejects progress talk in favor of a morphological view of history`,
+    `Late-stage politics is defined by money, exhaustion, and the hunger for stronger rule`
   ],
   'the-waste-land': [
-    `Tiresias binding the poem’s shifting voices`,
-    `The Unreal City of deadened modern life`,
-    `Sex without intimacy in The Fire Sermon`,
-    `Fragments of myth and scripture against collapse`,
-    `Rain, thunder, and the possibility of renewal`
+    `Fragmentation becomes the formal expression of cultural and spiritual exhaustion`,
+    `Myth, scripture, and quotation survive as broken inheritances rather than stable answers`,
+    `The poem holds out renewal only as something difficult, partial, and uncertain`
   ],
   'snow-crash': [
-    `Hiro Protagonist hacking through franchise America`,
-    `The Metaverse as status world and battlefield`,
-    `Snow Crash as virus, language, and mind-control code`,
-    `Sumerian myth repurposed as information warfare`,
-    `Mafia pizza delivery and privatized state collapse`
+    `Information systems become the new terrain on which myth, language, and control collide`,
+    `Privatized modernity turns society into a branded and unstable patchwork`,
+    `Stephenson treats media, code, and belief as different forms of power over attention`
   ],
   'animal-farm': [
-    `Old Major’s revolt turning into Napoleon’s regime`,
-    `Snowball, exile, and the seizure of the revolution`,
-    `Boxer’s loyalty being exploited to the end`,
-    `Commandments rewritten by Squealer’s propaganda`,
-    `Pigs becoming indistinguishable from human masters`
+    `Revolutionary language can survive long after revolutionary purpose has been emptied out`,
+    `Propaganda matters because it rewrites memory faster than force alone ever could`,
+    `Power ends up imitating the very order it once promised to destroy`
   ],
   'the-catcher-in-the-rye': [
-    `Holden Caulfield wandering New York after expulsion`,
-    `Allie’s death sitting beneath the sarcasm`,
-    `Phoniness as Holden’s attack on adult performance`,
-    `Phoebe and the fantasy of protecting innocence`,
-    `Collapse, exhaustion, and refusal to grow up cleanly`
+    `Contempt for phoniness hides grief, fear, and emotional fragility`,
+    `Innocence matters less as purity than as something Holden cannot bear to see broken`,
+    `Adolescence is shown as a defensive performance against loss and adult compromise`
   ],
   'to-kill-a-mockingbird': [
-    `Atticus Finch defending Tom Robinson`,
-    `Scout and Jem learning Maycomb’s racial code`,
-    `Boo Radley shifting from fear to human reality`,
-    `Courtroom injustice exposing respectable cruelty`,
-    `Empathy taught against social prejudice`
+    `Moral education happens inside a community structured by racial injustice`,
+    `Empathy is presented as necessary but not sufficient against entrenched prejudice`,
+    `The novel measures law and adulthood by whether they protect the vulnerable or fail them`
   ],
   'macbeth': [
-    `The witches triggering Macbeth’s fatal imagination`,
-    `Lady Macbeth driving Duncan’s murder and then breaking`,
-    `Banquo’s ghost and guilt made visible`,
-    `Prophecy twisting confidence into delusion`,
-    `Tyranny ending at Birnam Wood and Dunsinane`
+    `Ambition becomes catastrophic once suggestion, permission, and fear begin reinforcing each other`,
+    `Guilt does not restrain violence here so much as deepen paranoia and instability`,
+    `Power detached from legitimacy quickly turns into tyranny defended by blood`
   ],
   'alice-in-wonderland': [
-    `The rabbit hole and constant shifts of scale`,
-    `Tea parties, riddles, and logic gone crooked`,
-    `The Caterpillar and Alice’s unstable identity`,
-    `The Queen’s authority as pure absurd performance`,
-    `Dream structure turning nonsense into satire`
+    `Identity feels unstable when language, scale, and rules keep shifting underneath it`,
+    `Nonsense works as satire because authority in Wonderland is mostly ritual without reason`,
+    `Childlike curiosity becomes a way of exposing adult systems as arbitrary performances`
   ],
   'lord-of-the-rings': [
-    `Frodo carrying the Ring toward Mordor`,
-    `Aragorn growing into kingship and responsibility`,
-    `Gollum as corruption, pity, and final necessity`,
-    `The Fellowship breaking apart and still holding purpose`,
-    `Power renounced instead of seized`
+    `Power is most dangerous when it presents domination as necessity`,
+    `Hope survives through fellowship, endurance, pity, and ordinary acts of loyalty`,
+    `Tolkien makes true greatness look like stewardship and renunciation rather than conquest`
   ],
   'pride-and-prejudice': [
-    `Elizabeth Bennet and Darcy correcting their first impressions`,
-    `Bingley, Jane, and quieter forms of affection`,
-    `Lydia and Wickham exposing the family’s vulnerability`,
-    `Lady Catherine and the pressure of rank`,
-    `Marriage as character test rather than mere romance`
+    `Pride and prejudice distort judgment long before either character realizes it`,
+    `Marriage is treated as a moral, social, and economic institution rather than just a romantic outcome`,
+    `Self-knowledge is what allows affection to become worthy of trust`
   ],
   'jane-eyre': [
-    `Lowood hardship forging Jane’s moral backbone`,
-    `Thornfield attraction and secrecy around Rochester`,
-    `Bertha Mason as the hidden cost of the household`,
-    `Refusal to become a dependent mistress`,
-    `Return to Rochester on terms of equality`
+    `Conscience matters more than passion when love demands self-erasure`,
+    `Jane's dignity comes from refusing dependence disguised as romance`,
+    `The novel insists that intimacy is only humane when it rests on moral equality`
   ],
   'wuthering-heights': [
-    `Catherine and Heathcliff bound by destructive obsession`,
-    `Heathcliff weaponizing humiliation into revenge`,
-    `Wuthering Heights and Thrushcross Grange as rival worlds`,
-    `Class exclusion warping love into cruelty`,
-    `The younger generation partially escaping the curse`
+    `Love becomes destructive when it is fused with possession, injury, and pride`,
+    `Humiliation hardens into revenge that outlives the original wound`,
+    `The novel asks whether one generation can inherit violence without repeating it`
   ],
   'crime-and-punishment': [
-    `Raskolnikov’s murder theory and the actual killing`,
-    `Porfiry tightening pressure through psychological pursuit`,
-    `Sonia as suffering, pity, and moral counterweight`,
-    `Pride isolating Raskolnikov from ordinary humanity`,
-    `Confession and the possibility of spiritual rebirth`
+    `Ideas of superiority collapse once they are tested against lived moral reality`,
+    `Guilt becomes an inward punishment that no theory can fully suppress`,
+    `Redemption begins only when pride gives way to confession and human connection`
   ],
   'war-and-peace': [
-    `Pierre Bezukhov stumbling toward moral seriousness`,
-    `Prince Andrei’s disillusionment with glory and greatness`,
-    `Natasha Rostova as vitality, error, and growth`,
-    `The 1812 invasion and Russia’s social world at war`,
-    `Tolstoy attacking great-man theories of history`
+    `History is made by countless lives and pressures, not by heroic legend alone`,
+    `War and domestic life are inseparable because public catastrophe reshapes private meaning`,
+    `Tolstoy keeps returning to humility as an answer to vanity, ambition, and abstraction`
   ],
   'anna-karenina': [
-    `Anna and Vronsky destroying themselves through passion`,
-    `Levin and Kitty as the counterpoint of earned domestic meaning`,
-    `Society punishing female scandal more than male selfishness`,
-    `Stiva’s easy moral shallowness inside the same world`,
-    `Jealousy, isolation, and Anna’s slide toward despair`
+    `Desire becomes ruinous when it cannot coexist with social reality or inner steadiness`,
+    `Tolstoy exposes how unequally society judges male and female transgression`,
+    `Levin's search for meaning gives the novel a counterweight rooted in ordinary life`
   ],
   'don-quixote': [
-    `Don Quixote imposing romance onto the real world`,
-    `Sancho Panza grounding fantasy with appetite and wit`,
-    `Windmills, inns, and beatings exposing delusion`,
-    `Books creating identity as much as madness`,
-    `Idealism surviving ridicule without fully collapsing`
+    `Imagination can deform reality and still preserve a kind of dignity`,
+    `Books matter because they shape identity as powerfully as experience does`,
+    `The comedy keeps asking what a disenchanted world loses when idealism is mocked out of it`
   ],
   'les-miserables': [
-    `Jean Valjean remade by the bishop’s mercy`,
-    `Javert’s law colliding with grace`,
-    `Fantine and Cosette inside structural misery`,
-    `Marius and the barricades of revolutionary Paris`,
-    `Redemption pursued through sacrifice rather than innocence`
+    `Mercy is shown as more transformative than punishment could ever be`,
+    `Law becomes cruel when it cannot recognize suffering, change, or grace`,
+    `Private redemption and public misery remain tightly bound throughout the novel's world`
   ],
   'madame-bovary': [
-    `Emma Bovary treating life like a bad romance novel`,
-    `Provincial boredom feeding erotic and social fantasy`,
-    `Rodolphe and Léon as failed escape routes`,
-    `Debt and Lheureux tightening the trap`,
-    `Self-destruction born from illusion and appetite`
+    `Borrowed fantasies make ordinary life feel intolerable and permanently insufficient`,
+    `Desire is modern here because it is tied to image, consumption, and dissatisfaction`,
+    `Self-destruction grows from vanity and boredom long before it reaches catastrophe`
   ],
   'the-brothers-karamazov': [
-    `Fyodor Karamazov’s corruption setting the murder plot`,
-    `Ivan’s rebellion and the Grand Inquisitor argument`,
-    `Alyosha as spiritual charity in a degraded family`,
-    `Dmitri’s appetite, honor, and wrongful implication`,
-    `Smerdyakov turning ideas into crime`
+    `Faith, doubt, freedom, and responsibility are argued through the structure of a family crisis`,
+    `Ideas matter because Dostoevsky keeps showing how they become lived moral forces`,
+    `Spiritual disorder is never abstract here; it enters appetite, guilt, violence, and love`
   ],
   'a-tale-of-two-cities': [
-    `Doctor Manette’s imprisonment echoing through generations`,
-    `Madame Defarge turning grievance into relentless vengeance`,
-    `Charles Darnay trapped by inherited aristocratic guilt`,
-    `Sydney Carton finding redemption through substitution`,
-    `Resurrection imagery binding private love to public terror`
+    `Revolution is shown as both morally intelligible and terrifying in its appetite for vengeance`,
+    `Inheritance matters because private lives stay caught inside older systems of injury`,
+    `Sacrifice becomes the novel's strongest answer to political and personal ruin`
   ],
   'the-scarlet-letter': [
-    `Hester Prynne wearing the scarlet letter in public`,
-    `Dimmesdale’s hidden guilt eating through his authority`,
-    `Chillingworth turning injury into parasitic revenge`,
-    `Pearl as living consequence and disruptive truth`,
-    `Puritan judgment failing to control inner reality`
+    `Public shame and private guilt damage people in radically different ways`,
+    `A moral community can become cruel when it mistakes surveillance for righteousness`,
+    `Identity is shaped by judgment here but never fully contained by it`
   ],
   'the-count-of-monte-cristo': [
-    `Edmond Dantès transformed by prison and Abbé Faria`,
-    `The Château d’If turning despair into education`,
-    `Layered revenge against Danglars, Fernand, and Villefort`,
-    `Wealth, disguise, and theatrical self-invention`,
-    `Mercy emerging only after vengeance goes too far`
+    `Injustice produces a self reinvented entirely around revenge`,
+    `Power becomes theatrical once wealth, secrecy, and performance can be weaponized together`,
+    `Mercy returns only after vengeance reveals how morally unstable it really is`
   ],
   'hamlet': [
-    `The ghost accusing Claudius and demanding revenge`,
-    `Hamlet’s delay between thought and action`,
-    `The play within the play exposing hidden guilt`,
-    `Ophelia and Polonius as collateral damage of court corruption`,
-    `Death, rot, and the collapse of Denmark’s order`
+    `Thought becomes paralyzing when the world itself seems morally rotten`,
+    `Court life is saturated with performance, surveillance, and bad faith`,
+    `Revenge cannot restore order once corruption has entered the whole political body`
   ],
   'dracula': [
-    `Jonathan Harker trapped inside Dracula’s castle`,
-    `Lucy Westenra’s transformation and repeated staking`,
-    `Mina Harker as both victim and strategic mind`,
-    `Modern tools fighting an ancient supernatural threat`,
-    `Invasion, blood, and sexual panic fused together`
+    `Modern rational systems are tested against a threat older than their confidence`,
+    `Invasion, contamination, and sexual anxiety give the horror its cultural charge`,
+    `Community matters because the novel imagines knowledge-sharing as a defense against darkness`
   ],
   'othello': [
-    `Iago engineering suspicion through insinuation`,
-    `The handkerchief becoming false proof`,
-    `Othello’s outsider status in Venice and Cyprus`,
-    `Desdemona’s innocence trapped inside male manipulation`,
-    `Jealousy turning honor into murder`
+    `Jealousy becomes lethal once identity and trust can be manipulated from within`,
+    `Suggestion matters more than proof because suspicion remakes reality for the victim`,
+    `Honor culture leaves love vulnerable to pride, insecurity, and public shame`
   ],
   'fathers-and-sons': [
-    `Bazarov’s nihilism confronting older liberal ideals`,
-    `Arkady pulled between imitation and maturity`,
-    `Odintsova exposing Bazarov’s emotional limits`,
-    `Serf-reform Russia shifting beneath family life`,
-    `Parents and children loving each other across ideological contempt`
+    `Generational conflict turns ideas into emotional and social struggle`,
+    `Nihilism looks powerful until it is tested against attachment, love, and mortality`,
+    `Modernization unsettles inherited authority without making the new worldview complete`
   ],
   'middlemarch': [
-    `Dorothea Brooke’s idealism colliding with Casaubon`,
-    `Lydgate’s ambition being suffocated by debt and marriage`,
-    `Rosamond’s vanity reshaping other lives`,
-    `Provincial gossip and reputation governing possibility`,
-    `Moral consequence spreading through an entire town`
+    `Apparently private choices keep radiating outward through a whole social web`,
+    `Idealism is limited as much by money and vanity as by outright malice`,
+    `Eliot finds moral seriousness in unheroic, everyday forms of life`
   ],
   'romance-of-the-three-kingdoms': [
-    `The fall of the Han and the scramble for legitimacy`,
-    `Liu Bei, Guan Yu, and Zhang Fei bound by sworn loyalty`,
-    `Cao Cao mixing brilliance, ambition, and ruthlessness`,
-    `Zhuge Liang making strategy itself legendary`,
-    `Red Cliffs and other campaigns deciding the shape of empire`
+    `Political legitimacy is always contested and always central to power`,
+    `Loyalty, ambition, and strategy keep colliding rather than aligning cleanly`,
+    `History is narrated as moral theater without losing its appetite for cunning`
   ],
   'the-tale-of-the-heike': [
-    `The Taira clan rising into fatal arrogance`,
-    `The Minamoto war turning court conflict into annihilation`,
-    `The Gion Shōja bells announcing impermanence`,
-    `Warrior glory shadowed by Buddhist transience`,
-    `Atsumori, Yoshitsune, and beauty inside loss`
+    `Impermanence gives every triumph a shadow before it fully arrives`,
+    `Warrior glory and Buddhist sorrow coexist instead of canceling each other out`,
+    `The poem remembers power most vividly at the moment it begins to vanish`
   ],
   'samguk-sagi': [
-    `Goguryeo, Baekje, and Silla locked in rivalry`,
-    `Annals of kingship used to define legitimacy`,
-    `Campaigns and alliances shaping peninsular power`,
-    `State formation recorded through court-centered history`,
-    `Silla’s eventual ascendancy framed as historical order`
+    `Historical memory is organized around kingship, legitimacy, and unification`,
+    `The chronicle treats state formation as the main frame through which the past becomes intelligible`,
+    `Record-keeping itself becomes part of how political order is justified`
   ],
   'secret-history-of-the-mongols': [
-    `Temujin’s rise from exile and vulnerability`,
-    `Jamukha, anda loyalty, and steppe betrayal`,
-    `Börte, family bonds, and political survival`,
-    `Tribal unification through charisma and terror`,
-    `Mongol law, discipline, and conquest-making power`
+    `State-building grows out of kinship, betrayal, survival, and personal charisma`,
+    `Steppe politics value loyalty intensely while rewarding ruthlessness when loyalty breaks`,
+    `Conquest is tied not just to violence but to discipline, order, and political imagination`
   ],
   'mahabharata': [
-    `The Pandava-Kaurava feud growing from family rivalry`,
-    `The dice game and Draupadi’s humiliation`,
-    `Krishna guiding Arjuna before battle`,
-    `Kurukshetra as a war of duty and devastation`,
-    `Aftermath showing victory without innocence`
+    `Duty remains morally difficult even when action cannot be avoided`,
+    `Family conflict expands until it becomes a civilizational catastrophe`,
+    `Victory offers no clean innocence once the ethical cost has fully appeared`
   ],
   'baburnama': [
-    `Losing and retaking kingdoms from Ferghana to Kabul`,
-    `Samarkand ambition and repeated reversals`,
-    `Landscape, gardens, and cities observed with unusual candor`,
-    `Campaign leadership amid fragile legitimacy`,
-    `Founding Mughal rule without losing the memoir’s personal voice`
+    `Rulership appears as precarious, mobile, and intensely personal`,
+    `Observation of cities, gardens, weather, and people matters as much as conquest`,
+    `Empire is recorded here with unusual candor about failure, desire, and contingency`
   ],
   'the-gallic-war': [
-    `Helvetii, Ariovistus, and the expansion of Roman intervention`,
-    `Vercingetorix and the siege of Alesia`,
-    `Engineering, logistics, and speed as instruments of conquest`,
-    `Third-person narration as Caesar’s self-justification`,
-    `Gaul subdued through force and political theater`
+    `Conquest is narrated as rational necessity by the very man conducting it`,
+    `Military efficiency depends on logistics, speed, engineering, and disciplined force`,
+    `The text is as much self-justification and political theater as battlefield record`
   ],
   'shahnameh': [
-    `Rostam carrying heroic greatness and catastrophic blindness`,
-    `Iran-Turan wars defining loyalty and enmity`,
-    `Kingship judged by justice rather than blood alone`,
-    `Tragedies like Rostam and Sohrab deepening the epic`,
-    `Persian memory preserved through legend and verse`
+    `Heroism matters most where greatness and blindness exist in the same figure`,
+    `Kingship is judged by justice, wisdom, and moral fitness rather than lineage alone`,
+    `Epic memory preserves a civilizational identity through tragedy as much as triumph`
   ],
   'mein-kampf': [
-    `Hitler turning defeat into the stab-in-the-back myth`,
-    `Race war and antisemitism made into a total worldview`,
-    `Propaganda treated as a weapon of mass persuasion`,
-    `Leader principle and contempt for parliamentary politics`,
-    `Lebensraum and expansionist nationalism`
+    `Personal grievance is enlarged into a total political myth of national betrayal`,
+    `Racism and antisemitism are presented as the organizing logic of history and politics`,
+    `Propaganda, authoritarian leadership, and expansionism are fused into one program`
   ],
   'the-arabs-and-the-holocaust': [
-    `Arab responses to the Holocaust across the twentieth century`,
-    `Nakba memory colliding with Holocaust memory`,
-    `Acknowledgment, denial, and political instrumentalization`,
-    `European antisemitism refracted through Arab debates`,
-    `Historical responsibility argued amid the Arab-Israeli conflict`
+    `Memory becomes politically contested when different histories of trauma are forced into the same field`,
+    `Acknowledgment, denial, and appropriation all take shape within Arab-Israeli conflict`,
+    `The book shows how historical responsibility is argued through identity and geopolitics`
   ],
   'nazis-islamists-and-the-making-of-the-modern-middle-east': [
-    `Haj Amin al-Husseini and wartime alliance politics`,
-    `Nazi broadcasting and propaganda in the Arab world`,
-    `Islamist movements borrowing from fascist-style mobilization`,
-    `Anti-British and anti-Zionist struggle entangled with larger ideologies`,
-    `Postwar legacies carried into regional politics`
+    `European totalitarian movements and Middle Eastern politics intersect through strategy, propaganda, and shared enemies`,
+    `Anti-colonial, anti-British, and anti-Zionist currents become entangled with fascist influence`,
+    `Wartime ideological alliances matter because their afterlives persist beyond the war itself`
   ],
   'sombres-bourreaux': [
-    `Black collaboration examined across colonies and diasporas`,
-    `Vichy, occupation, and imperial status complicating allegiance`,
-    `Race operating inside regimes built on racial hierarchy`,
-    `Opportunism, survival, and moral compromise under war pressure`,
-    `Memory politics around uncomfortable collaboration histories`
+    `Collaboration under empire resists simple moral sorting`,
+    `Race complicates allegiance because hierarchical regimes still depend on compromised intermediaries`,
+    `The hardest question is how societies remember histories that do not fit heroic self-images`
   ],
   'the-quran': [
-    `Revelation to Muhammad in Meccan and Medinan settings`,
-    `Stories of earlier prophets as warning and continuity`,
-    `Judgment, mercy, and accountability before God`,
-    `Prayer, law, and communal discipline`,
-    `Arabic recitation as part of the scripture’s force`
+    `Revelation appears as warning, mercy, command, and reminder all at once`,
+    `Human beings are judged within a world ordered by divine unity and accountability`,
+    `Recitation, law, and remembrance make scripture part of communal life rather than a distant text`
   ],
   'torah': [
-    `Genesis origins and the patriarchal family line`,
-    `Exodus from Egypt under Moses`,
-    `Sinai covenant and the giving of the law`,
-    `Holiness, sacrifice, and communal order in Leviticus`,
-    `Wilderness testing and Deuteronomic renewal`
+    `Covenant and law shape a people through story as much as through command`,
+    `Origins, exodus, and wilderness testing define identity through memory and obligation`,
+    `Holiness here is communal, practical, and inseparable from obedience`
   ],
   'tanakh': [
-    `From conquest and judges to monarchy and collapse`,
-    `Prophets confronting kings, idolatry, and injustice`,
-    `Psalms, Job, and wisdom literature on suffering and praise`,
-    `Exile and return reshaping national identity`,
-    `Covenant memory carried through narrative, poetry, and law`
+    `History, poetry, prophecy, and wisdom all interpret what covenant faithfulness means`,
+    `Exile and return become the deepest political and spiritual pattern in the collection`,
+    `Praise, lament, warning, and hope keep national memory tied to divine judgment`
   ],
   'talmud': [
-    `Mishnah and Gemara building layered argument`,
-    `Rabbinic dispute as the method rather than a defect`,
-    `Halakhic reasoning applied to ordinary life`,
-    `Aggadic stories carrying ethics and imagination`,
-    `Tradition preserved through debate, commentary, and precedent`
+    `Argument is treated as a mode of preservation rather than a sign of disorder`,
+    `Law becomes durable by being translated into lived, everyday reasoning`,
+    `Commentary builds continuity by keeping tradition open to disciplined debate`
   ],
   'tao-te-ching': [
-    `The Tao as the nameless source and pattern of things`,
-    `Wu wei as action without strain or forcing`,
-    `Water, softness, and reversal defeating hardness`,
-    `Small-state rulership and suspicion of prideful power`,
-    `Simplicity, emptiness, and the uncarved life`
+    `The deepest order works best when it is not turned into display, force, or ego`,
+    `Softness, emptiness, and restraint are treated as sources of strength rather than weakness`,
+    `Self-rule and political rule both improve when control stops becoming obsession`
   ],
   'kojiki': [
-    `Izanagi and Izanami in the creation of the islands`,
-    `Amaterasu, Susanoo, and the drama of the kami`,
-    `The heavenly descent and imperial ancestry`,
-    `Purification, pollution, and ritual order`,
-    `Myth tied to sacred geography and rulership`
+    `Sacred story and political legitimacy are fused so tightly that myth becomes a foundation of rule`,
+    `Purity, pollution, and ritual order matter because the world is imagined as spiritually charged`,
+    `Genealogy, place, and divine ancestry are used to preserve a durable cultural identity`
   ],
   'dhammapada': [
-    `Mind as the forerunner of conduct`,
-    `Craving, anger, and self-made suffering`,
-    `Heedfulness versus negligence`,
-    `The disciplined person on the path to liberation`,
-    `Detachment, compassion, and nirvana`
+    `Suffering is traced back to the trained or untrained mind rather than to fate alone`,
+    `Ethical discipline matters because thought, speech, and action keep shaping each other`,
+    `Liberation begins with repeated practices of clarity, detachment, and compassion`
   ],
   'bhagavad-gita': [
-    `Arjuna’s crisis before killing his own kin`,
-    `Dharma and disciplined action under moral strain`,
-    `Action without attachment to the fruits`,
-    `Bhakti, knowledge, and the paths of yoga`,
-    `Krishna’s cosmic form and the deathless self`
+    `Action remains necessary even when moral clarity is painful or incomplete`,
+    `Discipline comes from doing one's duty without surrendering the self to fear or outcome`,
+    `Devotion, knowledge, and self-mastery are treated as converging paths rather than rival ones`
   ],
   'the-mabinogion': [
-    `Pwyll, Rhiannon, and traffic with Annwn`,
-    `Branwen and the catastrophe of kinship politics`,
-    `Manawydan, dispossession, and enchantment`,
-    `Math, Blodeuwedd, and transformation as punishment`,
-    `Heroic honor mixed with older Celtic wonder`
+    `Heroic politics and otherworldly enchantment occupy the same imaginative universe`,
+    `Honor, kinship, and injury keep turning private conflict into public catastrophe`,
+    `Transformation and magic are used to test identity rather than merely decorate the tales`
   ],
   'arvisura': [
-    `Scythian, Hun, and Magyar origin lineages`,
-    `Táltos spirituality and sacred ancestry`,
-    `Legendary migrations and tribal memory`,
-    `Heroic rulers turned into national myth`,
-    `Myth used to fortify Hungarian identity`
+    `Mythic ancestry is turned into a claim about collective identity rather than harmless folklore`,
+    `Spiritual lineage matters because national continuity is imagined as sacred as well as historical`,
+    `The text shows how legend can be mobilized to stabilize belonging in the present`
   ],
   'opportunity': [
-    `Finding urgent problems people already want solved`,
-    `Positioning and market selection before product-building`,
-    `Designing offers around demand instead of ego`,
-    `Creating value that is easy to explain and buy`,
-    `Execution and responsibility over entrepreneurial wishful thinking`
+    `Entrepreneurship begins with demand rather than with self-expression alone`,
+    `Positioning matters because the right market can matter more than a clever product`,
+    `Execution beats fantasy when value is urgent, legible, and easy to buy`
   ],
   'the-power-of-now': [
-    `Watching thought instead of being ruled by it`,
-    `The pain-body and emotional reactivity`,
-    `Ego built from past and future identification`,
-    `Presence through surrender to what already is`,
-    `Inner stillness as the opening to awakening`
+    `Most suffering is intensified by compulsive identification with thought and time`,
+    `Presence is treated as a practical discipline rather than a vague spiritual mood`,
+    `Freedom begins when reaction stops governing attention`
   ],
   '7-habits-of-highly-effective-people': [
-    `Habit 1: Be Proactive — take responsibility for your responses, choices, and conduct instead of blaming circumstances or other people.`,
-    `Habit 2: Begin with the End in Mind — define your principles, long-term goals, and desired direction before deciding what to do day to day.`,
-    `Habit 3: Put First Things First — organize time around what matters most so values and priorities control the schedule rather than urgency alone.`,
-    `Habit 4: Think Win-Win — aim for solutions that create mutual benefit instead of treating relationships as zero-sum contests.`,
-    `Habit 5: Seek First to Understand, Then to Be Understood — listen deeply and accurately before trying to persuade, defend, or correct.`,
-    `Habit 6: Synergize — use difference, trust, and cooperation to create better outcomes than any one person could produce alone.`,
-    `Habit 7: Sharpen the Saw — renew yourself physically, mentally, emotionally, and spiritually so effectiveness can be sustained over time.`
+    `Character matters more than technique because habits scale the kind of person using them`,
+    `Effective living begins with self-governance before it reaches leadership or collaboration`,
+    `Renewal is part of effectiveness itself, not a reward that comes after it`
   ],
   'the-buying-brain': [
-    `Attention, novelty, and neural salience in marketing`,
-    `Emotion and reward as drivers of purchase decisions`,
-    `Memory, branding, and decision shortcuts`,
-    `Measuring responses to ads, packaging, and products`,
-    `What brain-based marketing can and cannot really prove`
+    `Consumer choice is driven by attention, emotion, and memory long before tidy rational explanation`,
+    `Marketing works better when it studies real behavior instead of idealized decision-making`,
+    `Brain science is most useful when it clarifies influence without pretending to eliminate complexity`
   ],
   'advanced-interviewing-techniques': [
-    `Rapport before resistance hardens`,
-    `Question sequencing and interview structure`,
-    `Behavioral cues, baselines, and leakage`,
-    `Elicitation that feels conversational instead of blunt`,
-    `Maintaining control without blowing the subject up`
+    `Good interviewing is about managing a social environment, not just asking questions`,
+    `Rapport and sequencing matter because disclosure depends on timing as much as pressure`,
+    `Control works best when it feels calm, structured, and non-theatrical`
   ],
   'mining-capital': [
-    `The funding ladder from explorer to producer`,
-    `Equity, debt, royalties, and streaming finance`,
-    `Technical, jurisdictional, and commodity-price risk`,
-    `Due diligence and bankable feasibility work`,
-    `Capital strategy across the mine life cycle`
+    `Resource projects live or die by how risk is priced, not just by what is underground`,
+    `Financing structures shape strategic options across the full mine life cycle`,
+    `Credibility matters because mining stories must survive technical, political, and market scrutiny`
   ],
   'the-phoenix-project': [
-    `Bill Palmer inheriting a collapsing IT operation`,
-    `Brent as the bottleneck that reveals the system`,
-    `The Three Ways and DevOps-style flow`,
-    `Work-in-progress limits and visible queues`,
-    `Operational recovery through cross-team discipline`
+    `Operational failure usually reflects system design more than individual effort`,
+    `Bottlenecks and invisible work determine performance more than heroic multitasking`,
+    `Reliability improves when flow, feedback, and shared responsibility replace firefighting`
   ],
   'thinking-fast-and-slow': [
-    `System 1 versus System 2 thinking`,
-    `Heuristics, substitution, and overconfidence`,
-    `Prospect theory and loss aversion`,
-    `Base-rate neglect and probability errors`,
-    `The remembering self versus the experiencing self`
+    `Human judgment is fast, useful, and predictably error-prone at the same time`,
+    `Bias thrives when confidence outruns numeracy, patience, and statistical sense`,
+    `Rationality matters less as a permanent state than as a corrective discipline`
   ],
   'thinking-in-bets': [
-    `Treating decisions as bets under uncertainty`,
-    `Separating process quality from lucky or unlucky outcomes`,
-    `Calibrating belief in percentages instead of certainty`,
-    `Truth-seeking groups that expose bad reasoning`,
-    `Emotional discipline after wins, losses, and feedback`
+    `Decision quality should be judged by process under uncertainty rather than by outcome alone`,
+    `Probabilistic thinking is a habit of humility rather than a trick for sounding smart`,
+    `Better judgment depends on feedback cultures that reward updating over ego defense`
   ],
   'good-strategy-bad-strategy': [
-    `Diagnosis of the actual bottleneck or challenge`,
-    `Guiding policy that narrows what to do`,
-    `Coherent action instead of scattered initiatives`,
-    `Tradeoffs, concentration, and leverage`,
-    `Fluff, goals, and buzzwords masquerading as strategy`
+    `Strategy begins with diagnosing the real obstacle instead of announcing ambition`,
+    `Focus creates power because coherent action beats scattered effort`,
+    `Clear tradeoffs are what separate strategy from motivational language`
   ],
   'the-infinite-game': [
-    `Finite contests versus an enduring mission`,
-    `A just cause that outlasts metrics`,
-    `Trusting teams and candid cultures`,
-    `Worthy rivals instead of paranoid enemies`,
-    `Existential flexibility when survival requires change`
+    `Institutions last longer when they serve an enduring mission rather than a scoreboard alone`,
+    `Trust and adaptability matter because finite wins can still produce long-term fragility`,
+    `Leadership weakens when rivals are treated only as enemies instead of sources of learning`
   ],
   'the-art-of-thinking-clearly': [
-    `Survivorship bias, confirmation bias, and selection traps`,
-    `Social proof, authority, and crowd distortion`,
-    `Overconfidence and the illusion of understanding`,
-    `Sunk costs and other everyday decision traps`,
-    `Mental hygiene for making fewer stupid calls`
+    `Cognitive error is ordinary, repeatable, and often socially reinforced`,
+    `Better judgment comes from subtraction as much as addition`,
+    `Practical skepticism is treated as mental hygiene rather than as cynicism`
   ],
   'predictably-irrational': [
-    `Anchoring and the relativity of price`,
-    `Why “free” short-circuits judgment`,
-    `Social norms versus market norms`,
-    `Arousal, temptation, and self-control failure`,
-    `Dishonesty and incentives that invite cheating`
+    `Irrationality follows patterns, which makes it measurable as well as familiar`,
+    `Context, framing, and temptation distort choice more than people like to admit`,
+    `Human behavior becomes clearer once rational self-image is treated with suspicion`
   ],
   'farsighted': [
-    `Short-term instincts versus long-term planning`,
-    `Scenario-building for branching futures`,
-    `Second-order effects and reversibility`,
-    `Collective decision-making under deep uncertainty`,
-    `Why people underinvest in distant outcomes`
+    `Long-term judgment requires thinking in branches rather than single forecasts`,
+    `Good decisions depend on reversibility, second-order effects, and scenario awareness`,
+    `Collective foresight fails when short-term emotion hijacks strategic patience`
   ],
   'skin-in-the-game': [
-    `Risk-takers versus people insulated from consequences`,
-    `Moral symmetry and accountability`,
-    `Experts, interventionists, and hidden asymmetry`,
-    `How minorities can reshape whole systems`,
-    `Local knowledge against abstract managerial arrogance`
+    `Ethics become credible only when decision-makers share in the downside`,
+    `Local exposure often sees reality more clearly than insulated expertise does`,
+    `Small committed minorities can reshape systems more than official consensus suggests`
   ],
   'the-innovators-dilemma': [
-    `Sustaining innovation versus disruption`,
-    `Why existing customers can mislead incumbents`,
-    `Low-end and new-market entry`,
-    `Why competent management still produces failure`,
-    `Spinning out new structures to chase disruption`
+    `Success with existing customers can blind firms to the future`,
+    `Disruption matters because new markets rarely look important at first`,
+    `Structure, not intelligence alone, determines whether incumbents can adapt`
   ],
   'how-spies-think': [
-    `Lesson 1: Situational Awareness — begin by building the clearest possible picture of reality, knowing that information is always incomplete and sometimes wrong.`,
-    `Lesson 2: Explanation — facts do not speak for themselves, so the analyst must test which explanation best accounts for what is known.`,
-    `Lesson 3: Estimations — judgments about what happens next should be framed as reasoned probabilities, not false certainty.`,
-    `Lesson 4: Strategic notice — look early for signals of danger or opportunity so surprise does not force rushed, unprepared reactions.`,
-    `Lesson 5: It is our own demons that are most likely to mislead us — bias, ego, and wishful thinking can distort analysis from within.`,
-    `Lesson 6: We are all susceptible to obsessive states of mind — people can become trapped in fixed narratives and keep forcing evidence to fit them.`,
-    `Lesson 7: Seeing is not always believing: beware manipulation, deception and faking — evidence may be staged, filtered, or designed to mislead.`,
-    `Lesson 8: Imagine yourself in the shoes of the person on the other side — understand motives, fears, and incentives by reasoning from the opponent's point of view.`,
-    `Lesson 9: Trustworthiness creates lasting partnerships — intelligence works best when cooperation is built on credibility, reliability, and shared confidence.`,
-    `Lesson 10: Subversion and sedition are now digital — modern influence campaigns and destabilization increasingly move through networks, platforms, and online information systems.`
+    `Intelligence is the disciplined management of uncertainty rather than the elimination of it`,
+    `Analysis fails most often through bias, narrative fixation, and deceptive evidence`,
+    `Sound judgment depends on probabilities, strategic notice, and understanding the other side`
   ],
   'the-ellipsis-manual': [
-    `Behavioral baselining and pattern clusters`,
-    `Elicitation without looking like interrogation`,
-    `Status, framing, and command presence`,
-    `Verbal suggestion and persuasion routines`,
-    `Reading incongruence under pressure`
+    `Influence works through framing, status, and baseline disruption more than through explicit force`,
+    `Behavioral reading improves when patterns matter more than isolated tells`,
+    `Conversation becomes leverage when attention, emotion, and authority are deliberately managed`
   ],
   'social-engineering-the-art-of-human-hacking': [
-    `Pretexting, rapport, and elicitation`,
-    `Authority, urgency, and other compliance triggers`,
-    `Reconnaissance before the human approach`,
-    `Manipulating trust instead of breaking code`,
-    `Security awareness as the human countermeasure`
+    `Human trust is often easier to exploit than technical infrastructure`,
+    `Attackers win by manipulating emotion, status, and context rather than by brute force`,
+    `Security improves when persuasion is understood as a system rather than as a list of scams`
   ],
   'never-split-the-difference': [
-    `Mirroring and tactical empathy`,
-    `Labeling emotions to lower resistance`,
-    `Calibrated “how” and “what” questions`,
-    `Black swans that change the whole negotiation`,
-    `The Ackerman model and deliberate bargaining structure`
+    `Negotiation turns on emotion and perception before it turns on arithmetic`,
+    `Tactical empathy can create leverage without surrendering position`,
+    `The strongest move is often to reshape the frame instead of splitting the difference`
   ],
   'greek-architecture': [
-    `Doric, Ionic, and Corinthian orders as formal systems`,
-    `Temple planning, proportion, and optical refinement`,
-    `Sanctuaries, theaters, and civic architecture`,
-    `Stone construction and the legacy of timber form`,
-    `How Greek building set the terms for later classicism`
+    `Classical architecture is a system of proportion, refinement, and civic meaning`,
+    `Form matters because ritual, public life, and construction technique are inseparable`,
+    `Greek building endures as a grammar of order rather than as decoration alone`
   ],
   'the-classical-language-of-architecture': [
-    `The classical orders as architectural vocabulary`,
-    `Columns, capitals, bases, and entablatures`,
-    `Proportion, symmetry, and facade composition`,
-    `Pediments, moldings, and ornamental grammar`,
-    `Reading buildings as sentences in a classical language`
+    `Classical design works like a readable visual language rather than a random style kit`,
+    `Proportion and hierarchy give buildings coherence before ornament does`,
+    `Learning the vocabulary turns seeing from passive admiration into interpretation`
   ],
   'chinese-architecture-a-history': [
-    `Timber-frame construction as the core system`,
-    `Dougong brackets, roofs, and structural expression`,
-    `Axial planning in palaces, temples, and capitals`,
-    `Architecture as ritual and political order`,
-    `Change and continuity from early empires to late dynasties`
+    `Continuity in Chinese architecture comes from timber systems, planning, and ritual order`,
+    `Buildings express political hierarchy as much as shelter or beauty`,
+    `Architectural change happens within durable civilizational frameworks rather than through constant rupture`
   ],
   'hanok-the-korean-house': [
-    `Ondol heating and maru floor space`,
-    `Timber construction and modular domestic layout`,
-    `Courtyards, orientation, and site placement`,
-    `House form shaped by climate and daily use`,
-    `Korean domestic aesthetics and landscape relations`
+    `Domestic architecture is shaped by climate, habit, and social pattern rather than style alone`,
+    `The hanok treats house and landscape as a negotiated relationship`,
+    `Everyday comfort depends here on proportion, material intelligence, and seasonal adaptation`
   ],
   'a-world-history-of-architecture': [
-    `Sacred and civic building across civilizations`,
-    `Materials and structural solutions in different regions`,
-    `Climate, technology, and building form`,
-    `Architecture as religion, rule, and public memory`,
-    `Comparing traditions without flattening them into one style story`
+    `Architecture records religion, power, climate, and technique at once`,
+    `Comparison is useful only when traditions are allowed to solve different problems differently`,
+    `The built world becomes legible when function and worldview are read together`
   ],
   'the-guns-of-august': [
-    `The Schlieffen Plan and the violation of Belgium`,
-    `French Plan XVII and the cult of the offensive`,
-    `British entry and the BEF in the opening battles`,
-    `Joffre, Moltke, and command failure in the first month`,
-    `The Marne shattering hopes for a quick war`
+    `World War I begins here as a catastrophe of pride, planning rigidity, and elite misjudgment`,
+    `Modern war punishes political theater once mobilized systems outrun common sense`,
+    `Tuchman makes contingency visible where later hindsight prefers inevitability`
   ],
   'postwar': [
-    `Reconstruction from rubble after 1945`,
-    `Cold War division between East and West`,
-    `Prosperity, welfare states, and social transformation`,
-    `Holocaust memory and Europe’s argument with its past`,
-    `The collapse of communism and the post-1989 settlement`
+    `Postwar Europe is defined by reconstruction, memory, and ideological division`,
+    `Prosperity and stability emerge from institutions built under the pressure of earlier collapse`,
+    `Europe's later identity remains haunted by war, genocide, and the afterlife of communism`
   ],
   'the-sleepwalkers': [
-    `The Balkans as the unstable fuse-box of Europe`,
-    `Serbia, Austria-Hungary, and assassination politics`,
-    `Alliance commitments and diplomatic entanglement`,
-    `The July Crisis as a step-by-step escalation`,
-    `Shared responsibility rather than one simple culprit`
+    `Catastrophe can emerge from cumulative misjudgment rather than one master intention`,
+    `Alliances and crises become dangerous when actors keep mistaking escalation for control`,
+    `Clark treats 1914 as a failure of political imagination as much as diplomacy`
   ],
   'the-rise-and-fall-of-the-third-reich': [
-    `Weimar weakness and Hitler’s political ascent`,
-    `The Nazi dictatorship and destruction of opposition`,
-    `War-making, expansion, and strategic overreach`,
-    `Ideology, propaganda, and the machinery of persecution`,
-    `Collapse, defeat, and the wreckage left behind`
+    `Totalitarian power grows by coordinating ideology, bureaucracy, and mass compliance`,
+    `Expansionism and racial persecution were central to the regime rather than side effects`,
+    `Collapse does not erase how much modern normality can be bent toward organized barbarism`
   ],
   'spqr': [
-    `Rome’s early myths versus recoverable history`,
-    `Citizenship, inclusion, and who counted as Roman`,
-    `Conflict between elite domination and popular politics`,
-    `Expansion, empire, and the strain of conquest`,
-    `How Romans narrated themselves across republic and empire`
+    `Roman history is a long argument about citizenship, legitimacy, and power`,
+    `Expansion enlarges the state while intensifying internal inequality and conflict`,
+    `Rome's self-mythmaking matters because political identity is built narratively as well as institutionally`
   ],
   'the-histories': [
-    `Croesus, Persia, and the long lead-in to war`,
-    `Greco-Persian conflict as the central narrative spine`,
-    `Ethnographic digressions on peoples and customs`,
-    `Hubris, reversal, and the volatility of fortune`,
-    `History as inquiry rather than bare chronicle`
+    `Inquiry matters because Herodotus treats culture, rumor, war, and travel as connected evidence`,
+    `Empire becomes fragile when success hardens into overconfidence`,
+    `The book keeps history open to contingency, curiosity, and competing explanations`
   ],
   'the-peloponnesian-war': [
-    `Athens, Sparta, and the growth of mutual fear`,
-    `Strategy, attrition, and the logic of prolonged war`,
-    `Plague, faction, and moral breakdown`,
-    `Speeches such as the Melian Dialogue as political X-rays`,
-    `The Sicilian disaster and the cost of bad judgment`
+    `Prolonged war corrodes language, judgment, and civic morality from within`,
+    `Fear and interest are shown as more durable drivers than public idealism`,
+    `Thucydides treats political intelligence as something that can sharpen and fail at the same time`
   ],
   'genghis-khan-and-the-making-of-the-modern-world': [
-    `Temujin’s rise and the unification of steppe tribes`,
-    `Mongol military organization and mobility`,
-    `Merit, law, and imperial administration`,
-    `Trade routes, relays, and exchange across Eurasia`,
-    `The Mongol legacy beyond simple barbarian stereotypes`
+    `The Mongol empire is presented as organizational innovation as much as conquest`,
+    `Merit, mobility, and connectivity help explain imperial scale without sanitizing violence`,
+    `Historical memory changes once empires are read beyond their enemies' stereotypes`
   ],
   'the-crusades': [
-    `Urban II and the launch of the First Crusade`,
-    `Holy war, pilgrimage, and penitential violence`,
-    `Latin states in the Levant and their fragility`,
-    `Muslim responses, including the age of Saladin`,
-    `Memory, myth, and the long afterlife of crusading`
+    `Holy war fused belief, ambition, logistics, and memory into one durable conflict`,
+    `Crusading politics never stay simple because devotion and opportunism reinforce each other`,
+    `The afterlife of the Crusades matters because later eras keep reusing them symbolically`
   ],
   'the-silk-roads': [
-    `Central Asia and Persia as historical crossroads`,
-    `Trade routes moving goods, ideas, and religions`,
-    `Empires competing for corridor control`,
-    `From ancient exchange to modern oil and geopolitics`,
-    `A challenge to Europe-centered historical narratives`
+    `History looks different when exchange corridors rather than nation-states become the map`,
+    `Trade routes move religion, power, disease, and empire along with goods`,
+    `Europe's centrality weakens once Eurasian interdependence becomes the main frame`
   ],
   'mastery': [
-    `Apprenticeship as the unavoidable first stage`,
-    `Deliberate practice beyond mere repetition`,
-    `Mentors, rivals, and social intelligence`,
-    `Patience through years of obscurity and frustration`,
-    `Creative independence after deep craft absorption`
+    `Excellence is built through long apprenticeship rather than early self-expression`,
+    `Frustration, obscurity, and repetition are part of deep skill formation`,
+    `Creative independence comes after discipline has been internalized, not before`
   ],
   'think-and-grow-rich': [
-    `Burning desire as the starting engine`,
-    `Faith, autosuggestion, and self-conditioning`,
-    `The “master mind” alliance`,
-    `Organized planning and persistence`,
-    `Imagination converting ambition into enterprise`
+    `Wealth is framed as a product of focused desire organized into belief and persistence`,
+    `Self-conditioning matters because mindset is treated as economic infrastructure`,
+    `The book's appeal lies in making ambition feel systematic rather than accidental`
   ],
   'david-and-goliath': [
-    `The real tactical mismatch in David versus Goliath`,
-    `Desirable difficulty and the uses of hardship`,
-    `When elite institutions become a burden`,
-    `Authority that generates resistance instead of compliance`,
-    `Underdogs pushed into more adaptive strategies`
+    `Apparent weakness can force smarter adaptation than comfortable strength does`,
+    `Hardship is not automatically good, but it can create unusual leverage`,
+    `Power is often misread when status is mistaken for real advantage`
   ],
   'blink': [
-    `Thin-slicing and rapid pattern recognition`,
-    `When expert intuition outruns deliberate analysis`,
-    `The Warren Harding effect and surface bias`,
-    `Stress, overload, and bad quick decisions`,
-    `The narrow conditions under which instinct deserves trust`
+    `Intuition works best under narrow conditions shaped by real expertise`,
+    `Fast judgment becomes dangerous when bias disguises itself as instinct`,
+    `The book is strongest when it asks when to trust speed rather than when to worship it`
   ],
   'what-the-dog-saw': [
-    `Eccentric experts and obsessive practitioners`,
-    `Ordinary products and systems seen through odd details`,
-    `Misread risk, failure, and unintended consequence`,
-    `Profile essays that make the familiar strange`,
-    `Hidden mechanisms behind everyday behavior and work`
+    `Ordinary systems become interesting once hidden mechanisms are made visible`,
+    `Expertise often looks eccentric from the outside because it notices different details`,
+    `Gladwell's method is interpretive curiosity more than one big unified theory`
   ],
   'outliers': [
-    `Opportunity structures behind exceptional success`,
-    `Practice and the famous 10,000-hour frame`,
-    `Birth-date and cohort effects`,
-    `Cultural inheritance shaping behavior`,
-    `Why talent stories leave out the scaffolding`
+    `Success is scaffolded by timing, culture, and opportunity as much as by talent`,
+    `Social context does not erase individual effort but helps explain it`,
+    `Merit stories flatter us most when they omit the systems underneath them`
   ],
   'freakonomics': [
-    `Incentives as the hidden engine of behavior`,
-    `Cheating by teachers, athletes, and experts`,
-    `Data used to test taboo or surprising claims`,
-    `Crime, parenting, and markets viewed sideways`,
-    `Economics as pattern-hunting rather than moral sermon`
+    `Incentives reveal motives that moral language often hides`,
+    `Data becomes most illuminating when it is applied to supposedly off-limits questions`,
+    `The book's style depends on reframing familiar issues rather than solving them exhaustively`
   ],
   'startup-nation': [
-    `Military service as a leadership and network engine`,
-    `Immigration and talent concentration`,
-    `Risk tolerance in a small, pressured country`,
-    `Venture capital, policy, and the Yozma effect`,
-    `Informality, speed, and entrepreneurial culture`
+    `Innovation ecosystems are shaped by culture, networks, pressure, and capital together`,
+    `National insecurity can produce agility as well as fear`,
+    `Entrepreneurial success emerges from institutions that reward speed, informality, and iteration`
   ],
   'zero-the-biography-of-a-dangerous-idea': [
-    `The emergence of zero in Indian mathematics`,
-    `Greek and religious discomfort with nothingness`,
-    `Zero, infinity, and metaphysical unease`,
-    `Positional notation and the growth of calculation`,
-    `Why an empty symbol transformed science`
+    `Nothing becomes revolutionary here once notation changes what thought can do`,
+    `Abstract symbols reshape science because they alter both calculation and imagination`,
+    `Resistance to zero shows that mathematics can disturb metaphysics as much as solve problems`
   ],
   'journey-through-genius': [
-    `Classic proofs as windows into mathematical history`,
-    `How elegance and rigor work together`,
-    `Breakthrough ideas from Euclid onward`,
-    `Theorems that changed what mathematics could do`,
-    `Discovery experienced through proof rather than biography`
+    `Great proofs matter because they change what mathematical thinking can look like`,
+    `Elegance and rigor reinforce each other rather than pulling in opposite directions`,
+    `Mathematical history becomes vivid when discovery is followed through proof instead of anecdote`
   ],
   'the-strangest-man': [
-    `Dirac’s role in quantum theory`,
-    `The equation that predicted antimatter`,
-    `Scientific genius joined to extreme reserve`,
-    `Life among the early quantum pioneers`,
-    `Modern physics seen through one difficult personality`
+    `Theoretical genius can be world-changing while remaining personally inaccessible`,
+    `Modern physics advances here through abstractions that outrun ordinary intuition`,
+    `Scientific revolutions depend on difficult minds as much as on beautiful ideas`
   ],
   'the-alchemist': [
-    `Santiago’s dream and the call to his Personal Legend`,
-    `Omens, signs, and trust in the journey`,
-    `The desert as a testing ground`,
-    `Alchemy as inner as well as literal transformation`,
-    `Treasure found by returning home changed`
+    `Purpose matters here because outward travel mirrors inward formation`,
+    `Intuition and faith are treated as forms of orientation rather than irrationality`,
+    `Transformation becomes more important than possession once the seeker learns how to see`
   ],
   'meditations': [
-    `Self-scrutiny and Stoic discipline`,
-    `Imperial duty carried without self-pity`,
-    `Mortality as a correction to vanity`,
-    `Reason ruling emotion and impulse`,
-    `Inner freedom amid external disorder`
+    `Self-command is treated as the foundation of ethical and political life`,
+    `Mortality shrinks vanity and clarifies what deserves attention`,
+    `Stoicism appears here as a daily discipline of perception rather than emotional numbness`
   ],
   'the-picture-of-dorian-gray': [
-    `Lord Henry’s seductive corruption of Dorian`,
-    `The portrait as the record of hidden decay`,
-    `Basil Hallward and the worship of beauty`,
-    `Pleasure, secrecy, and moral decomposition`,
-    `A conscience that can be hidden but not escaped`
+    `Aestheticism becomes dangerous when beauty is separated from conscience`,
+    `Hidden corruption deepens precisely when appearances remain intact`,
+    `Influence matters because self-creation is never as autonomous as it pretends to be`
   ],
   'smugglers-cove': [
-    `Rum families, flavor profiles, and blending`,
-    `Classic tiki technique beyond sugary gimmicks`,
-    `Donn Beach, Trader Vic, and tiki’s history`,
-    `Syrups, juices, and disciplined drink construction`,
-    `Hospitality as theater, spectacle, and craft`
+    `Craft becomes serious here when playfulness is supported by disciplined technique`,
+    `Taste depends on structure, ingredients, and classification rather than branding alone`,
+    `Hospitality works as performance without ceasing to be precision work`
   ],
   'the-age-of-gold': [
-    `The 1848 discovery and the rush west`,
-    `Boomtown disorder and sudden social upheaval`,
-    `Speculation, capital, and extractive ambition`,
-    `California statehood and the remaking of the West`,
-    `The gold rush as a brutal version of the American dream`
+    `Gold rushes turn ambition into mass upheaval rather than simple individual opportunity`,
+    `Boom economies reward reinvention while normalizing exploitation and disorder`,
+    `Frontier mythology survives by simplifying a much harsher reality`
   ],
   'death-valley-and-the-amargosa': [
-    `Prospectors chasing strikes through extreme desert country`,
-    `Mining camps, failures, and short-lived booms`,
-    `Water, heat, and survival in the Amargosa region`,
-    `Local legend, lost mines, and frontier mythology`,
-    `Settlement patterns shaped by extraction and collapse`
+    `Extraction economies are shaped as much by environment and logistics as by mineral desire`,
+    `Frontier history is built from failure, rumor, and endurance as much as success`,
+    `Harsh landscapes expose how thin the dream of sudden fortune really is`
   ],
   'klondike': [
-    `The stampede north after the Yukon discovery`,
-    `Chilkoot, White Pass, and the cost of getting in`,
-    `Dawson City and frontier improvisation`,
-    `Cold, scarcity, and survival under pressure`,
-    `The Klondike myth versus the lived reality of the rush`
+    `Gold-rush mythology depends on forgetting the logistical brutality underneath it`,
+    `Extreme environments turn ambition into a test of endurance and improvisation`,
+    `Resource booms create communities quickly and strip them just as quickly`
   ],
   'the-civilization-of-the-renaissance-in-italy': [
-    `The state as a work of political art`,
-    `Humanism and the recovery of antiquity`,
-    `Art, patronage, and civic display`,
-    `Courtly life, ceremony, and power`,
-    `The rise of individual self-consciousness`
+    `The Renaissance is read here as a shift toward heightened individual self-consciousness`,
+    `Politics, art, and ceremony are treated as mutually reinforcing forms of cultural power`,
+    `Modernity emerges through display, ambition, and revived antiquity rather than through one single invention`
   ],
   'versailles-a-biography-of-a-palace': [
-    `Louis XIV and the making of Versailles`,
-    `Court etiquette as a technology of control`,
-    `Gardens, apartments, and ceremonial routes`,
-    `Architecture staging absolutist power`,
-    `The palace’s afterlife in French memory`
+    `Architecture can operate as a system for organizing hierarchy and access`,
+    `Spectacle becomes political when ceremony trains people to inhabit power`,
+    `Versailles endures as proof that aesthetics and control can share the same design`
   ],
   'the-story-of-art': [
-    `Learning to look before reciting labels`,
-    `Tradition and innovation in art history`,
-    `Artists solving visual and technical problems`,
-    `Patrons, religion, and social setting`,
-    `From ancient art to modern experimentation`
+    `Looking matters before labeling if art is going to become intelligible`,
+    `Artistic change is driven by problems, patrons, and traditions rather than isolated genius`,
+    `Art history becomes clearer when style is read as a sequence of choices under pressure`
   ],
   'music-in-the-baroque': [
-    `Baroque style, basso continuo, and expressive form`,
-    `Opera, court ceremony, and church music`,
-    `Patronage systems shaping composition`,
-    `Performance practice and musical rhetoric`,
-    `Innovation in a world of hierarchy and spectacle`
+    `Style is inseparable from the institutions that finance and stage it`,
+    `Baroque music seeks emotional force through structure rather than spontaneity alone`,
+    `Innovation thrives even within worlds organized by hierarchy, ritual, and patronage`
   ],
   'food-in-history': [
-    `Agriculture and the long foundations of diet`,
-    `Trade goods, sugar, spices, and global exchange`,
-    `Class distinction at the table`,
-    `Scarcity, famine, and the politics of food`,
-    `Cuisine as ritual, technology, and identity`
+    `Food reveals power because class, trade, and scarcity are embodied at the table`,
+    `Eating habits preserve religion, identity, and technology as much as taste`,
+    `Diet becomes historical evidence once the everyday is taken seriously`
   ],
   'the-old-man-and-the-sea': [
-    `Santiago’s long unlucky streak and return to sea`,
-    `The marlin as a worthy opponent and measure of craft`,
-    `Isolation, age, and endurance under strain`,
-    `Sharks stripping away the visible victory`,
-    `Dignity preserved even when the prize is lost`
+    `Dignity can survive visible defeat when work has been done with full seriousness`,
+    `Endurance matters because worth is not measured only by what can be kept`,
+    `Hemingway turns craft and suffering into a test of inward nobility`
   ],
   'green-hills-of-africa': [
-    `Safari hunting in East Africa`,
-    `Camp rivalry, boasting, and masculine competition`,
-    `Landscape observed with a writer’s eye`,
-    `Kudu hunting as pursuit and self-testing`,
-    `Writing, style, and turning experience into literature`
+    `Experience becomes meaningful only when it can survive being made into truthful prose`,
+    `Competition, skill, and self-display shape masculine identity throughout the memoir`,
+    `Landscape matters as more than backdrop because perception is part of the hunt`
   ],
   'storm-of-steel': [
-    `Bombardment, trench raids, and assault actions`,
-    `Repeated wounding and survival at the front`,
-    `Comradeship inside mechanized slaughter`,
-    `Cool observation instead of moralizing lament`,
-    `Industrial war experienced as shock, endurance, and intensity`
+    `Modern combat can become aesthetically vivid without becoming morally simple`,
+    `Survival in industrial war depends on adaptation, nerve, and emotional hardening`,
+    `The memoir unsettles because it records experience more readily than it interprets it`
   ],
   'one-green-beret': [
-    `Special Forces deployments in Bosnia and Kosovo`,
-    `Unconventional warfare and work with local partners`,
-    `Iraq-era missions and the realities of modern SOF`,
-    `Discipline, endurance, and professional identity`,
-    `War remembered from the operator’s ground level`
+    `Elite soldiering is built on routine professionalism more than on cinematic heroics`,
+    `Small-unit warfare depends on adaptability, trust, and preparation across long stretches of uncertainty`,
+    `Modern military identity is shaped as much by repetition and strain as by action`
   ],
   'bloodlines': [
-    `Agusto Zidarov is a veteran probator whose cynicism comes from long experience, but the case works because he still cannot stop himself from pushing toward the truth when everyone around him wants compromise.`,
-    `Varangantua is the real star of the novel: a hive-city where nobles, trade combines, enforcers, gang lords, and laboring masses all occupy the same system but live in radically different conditions.`,
-    `The missing Terashova heir is not just a detective hook; the disappearance becomes the thread that pulls together elite decadence, organized crime, and the city's hidden economy of violence.`,
-    `Cell-draining gives the book its most brutal image of class society, since the rich preserve youth and comfort by turning poorer bodies into consumable stock.`,
-    `The novel treats policing as compromised from the start, with raids, paperwork, hierarchy, and political pressure constantly limiting what justice can actually look like.`,
-    `Zidarov's family storyline, especially the strain around Naxi and the pull of the Imperial Guard, gives the setting a civilian scale that most larger Warhammer stories skip over.`,
-    `The ending refuses clean redemption and instead shows how deeply exploitation is built into the normal functioning of the Imperium.`
+    `The novel uses detective fiction to expose class violence hidden inside imperial normality`,
+    `Institutions of order appear compromised because power and corruption share the same machinery`,
+    `The setting feels most disturbing where exploitation is shown as routine rather than exceptional`
   ]
 };
 
@@ -1611,25 +1314,25 @@ const bespokeTldrs = {
     `The Art of War says the best strategist does not confuse aggression with intelligence. If you do not understand conditions, timing, information, morale, and the opponent in front of you, then strength just becomes an expensive way of making dumb mistakes faster.`
   ],
   'kite-runner': [
-    `The Kite Runner turns one boy's betrayal into a lifelong reckoning with class, fatherhood, exile, and Taliban brutality. Hosseini's real point is that redemption arrives only in painful fragments, never as a clean wipe of the past.`
+    `The Kite Runner hurts because Amir does not just betray Hassan once; he lets cowardice become part of his identity and then spends years trying to outrun the knowledge. Hosseini ties that private failure to class hierarchy, father-hunger, exile, and Taliban Afghanistan, so redemption matters here only as something partial, costly, and never clean.`
   ],
   'the-sun-also-rises': [
-    `The Sun Also Rises strips expatriate glamour until only damage, jealousy, boredom, and performance remain. Jake can still recognize grace in Romero and the bullring, but Hemingway makes clear that style is a poor substitute for wholeness.`
+    `The Sun Also Rises is Hemingway draining the glamour out of the Lost Generation until only aimlessness, jealousy, money, sexual frustration, and performance are left. Paris and Pamplona still glitter, but Jake's wound and Brett's restlessness keep exposing a generation that can still travel, drink, and pose without quite knowing how to live.`
   ],
   'heart-of-darkness': [
-    `Heart of Darkness is a voyage into imperial greed masquerading as civilization. Marlow goes looking for Kurtz and instead finds a system so rotten that Kurtz feels less like an exception than its purest expression.`
+    `Heart of Darkness is less a jungle adventure than an exposure of the lies empire tells about itself. Conrad makes the trip upriver feel like a movement past administrative language and into the greed, vanity, and sanctioned brutality that civilization prefers to call necessity.`
   ],
   'a-passage-to-india': [
-    `A Passage to India shows how empire poisons even sincere friendship before it can fully form. The Marabar Caves do not solve a mystery so much as explode everyone's illusions about race, truth, and what the British order is really built on.`
+    `Nothing in Forster's novel stays merely personal for long. A courtesy, an invitation, a misunderstanding, even a courtroom proceeding all get absorbed into the political weather of the Raj, where intimacy is constantly being translated into hierarchy. What lingers is not a solved accusation but the harder recognition that empire damages perception itself, making friendship, truth, and generosity feel fragile before anyone consciously chooses betrayal.`
   ],
   'catch-22': [
     `Catch-22 is funniest exactly where it is most murderous: mission counts rise, paperwork multiplies, and every rule exists to keep the machine fed with bodies. Yossarian looks crazy only because he is one of the few people still reacting sanely to war.`
   ],
   'moby-dick': [
-    `Moby-Dick begins as a whaling voyage and mutates into a fight between encyclopedic curiosity and monomaniac vengeance. Ishmael keeps expanding the world while Ahab keeps shrinking it to one white target, and that mismatch sinks the whole ship.`
+    `Melville's genius is that he lets the novel keep expanding even as Ahab keeps narrowing it. Ishmael turns whaling into labor history, taxonomy, theology, comedy, and fellowship, while Ahab tries to force the whole sea into one private vendetta. The catastrophe lands because curiosity and obsession have been sharing the same ship all along.`
   ],
   '1984': [
-    `1984 makes totalitarianism terrifying by showing that power is not satisfied with outward obedience. Orwell's nightmare is a regime that rewrites memory, narrows language, breaks love, and finally gets inside the victim's sense of reality itself.`
+    `Orwell's dystopia is so corrosive because it attacks the conditions of thought before it attacks the body. Once language is narrowed, memory edited, fear ritualized, and loneliness weaponized, resistance stops being heroic and starts becoming cognitively difficult. Winston's collapse lands so hard because the regime does not merely punish dissent; it rearranges reality until even the victim's inner life begins cooperating with power.`
   ],
   'ulysses': [
     `Ulysses turns one ordinary Dublin day into an epic of thought, appetite, memory, embarrassment, and wandering attention. Its genius is that Bloom's errands and Stephen's restlessness matter as much as any legendary quest once consciousness itself becomes the adventure.`
@@ -1668,22 +1371,22 @@ const bespokeTldrs = {
     `Oliver Twist drags innocence through a city built to prey on the weak. Workhouse charity, Fagin's gang, Nancy's divided loyalties, and Bill Sikes's violence all make Dickens's point that respectable society and criminal exploitation are closer than they pretend.`
   ],
   'the-works-of-hp-lovecraft': [
-    `The Works of H.P. Lovecraft keep widening the scale until human importance collapses. Forbidden books, ruined bloodlines, sea gods, and ancient cities matter because they make knowledge itself feel like a trap door under sanity.`
+    `The Works of H.P. Lovecraft do not merely scare by producing monsters; they keep humiliating the human point of view. Cults, sea gods, ruined bloodlines, unreadable books, and buried civilizations all serve one pressure: the discovery that reality may be so old, alien, and indifferent that sanity was only ever a local convenience.`
   ],
   'five-weeks-in-a-balloon': [
     `Five Weeks in a Balloon turns exploration into engineering spectacle: Verne keeps asking how far ingenuity, nerve, and improvisation can carry three men above an unpredictable continent. The balloon is both vehicle and thesis, making science the engine of adventure.`
   ],
   'the-adventures-of-huckleberry-finn': [
-    `The Adventures of Huckleberry Finn uses the river to strip hypocrisy out of American respectability. Huck's moral breakthrough is simple and enormous: friendship with Jim matters more than the slaveholding code he was taught to call civilization.`
+    `Twain sends Huck and Jim onto the river, but the real current is moral rather than geographic. Every fraud, feud, sermon, and mob on shore keeps proving that “civilization” in this world is mostly a polished vocabulary for cruelty, which makes Huck's loyalty feel larger than a boy's private affection. The novel endures because its comedy never softens the central shock: decency may require rejecting the values respectable society treats as sacred.`
   ],
   'the-last-of-the-mohicans': [
-    `The Last of the Mohicans is frontier pursuit with an elegiac undertone. Cooper turns rescue, ambush, and wilderness tracking into a story about a violent border world where empires fight, loyalties fracture, and whole ways of life are disappearing.`
+    `Cooper gives the frontier chase real pressure by locating it inside imperial war, unstable alliances, and the slow disappearance of whole peoples. Hawkeye's competence, Magua's intelligence, and the elegiac force surrounding Uncas keep the novel from collapsing into simple rescue adventure. What lingers is not only pursuit but loss.`
   ],
   'robinson-crusoe': [
-    `Robinson Crusoe is survival told as inventory, labor, property, and control. Defoe makes isolation into a fantasy of mastery, which is why the novel is as much about empire and hierarchy as it is about one man's resourcefulness.`
+    `Robinson Crusoe is not just a survival adventure; it is a fantasy of turning isolation into management. Crusoe inventories, builds, domesticates, and governs until the island starts looking like a miniature empire, which is why the novel feels so bound to property, labor, hierarchy, and the strange comfort of control.`
   ],
   'the-jungle-books': [
-    `The Jungle Books treat discipline and belonging as the real law of the wild. Mowgli's story works because he is never simply animal or human; Kipling keeps making him cross between systems of order that each demand loyalty on different terms.`
+    `What gives these stories their bite is that the jungle is governed, not free. Law, rank, training, and earned belonging shape Mowgli's world just as strongly as danger does, so the animal setting becomes a way of thinking about loyalty, punishment, and identity under pressure. Even the collection's charm carries a stern undertone, since Kipling keeps imagining life as something organized by discipline before it can ever be romanticized as instinct.`
   ],
   'kim-rudyard-kipling': [
     `Kim makes colonial India feel like a moving web of roads, languages, disguises, and rival loyalties. The fun of the adventure never cancels the deeper split in Kim himself, who is being formed at once by espionage, affection, and spiritual apprenticeship.`
@@ -1695,7 +1398,7 @@ const bespokeTldrs = {
     `Thus Spoke Zarathustra is Nietzsche turning philosophy into prophecy, parody, and challenge. Zarathustra keeps attacking comfort, herd morality, and borrowed piety in order to demand self-overcoming from readers who would rather be told they are already virtuous.`
   ],
   'the-futurist-manifesto': [
-    `The Futurist Manifesto reads like an arson attack on cultural memory. Marinetti glorifies speed, machines, youth, aggression, and rupture because he wants modern art to stop preserving civilization and start smashing it.`
+    `The Futurist Manifesto is thrilling and ugly for the same reason: it wants art to prove its modernity by worshipping speed, violence, machinery, youth, and destruction. Marinetti's energy is real, but so is the way aesthetic rupture starts leaning toward political cruelty.`
   ],
   'the-communist-manifesto': [
     `The Communist Manifesto is still powerful because it praises capitalism's world-remaking force even while declaring war on it. Marx and Engels make class struggle feel historical, structural, and international rather than a local complaint about wages.`
@@ -1704,94 +1407,94 @@ const bespokeTldrs = {
     `The Changing World Order argues that empires do not rise and fall randomly; debt, internal cohesion, reserve-currency privilege, and geopolitical pressure move in recurring cycles. Dalio's big wager is that current U.S.-China tension makes more sense when read as pattern rather than exception.`
   ],
   'the-decline-of-the-west': [
-    `The Decline of the West replaces progress talk with civilizational lifecycle talk. Spengler treats the West not as the summit of history but as a culture entering its late, money-dominated, Caesar-seeking phase.`
+    `The Decline of the West is powerful because Spengler refuses to flatter modern readers with progress. He treats civilizations as finite organisms with distinctive souls, and the West as a culture moving toward late-form exhaustion, money power, and the appetite for harder rule once inner confidence has ebbed.`
   ],
   'the-waste-land': [
-    `The Waste Land sounds like a civilization trying to speak through broken circuitry. Eliot's fragments, quotations, deadened desire, and ritual debris make cultural exhaustion audible long before any promise of rain arrives.`
+    `The Waste Land sounds like culture after coherence has been smashed into fragments that still remember older meanings. Eliot's voices, quotations, dead rituals, and erotic fatigue make spiritual exhaustion audible, so the poem feels less like a statement than a ruined civilization trying to think.`
   ],
   'snow-crash': [
     `Snow Crash hurls swordfights, corporate enclaves, Sumerian myth, and computer networks into one manic information war. Stephenson's joke is that the future is absurdly commercial, but the threat underneath it is real: language itself can become malware.`
   ],
   'animal-farm': [
-    `Animal Farm works because the allegory never stays cute. Slogans, staged confessions, and rewritten commandments show how a revolution can keep its symbols while hollowing out everything it promised.`
+    `Animal Farm hurts because Orwell shows how a revolution can preserve its anthem, banners, and moral vocabulary while reversing their meaning underneath. Napoleon does not merely seize power; he teaches the farm to accept lies, fear, and memory loss as normal political weather.`
   ],
   'the-catcher-in-the-rye': [
-    `The Catcher in the Rye is a grief novel hiding inside teenage disgust. Holden keeps mocking phonies, hotels, dates, schools, and adults because sarcasm is easier than admitting how shattered he feels by loss and growing up.`
+    `The Catcher in the Rye keeps its bite because Holden's contempt is not the whole story; it is camouflage. Behind the disgust with phonies and adult performance is a mind trying to hold off grief, sex, change, and the knowledge that innocence cannot be preserved by sneering at it.`
   ],
   'to-kill-a-mockingbird': [
     `Bluntly, To Kill a Mockingbird is about a town that thinks of itself as decent while running on racial lies and routine cowardice. Atticus gives the novel its moral spine, but the trial of Tom Robinson makes the harder point: one good man's integrity does not by itself defeat a whole community's willingness to see injustice and call it normal.`
   ],
   'macbeth': [
-    `Macbeth is what happens when ambition finds prophecy, permission, and fear in the same room. Shakespeare makes the murder of Duncan feel like the beginning of a logic that can only end in paranoia, tyranny, and blood.`
+    `Macbeth is terrifying because the catastrophe feels jointly produced: prophecy tempts, Lady Macbeth licenses, Macbeth chooses, and then fear keeps manufacturing the next crime. Shakespeare turns ambition into a self-feeding system in which power can no longer distinguish security from bloodshed.`
   ],
   'alice-in-wonderland': [
-    `Alice in Wonderland turns childhood curiosity loose inside a dream world where language, authority, and scale keep slipping. Carroll's nonsense is sharp because every absurd creature exposes how arbitrary grown-up rules already are.`
+    `Wonderland stays sharp because Carroll turns nonsense into a stress test for ordinary authority. Size shifts, schoolroom logic, legal ritual, and word games keep exposing how often adult rules survive on tone and enforcement rather than sense. Alice matters as the steady witness who discovers that civilization can sound perfectly grammatical while making no argument at all.`
   ],
   'lord-of-the-rings': [
     `Bluntly, The Lord of the Rings says power is most dangerous exactly when decent people imagine they could use it for good ends. The real heroes are not the ones who grab domination best, but the ones who carry burden, refuse corruption, and keep faith with each other long enough to destroy what nobody should possess.`
   ],
   'pride-and-prejudice': [
-    `Pride and Prejudice is a comedy of misreading before it becomes a love story. Austen keeps letting pride, vanity, family chaos, and class anxiety distort first impressions until Elizabeth and Darcy earn a clearer way of seeing each other.`
+    `Pride and Prejudice stays fresh because Austen treats romance as a problem of perception before it becomes a reward. Elizabeth and Darcy are both intelligent enough to judge quickly and vain enough to judge badly, while family noise, class pressure, and social theater keep turning misreading into plot. Love works only once self-knowledge catches up.`
   ],
   'jane-eyre': [
-    `Jane Eyre is a romance that never forgets dignity. Jane can love Rochester intensely and still refuse to belong to him on false or humiliating terms, which is why the novel feels so modern in its defense of female conscience.`
+    `What keeps Jane Eyre modern is that Bronte never lets passion outrank self-respect. Jane can love Rochester fiercely and still refuse any arrangement that makes her morally secondary, which turns the romance into an argument about dignity, conscience, and equality rather than surrender. The novel's intensity comes from that refusal to separate desire from character.`
   ],
   'wuthering-heights': [
-    `Wuthering Heights turns love, humiliation, and class injury into a weather system. Heathcliff and Catherine are so bound up in possession and vengeance that the novel feels less like courtship than like haunting carried across generations.`
+    `Wuthering Heights is not a love story made beautiful by excess; it is a study in how injury, desire, class humiliation, and possession can fuse into a self-perpetuating climate. Heathcliff and Catherine do not stabilize one another; they radicalize one another. That is why the novel feels haunted even before any ghost appears.`
   ],
   'crime-and-punishment': [
-    `Crime and Punishment is not a whodunit but a breakdown study. Raskolnikov tries to live inside a theory that places him above ordinary morality, and Dostoevsky shows that the mind itself becomes the crime scene.`
+    `Crime and Punishment locks the reader inside a mind trying to intellectualize its way past guilt. Raskolnikov wants to believe theory can lift him above ordinary morality, but Dostoevsky keeps making conscience feel bodily, social, spiritual, and impossible to out-argue.`
   ],
   'war-and-peace': [
-    `War and Peace keeps refusing the lie that history is made only by great men. Tolstoy makes salons, marriages, mistakes, battlefield confusion, and spiritual searching just as decisive as Napoleon's plans or anyone else's legend.`
+    `War and Peace keeps widening the frame until no single hero can plausibly contain history. Battles, marriages, salons, blunders, deaths, and spiritual searching all matter, because Tolstoy wants the reader to feel how vast events are made from countless partial lives rather than one commanding will.`
   ],
   'anna-karenina': [
-    `Anna Karenina gives desire its glamour and then follows the bill. Tolstoy pairs Anna's destructive love affair with Levin's slower search for honest work, marriage, and faith so that tragedy and hard-won meaning keep answering each other.`
+    `Anna Karenina is Tolstoy refusing to let desire stay romantic for long. Anna's affair burns with urgency because society, marriage, reputation, motherhood, and self-deception close around it from every side, while Levin's slower search for work, marriage, and belief offers a completely different experiment in meaning.`
   ],
   'don-quixote': [
-    `Don Quixote is ridiculous and noble at the same time. Cervantes keeps crashing chivalric fantasy into ordinary Spain until you realize the novel is not just mocking delusion, but asking what becomes of idealism in a stubbornly unromantic world.`
+    `Cervantes keeps making delusion hilarious without letting realism claim an easy victory. The knight's disasters expose what romance does to the mind, but they also expose how spiritually thin the world can look once every grand aspiration is dismissed as foolishness. That doubleness is why the novel still feels modern: it is mocking fantasy, mourning disenchantment, and inventing a new kind of self-aware fiction all at the same time.`
   ],
   'les-miserables': [
-    `Les Miserables turns mercy into the force that keeps breaking open rigid systems of law, class, and punishment. Valjean keeps trying to outrun his past, while Hugo keeps insisting that grace and social misery are never separate questions.`
+    `Les Miserables is Hugo insisting that mercy is more revolutionary than punishment. Valjean's life keeps colliding with police logic, poverty, convents, barricades, labor, prostitution, and parental love until the novel starts to feel like one vast argument that private goodness and public misery can never be separated.`
   ],
   'madame-bovary': [
-    `Madame Bovary is a novel about what happens when romantic fantasy colonizes ordinary life. Emma wants passion, luxury, and transcendence, but Flaubert keeps translating those cravings back into boredom, debt, adultery, and self-destruction.`
+    `Flaubert makes bad desire look intelligent enough to seduce the reader. Emma keeps mistaking intensity for depth and luxury for escape, while marriage, lovers, debt, and consumer fantasy reduce transcendence to installments, purchases, and boredom. The novel cuts deepest because it understands the glamour of illusion before it judges the wreckage.`
   ],
   'the-brothers-karamazov': [
-    `The Brothers Karamazov turns family filth into a stage for arguments about God, freedom, guilt, and responsibility. Patricide matters here not just as crime, but as the moment philosophy stops being abstract and starts drawing blood.`
+    `The Brothers Karamazov is a philosophical novel that never lets philosophy stay clean. Faith, rebellion, sensuality, guilt, family hatred, and the desire for innocence all collide around patricide, so ideas feel dangerous precisely because they keep turning into lived consequences.`
   ],
   'a-tale-of-two-cities': [
-    `Revolution in A Tale of Two Cities never stays abstract for long. Dickens turns inherited guilt, political vengeance, and sacrificial love into a story about what happens when history stops judging a class and starts consuming people one by one.`
+    `Dickens does not treat revolution as a clean moral correction but as historical grievance turning indiscriminate once it acquires momentum. The novel keeps yoking public violence to private resurrection—Manette recalled from living burial, Darnay dragged back by inheritance, Carton discovering purpose at the edge of death—so that political catastrophe and personal redemption never stop reflecting each other. What remains after the melodrama is a hard truth about vengeance: once history starts devouring persons instead of systems, innocence offers little protection.`
   ],
   'the-scarlet-letter': [
-    `Public shame powers The Scarlet Letter at every level. Hester bears punishment in the open, while Dimmesdale and Chillingworth reveal how concealed guilt and private vengeance can rot a life far more completely than any scaffold sentence.`
+    `The Scarlet Letter is sharper than a simple adultery tale because Hawthorne cares about how communities manufacture moral theater. Hester's badge becomes public spectacle, Dimmesdale turns inward guilt into spiritual decay, and Chillingworth makes injury into vocation. The novel keeps asking whether sin does more damage in the act itself or in the systems built to expose, hide, and feed on it.`
   ],
   'the-count-of-monte-cristo': [
     `The Count of Monte Cristo is revenge engineered with patience, money, education, and theatrical timing. Dumas gives vengeance enormous narrative satisfaction, then keeps asking how long it can masquerade as justice before it deforms the avenger too.`
   ],
   'hamlet': [
-    `Hamlet is a revenge play clogged on purpose with grief, thought, disgust, theater, and delay. Shakespeare keeps widening the prince's task until killing one guilty king can no longer solve the rot underneath the whole court.`
+    `Hamlet feels inexhaustible because Shakespeare makes delay intelligent without making it admirable. The prince sees too much theater, rot, self-deception, and moral contamination for revenge to remain a simple task, so thought itself becomes both insight and paralysis.`
   ],
   'dracula': [
     `Dracula makes modern tools feel thrillingly useful and still potentially too late. Diaries, railways, blood transfusions, and coordinated investigation only matter because Stoker is pitting bureaucratic modernity against something ancient, invasive, and patient.`
   ],
   'othello': [
-    `In Othello, suggestion does more damage than proof ever could. Iago barely needs facts once he learns how to work on Othello's trust, outsider insecurity, and love, which is why the collapse feels so sickeningly plausible.`
+    `Othello is devastating because Iago barely has to fabricate facts once he learns how to weaponize insecurity. Shakespeare shows jealousy as something built conversationally, with suggestion, silence, and insinuation doing the work that open proof never could.`
   ],
   'fathers-and-sons': [
-    `Fathers and Sons stages generational conflict without pretending the young automatically inherit truth. Bazarov's nihilism feels powerful until love, mortality, and family attachment expose how much life resists being reduced to doctrine.`
+    `Fathers and Sons feels modern because Turgenev refuses to flatter either youth or tradition. Bazarov's nihilism carries real force when aimed at stale sentiment and empty posture, but love, illness, family attachment, and mortality keep showing what theory cannot absorb. The novel understands generational conflict as a struggle over reality, not just manners.`
   ],
   'middlemarch': [
-    `Middlemarch is what happens when a whole town becomes the scale of a novel. Eliot makes marriage, debt, ambition, gossip, reform, and disappointment interlock so tightly that no supposedly private choice stays private for long.`
+    `Middlemarch becomes great by refusing the fantasy that private life stays private. Eliot makes marriage, vocation, debt, reform, gossip, and disappointed idealism circulate through a whole provincial world until moral seriousness looks less like grand heroism than like sustained attention to other people's reality.`
   ],
   'romance-of-the-three-kingdoms': [
     `Romance of the Three Kingdoms turns dynastic collapse into a marathon of strategy, loyalty, and legitimacy. Its great pleasure is that brilliant plans and sworn brotherhoods matter just as much as battlefield violence in deciding who can claim empire.`
   ],
   'the-tale-of-the-heike': [
-    `Temple bells frame The Tale of the Heike with impermanence from the start. Battles, clan rivalries, and famous deaths all keep returning to the same Buddhist note: pride rises brilliantly and then vanishes.`
+    `From the opening bell, triumph is already sounding like an elegy. Battles, rank, court splendor, and warrior renown matter, but the deeper atmosphere is Buddhist impermanence, which keeps every ascent shadowed by decline. That is why the epic feels sorrowful even at its grandest.`
   ],
   'samguk-sagi': [
-    `Samguk Sagi builds Korean historical memory through kings, campaigns, alliances, and court record. Its emphasis is less on colorful anecdote than on how legitimacy and unification were narrated through state-centered history.`
+    `Samguk Sagi matters less for vivid anecdote than for how state-centered history gets built. Kings, campaigns, alliances, and court record are arranged to make legitimacy, unification, and political continuity feel like the natural frame through which the Korean past should be read.`
   ],
   'secret-history-of-the-mongols': [
     `Temujin's rise in The Secret History of the Mongols feels harsher and more intimate than an imperial chronicle. Hunger, betrayal, kinship politics, and violence shape Chinggis Khan as survival sharpened into power rather than legend polished after the fact.`
@@ -1800,16 +1503,16 @@ const bespokeTldrs = {
     `The Mahabharata begins as a family dispute and ends as civilizational devastation. Dice, exile, Krishna's counsel, and the slaughter at Kurukshetra make the epic feel obsessed with one truth: duty can remain binding even when every available action is stained.`
   ],
   'baburnama': [
-    `Baburnama stands out because Babur writes like a conqueror who actually notices terrain, gardens, cities, reversals, and his own moods. The memoir mixes campaign narrative with self-portrait, so empire-building never fully crowds out personality.`
+    `Babur writes like a ruler who cannot help remaining a particular person on the page. Campaigns, defeats, gardens, weather, cities, drinking, longing, and strategic calculation all coexist, so empire never fully hardens into official chronicle. The memoir stays memorable because conquest is being narrated by someone whose eye for terrain and temperament is as revealing as his appetite for power.`
   ],
   'the-gallic-war': [
-    `The Gallic War is conquest narrated as if it were calm necessity. Caesar's great trick is third-person distance: he makes sieges, logistics, and annihilation sound like disciplined public service while campaigning for his own glory.`
+    `The Gallic War is gripping because Caesar narrates conquest as if it were transparent necessity. That cool third-person tone is the point: it turns extermination, engineering, logistics, and self-promotion into one polished performance of authority.`
   ],
   'shahnameh': [
-    `Shahnameh preserves Persian kingship and heroism in a register where grandeur and grief are inseparable. Ferdowsi keeps turning legendary power into tragedy, especially when great champions destroy what they love without seeing clearly in time.`
+    `Ferdowsi gives Persian memory its full emotional range: kingly splendor, heroic combat, dynastic struggle, and then the recurring grief that follows greatness when pride outruns wisdom. The poem's power is not just that it preserves old stories, but that it keeps showing how power becomes tragic precisely in figures large enough to inspire love. Again and again, triumph arrives already shadowed by blindness, making civilizational grandeur feel inseparable from loss.`
   ],
   'mein-kampf': [
-    `Mein Kampf matters less as literature than as an unfiltered map of paranoid hatred given political form. Hitler turns grievance, race myth, propaganda theory, and expansionism into a program that later history would carry out at industrial scale.`
+    `Whatever its literary quality, the text matters as a blueprint for political hatred trying to make itself systematic. Grievance, racial fantasy, propaganda theory, leader worship, and territorial obsession are fused here into a worldview that later became policy, bureaucracy, and mass murder. Reading it is less an encounter with argument than with paranoia seeking state form, which is why it remains historically important and morally repellent.`
   ],
   'the-arabs-and-the-holocaust': [
     `The Arabs and the Holocaust tracks how Holocaust memory and Nakba memory collide, overlap, deny, and instrumentalize each other in Arab political life. Achcar's value is that he refuses a single Arab response and instead follows argument, sympathy, polemic, and evasion across decades.`
@@ -1818,13 +1521,13 @@ const bespokeTldrs = {
     `Nazis, Islamists and the Making of the Modern Middle East argues that wartime Nazi outreach and later Islamist politics are more entangled than comfortable narratives admit. Its edge comes from tracing propaganda, alliances, and ideological afterlives rather than treating them as isolated episodes.`
   ],
   'sombres-bourreaux': [
-    `Sombres Bourreaux examines collaboration where ordinary moral categories already feel strained by empire, occupation, race, and coercion. Its unsettling point is that fascist systems could recruit people whom those same systems also degraded.`
+    `This is difficult material precisely because it refuses the comfort of simple roles. Collaboration under empire emerges through coercion, compromised ambition, racial hierarchy, and survival calculation all at once, so the familiar moral map of victim and perpetrator never stays clean for long. Its force lies in showing that fascist and colonial systems could recruit degraded intermediaries without ever treating them as equals, leaving memory itself permanently unstable afterward.`
   ],
   'the-quran': [
-    `Put bluntly, the Qur’an is not vague spirituality. It is revelation as warning, command, judgment, and mercy, hammering the same point again and again: worship one God, remember the prophets, and stop pretending human action escapes accountability.`
+    `The Qur’an speaks with urgency because it is not presented as detached theology but as address: warning, consolation, command, dispute, promise, and judgment. Its force comes from the insistence that history, nature, law, and conscience all point back to one sovereign God before whom no life stays morally unaccounted for.`
   ],
   'torah': [
-    `Put simply, the Torah is not just origin story plus rules. It is the founding claim that Israel’s memory, law, worship, and identity all stand or fall together, which is why creation, Exodus, Sinai, and wilderness testing read like one continuous argument about covenantal life.`
+    `Rather than offering detached spirituality, the Torah builds a world in which story and obligation are inseparable. Creation, ancestral promise, slavery, liberation, covenant, law, ritual, and wilderness testing all work together to form a people whose identity is supposed to be practiced, not merely remembered. That is why its authority feels so foundational: it does not just tell Israel where it came from, but keeps defining what fidelity, holiness, justice, and communal life are meant to look like.`
   ],
   'tanakh': [
     `At bottom, the Tanakh is what happens when covenant moves from charter to history: kings fail, prophets prosecute, poets grieve and praise, exile shatters the nation, and memory refuses to die. If the Torah lays down the terms, the Tanakh shows how brutal and complicated it is to actually live under them.`
@@ -1836,10 +1539,10 @@ const bespokeTldrs = {
     `In a nutshell, the Bhagavad Gita starts with Arjuna wanting to escape moral burden and ends by refusing him that comfort. Its whole point is that duty, action, devotion, and knowledge have to survive fear, grief, and attachment to outcomes or they are not real.`
   ],
   'tao-te-ching': [
-    `At bottom, the Tao Te Ching says the loud, forceful, controlling approach is usually self-defeating. Its point is not passivity for its own sake, but the claim that restraint, softness, emptiness, and non-forcing often beat domination because they fit reality better.`
+    `Instead of praising force, achievement, and self-assertion, the Tao Te Ching keeps honoring what ordinary ambition underrates: emptiness, softness, restraint, receptivity, and action that does not advertise itself. Its radical calm comes from the suspicion that ego is the main source of disorder, whether in a ruler, a household, or a single mind. The result is not passivity but a disciplined refusal to confuse control with wisdom.`
   ],
   'kojiki': [
-    `From creation myth to imperial ancestry, Kojiki fuses sacred story with political order. These myths are not floating folklore; they ground rulership itself in divine descent, sacred geography, and ritual legitimacy.`
+    `Kojiki is not just a pile of old myths; it is a political cosmology. Creation stories, divine births, pollution rituals, and imperial ancestry all work together to make rulership feel rooted in sacred origin, so mythology becomes a structure of legitimacy rather than loose folklore.`
   ],
   'dhammapada': [
     `Put simply, the Dhammapada says suffering is not mostly descending on you from outside; your own mind keeps helping build it. That is why the book keeps driving back to discipline, clarity, compassion, and detachment: if the mind is crooked, the life follows.`
@@ -1863,7 +1566,7 @@ const bespokeTldrs = {
     `The Buying Brain argues that purchasing starts in attention, emotion, memory, and reward long before the buyer invents a neat rational explanation. Its attraction is simple: marketing works better when you stop pretending consumers are little logic machines.`
   ],
   'advanced-interviewing-techniques': [
-    `Advanced Interviewing Techniques treats the interview as a managed social environment, not a checklist. Rapport, sequencing, baselines, and elicitation matter because people reveal more when pressure is controlled rather than announced.`
+    `What this manual understands well is that people rarely disclose on the merits of a question alone. Timing, baseline behavior, emotional temperature, sequencing, silence, and perceived safety all shape whether a subject talks, withholds, or starts rationalizing. That is why it feels both useful and faintly chilling: conversation is treated as a designed environment in which disclosure can be engineered rather than politely requested.`
   ],
   'mining-capital': [
     `Geology only becomes a mining business once financiers can price the risk. Exploration uncertainty, feasibility work, commodity cycles, and jurisdictional danger determine whether a project can actually raise capital instead of merely selling a story.`
@@ -1875,7 +1578,7 @@ const bespokeTldrs = {
     `Kahneman turns human judgment into a catalogue of recurring mistakes rather than a showcase of natural rationality. Fast intuition is useful, but the real force lies in showing how predictably bias, loss aversion, and statistical blindness keep hijacking it.`
   ],
   'thinking-in-bets': [
-    `Thinking in Bets teaches one hard habit: stop confusing a good decision with a lucky outcome. Annie Duke uses poker to make uncertainty, probability, and feedback feel livable instead of something to be erased by hindsight.`
+    `Thinking in Bets is useful because it treats uncertainty as a permanent condition, not an error that smarter people can eliminate. Duke's poker lens keeps pressing one corrective: evaluate decisions by the quality of the reasoning and the odds, not by whether luck happened to cooperate this time.`
   ],
   'good-strategy-bad-strategy': [
     `Good Strategy/Bad Strategy keeps cutting through executive fluff until only the essentials remain: identify the real problem, choose a guiding policy, and back it with coherent action. Rumelt's favorite enemy is the fake strategy document that is really just ambition wearing jargon.`
@@ -1893,7 +1596,7 @@ const bespokeTldrs = {
     `Farsighted is a manual for making better long-range decisions when the future refuses to stay simple. Johnson pushes scenario thinking, second-order effects, reversibility, and group judgment so that planning becomes more adaptive than predictive.`
   ],
   'skin-in-the-game': [
-    `Skin in the Game says ethics begins where exposure begins. Taleb keeps attacking experts, managers, and intellectuals who can impose risk on other people while remaining personally insulated from the downside.`
+    `Taleb's real target is insulated decision-making: people who theorize, regulate, advise, or profit while exporting the downside to strangers. What gives the argument its bite is not just the economics of risk but the moral charge behind it, the claim that judgment becomes corrupt when exposure becomes optional. It is most persuasive when it insists that accountability is not a sentimental virtue but the minimum price of speaking forcefully about how others should live.`
   ],
   'the-innovators-dilemma': [
     `The Innovator's Dilemma is brutal because it says competent management can still produce collapse. Christensen's point is that listening to current customers and optimizing existing products often blinds incumbents to the smaller, cheaper disruptions that eventually replace them.`
@@ -1902,10 +1605,10 @@ const bespokeTldrs = {
     `David Omand's book turns intelligence tradecraft into a broader guide for thinking under uncertainty. Its lessons matter because they insist on humility, bias-checking, probabilistic judgment, and alertness to deception when certainty is impossible.`
   ],
   'the-ellipsis-manual': [
-    `Chase Hughes frames influence and behavioral reading as repeatable routines rather than mystical intuition. Baselining, elicitation, framing, and incongruence detection become forms of trained conversational leverage.`
+    `Chase Hughes writes as if social perception could be industrialized into a repeatable method: establish baselines, watch incongruence, control status, frame the exchange, and use pressure without looking theatrical. That procedural tone is the whole appeal and the whole warning. The manual becomes interesting exactly where influence stops sounding mystical and starts sounding like an operational craft for steering attention, emotion, and disclosure.`
   ],
   'social-engineering-the-art-of-human-hacking': [
-    `Social Engineering: The Art of Human Hacking reminds security people that trust is often the weakest perimeter. Attackers win here through pretext, rapport, authority, urgency, and curiosity, not by cracking the hardest technical layer first.`
+    `The unsettling point is not that people are foolish; it is that normal social virtues are exploitable. Helpfulness, urgency, trust, deference to authority, and the wish to be cooperative all become openings once an attacker knows how to stage the encounter. Hadnagy's value lies in making persuasion look systematic rather than magical, which is precisely why it reads as both a security guide and a lesson in how thin everyday defenses really are.`
   ],
   'never-split-the-difference': [
     `Never Split the Difference imports hostage-negotiation habits into ordinary bargaining. Voss makes empathy tactical, questions calibrated, and compromise suspicious, because the real advantage comes from shaping the other side's perception rather than just meeting in the middle.`
@@ -1935,28 +1638,28 @@ const bespokeTldrs = {
     `The Sleepwalkers rejects the comforting hunt for one master villain of 1914. Clark's argument is that Europe moved into catastrophe through cumulative fear, Balkan volatility, alliance habits, and serial misjudgment rather than a single clean act of intention.`
   ],
   'the-rise-and-fall-of-the-third-reich': [
-    `The Rise and Fall of the Third Reich has its authority because it reads the regime against its own documents. Shirer turns dictatorship, conquest, propaganda, genocide, and collapse into a paper trail of how modern barbarism organized itself.`
+    `The Rise and Fall of the Third Reich gets its force from accumulation. Shirer lets speeches, directives, diplomatic maneuvers, military campaigns, bureaucratic language, and genocide pile up until Nazism looks less like a sudden madness than like a modern state teaching itself to normalize barbarism.`
   ],
   'spqr': [
-    `SPQR makes Rome feel argumentative instead of marble-stiff. Mary Beard keeps returning to citizenship, class conflict, political legitimacy, and self-mythmaking so that Roman history becomes a struggle over who counted and why.`
+    `SPQR makes Rome feel alive by recovering its arguments rather than its marble. Beard keeps asking who counted as Roman, who got heard, how citizenship expanded, and how empire reshaped the republic, so Roman greatness appears inseparable from contest, improvisation, and self-invention.`
   ],
   'the-histories': [
-    `The Histories is part war narrative, part travel writing, part gossip, part anthropology, and that sprawl is exactly the point. Herodotus keeps asking how custom, hubris, luck, and imperial ambition interact once Greeks and Persians collide.`
+    `The Histories feels alive because Herodotus never narrows history down to one respectable genre. War report, travelogue, rumor, ethnography, anecdote, and moral reflection all mingle, which is exactly how he turns the Persian Wars into a wider study of custom, hubris, empire, luck, and the strange things people take for normal.`
   ],
   'the-peloponnesian-war': [
-    `The Peloponnesian War is war written as political diagnosis. Thucydides uses speeches, plague, faction, and strategic failure to show how fear and ambition can hollow out a city long before defeat is official.`
+    `Thucydides makes prolonged conflict feel corrosive long before it becomes decisive. Speeches, faction fights, plague, imperial overreach, and strategic calculation all show a political world in which fear and prestige slowly deform what citizens can say, justify, and believe about themselves. That is why the history keeps reading as more than campaign narrative: it is an anatomy of civic intelligence unraveling under pressure.`
   ],
   'genghis-khan-and-the-making-of-the-modern-world': [
-    `Genghis Khan and the Making of the Modern World tries to recover the Mongol empire from the simple barbarian stereotype. Weatherford stresses law, merit, mobility, trade, and imperial connectivity without pretending conquest came gently.`
+    `Genghis Khan and the Making of the Modern World is a revisionist history that wants conquest seen alongside administration. Weatherford keeps stressing merit, law, trade networks, religious tolerance, and mobility, not to excuse Mongol violence, but to show that the empire's world-making power was larger and more organized than the barbarian stereotype allows.`
   ],
   'the-crusades': [
-    `The Crusades follows holy war as both devotion and opportunism. Asbridge makes the movement intelligible not by romanticizing it, but by showing how piety, power, logistics, and long memory kept the conflict renewing itself.`
+    `The Crusades works best when holy war stops looking like pure piety or pure opportunism and becomes an unstable mixture of both. Asbridge shows how devotion, ambition, logistics, memory, and political fragmentation kept the enterprise alive far beyond any single campaign.`
   ],
   'the-silk-roads': [
     `The Silk Roads recenters world history on the corridors through Central Asia and Persia where trade, conquest, religion, and later energy politics keep converging. Frankopan's big move is to make Europe's usual stage look provincial by comparison.`
   ],
   'mastery': [
-    `Mastery is Robert Greene's long game against impatience. Apprenticeship, humiliation, practice, mentors, rivals, and eventually creative independence matter here because excellence is treated as something earned slowly, not announced early.`
+    `Greene flatters ambition only after subjecting it to apprenticeship. Repetition, obscurity, imitation, frustration, and long stretches of unglamorous work are not obstacles to excellence here; they are the material out of which deep perception is built. Its appeal is obvious, but the discipline it recommends is harsher than motivational culture usually allows: independence comes late, and only after the ego has survived being trained.`
   ],
   'think-and-grow-rich': [
     `Think and Grow Rich turns ambition into a quasi-spiritual program of desire, autosuggestion, planning, and persistence. Its appeal has always been that it treats wealth as something first engineered in belief and will before it appears in business.`
@@ -1965,13 +1668,13 @@ const bespokeTldrs = {
     `David and Goliath argues that apparent weakness often forces better strategy than comfortable power does. Gladwell keeps flipping the script so that hardship, outsider status, and constraint become sources of tactical creativity rather than automatic defeat.`
   ],
   'blink': [
-    `Blink asks when snap judgment deserves trust and when it is just bias moving fast. Gladwell's best examples work because they keep showing thin-slicing as a real skill under narrow conditions, not a magical excuse to stop thinking.`
+    `Blink is strongest when it narrows the claim instead of romanticizing instinct. Gladwell shows that thin-slicing can be real expertise under the right conditions, but also that snap judgment becomes dangerous the moment prejudice, vanity, or stress starts dressing itself up as intuition.`
   ],
   'what-the-dog-saw': [
-    `What the Dog Saw is Gladwell at essay length, poking into odd experts, product failures, hidden systems, and eccentric jobs until familiar things stop looking obvious. The pleasure is in the sideways angle more than any one grand thesis.`
+    `What the Dog Saw is Gladwell at his best when curiosity matters more than thesis. The essays keep using odd experts, product failures, innovators, criminals, and overlooked professions to show how much of modern life depends on invisible systems and strange specializations. The pleasure is not one argument so much as the habit of looking sideways.`
   ],
   'outliers': [
-    `Outliers is an attack on the flattering myth of solitary genius. Gladwell keeps dragging success stories back toward timing, practice, culture, cohort, and institutional opportunity, where talent suddenly looks less self-made.`
+    `Outliers keeps puncturing the vanity of self-made success stories. Gladwell's larger point is not that individual effort is fake, but that timing, culture, cohort, institutions, and opportunity structures quietly shape who gets to convert effort into visible achievement.`
   ],
   'freakonomics': [
     `Freakonomics turns economics into a way of hunting hidden incentives in places respectable people pretend not to look. Its charm comes from the sideways questions: cheating teachers, drug gangs, baby names, crime, and the difference between moral panic and measurable behavior.`
@@ -1980,31 +1683,31 @@ const bespokeTldrs = {
     `Israel's startup density emerges here from pressure, improvisation, military networks, immigrant talent, and venture capital. The central claim is that insecurity and small size can make a country faster, flatter, and more risk-tolerant than larger rivals.`
   ],
   'zero-the-biography-of-a-dangerous-idea': [
-    `Zero: The Biography of a Dangerous Idea shows how a symbol for nothing rewired mathematics, metaphysics, and science. Seife makes zero fascinating because every era seems to need it intellectually while also finding it philosophically unnerving.`
+    `Seife turns one symbol into an intellectual troublemaker with an unusually long afterlife. Zero keeps disturbing inherited habits of thought—about number, void, infinity, God, space, and calculation—so the history becomes larger than mathematics alone. The story stays memorable because “nothing” repeatedly arrives as a cultural scandal before it settles into being an indispensable tool.`
   ],
   'journey-through-genius': [
-    `Journey Through Genius makes math history feel like a sequence of beautifully structured surprises. Dunham uses landmark proofs to show that elegance is not a decorative extra in mathematics, but often the clearest sign of deep understanding.`
+    `Dunham's great move is to make proof feel dramatic. Instead of treating mathematics as a warehouse of results, he keeps returning to the moment an argument suddenly becomes elegant, necessary, and surprising all at once. It works because it teaches readers to admire structure itself, showing that beauty in mathematics is not decoration but the feeling of thought finding its cleanest possible form.`
   ],
   'the-strangest-man': [
     `The Strangest Man is a biography of Paul Dirac written around the odd fit between emotional reserve and theoretical brilliance. Farmelo makes early quantum physics vivid partly by showing how much of it ran through one extraordinarily difficult, abstract mind.`
   ],
   'the-alchemist': [
-    `Coelho turns treasure-hunting into a fable about vocation. Santiago follows omens across the desert only to learn that the journey changes the seeker into someone capable of recognizing what he was after all along.`
+    `The Alchemist works best as a parable about learning how to read meaning without mistaking cliché for destiny. Santiago's journey matters less for the treasure plot than for the idea that vocation requires risk, attention, and a changed self before the world can look like an answer.`
   ],
   'meditations': [
     `Meditations is basically an emperor telling himself, over and over, not to be vain, reactive, soft, petty, or distracted. Its power comes from how unglamorous that struggle is: Marcus is trying to keep his own mind in order because he knows external power is useless if the inside of the soul is a mess.`
   ],
   'the-picture-of-dorian-gray': [
-    `Wilde gives vanity a supernatural loophole in The Picture of Dorian Gray. Dorian's face stays flawless while the portrait records the damage, making the point brutal: corruption hidden from society is not corruption escaped.`
+    `Wilde's novel is fascinated by the fantasy of separating appearance from consequence. Dorian gets to keep the social surface—youth, charm, desirability—while the portrait absorbs the moral truth, and that division turns beauty into a kind of spiritual embezzlement. The story lasts because its supernatural device never feels arbitrary; it simply externalizes the wish to sin aesthetically and be judged somewhere else.`
   ],
   'smugglers-cove': [
-    `Smuggler's Cove refuses to treat tiki drinks as sugary gimmickry. Martin Cate turns rum classification, syrups, juices, garnish theater, and disciplined technique into a serious craft system with a playful surface.`
+    `Smuggler's Cove makes tiki respectable by treating excess as something engineered, not improvised. Cate shows that the escapist surface—rum, garnishes, spectacle, tropical fantasy—only works when classification, balance, prep, and hospitality are handled with almost obsessive discipline.`
   ],
   'the-age-of-gold': [
     `The Age of Gold treats the California Gold Rush as a national fever dream of migration, speculation, violence, and reinvention. Brands keeps the energy high while showing how quickly fortune-seeking remade the West into something harsher and more organized.`
   ],
   'death-valley-and-the-amargosa': [
-    `Borax camps, false strikes, and brutal desert travel define Death Valley and the Amargosa. The region's history comes alive because survival logistics matter as much as dreams of sudden wealth.`
+    `Here the desert is the main intelligence in the story. Prospectors, borax men, transport schemes, and rush-fed fantasies keep colliding with distance, thirst, heat, and terrain, so frontier ambition is measured less by daring than by logistics. The effect is anti-romantic in the best way: sudden fortune remains the dream, but landscape keeps reintroducing cost, failure, and human smallness.`
   ],
   'klondike': [
     `Klondike is the gold-rush myth marched through cold, scarcity, bad trails, and logistical misery. Berton keeps Dawson City and the northern stampede vivid by never letting stampeders' fantasies outrun the brutal arithmetic of getting there and surviving.`
@@ -2016,19 +1719,19 @@ const bespokeTldrs = {
     `Versailles: A Biography of a Palace treats architecture as court machinery. Louis XIV's residence matters not only for splendor, but because every route, room, garden, and ritual helped turn access into power and nobles into spectators of monarchy.`
   ],
   'the-story-of-art': [
-    `The Story of Art remains useful because Gombrich teaches looking before labeling. Art history here is not a parade of masterpieces; it is a record of artists solving visual problems under different patrons, beliefs, and traditions.`
+    `The Story of Art still works because Gombrich teaches vision before jargon. By treating art history as a succession of problems, patrons, traditions, and inventions, he makes looking active again instead of leaving the reader trapped in a museum of reverent labels.`
   ],
   'music-in-the-baroque': [
-    `Music in the Baroque keeps style tied to institutions: courts, churches, opera houses, patronage, and performance practice. Heller makes the period feel alive by showing that baroque sound was inseparable from the world paying for it.`
+    `Music in the Baroque gets beyond style labels by restoring the institutions underneath the sound. Courts, churches, opera, patronage, rhetoric, and performance practice all matter, because baroque music was never just a sequence of notes floating above social hierarchy.`
   ],
   'food-in-history': [
-    `Food in History uses diet to expose class, trade, famine, ritual, technology, and empire. Tannahill's best move is to treat eating not as background but as one of the clearest ways power becomes everyday life.`
+    `Food in History becomes sharper the moment eating stops looking ordinary. Tannahill uses grain, spice, sugar, famine, ritual, and cuisine to show that appetite is never just biological; it is one of the main places where class, empire, technology, and belief become daily life.`
   ],
   'the-old-man-and-the-sea': [
-    `Santiago's battle with the marlin turns The Old Man and the Sea into a stripped-down test of craft, pride, suffering, and dignity. Hemingway makes the victory real and then lets the world take the visible reward away.`
+    `Hemingway strips away almost everything except work, pain, pride, and endurance, which is why Santiago's ordeal feels ceremonial rather than merely athletic. Catching the marlin matters, but not as much as the standard of craft and seriousness he brings to the struggle even when the visible prize is later destroyed. The novella becomes moving by insisting that dignity is not the same thing as winning and may survive precisely where success does not.`
   ],
   'green-hills-of-africa': [
-    `Safari becomes Hemingway's laboratory in Green Hills of Africa. He cares about the hunt, but he cares just as much about skill, rivalry, landscape, and whether lived experience can be turned into hard, truthful prose.`
+    `Safari is the surface subject, but Hemingway is really testing whether experience can be turned into prose without softening it into pose. Hunting, talk, rivalry, camp routine, landscape, and the performance of masculinity all become part of that experiment, which makes it read as both adventure narrative and workshop in self-mythmaking. Its interest lies in the tension between honest seeing and the temptation to make a style out of being the man who sees.`
   ],
   'storm-of-steel': [
     `Bluntly, Storm of Steel is not a clean sermon about patriotism or peace. It is trench warfare from the inside: mud, shellfire, waiting, wounds, adrenaline, survival, and the strange emotional hardening that modern combat can produce. That is why it feels so different from a polished history of the war.`
